@@ -42,12 +42,12 @@ The app is designed for those looking to take control of their health with data-
 * USDA API provides a sufficient coverage of food items applicable to users
 
 ##### Examples:
-1.1
+1.1<br/>
 **Given** the user is logged in, <br/>
 **When** the user logs a meal or snack, <br/>
 **Then** the app should automatically calculate the total calories and nutrient for the day using the USDA API as its source.
 
-2.1
+2.1 <br/>
 **Given** the user is tracking their food intake, <br/>
 **When** the daily sodium level exceeds the recommended amount, <br/>
 **Then** the app will display a notification that the user should reduce their sodium intake to better manage their health.
@@ -62,7 +62,7 @@ The app is designed for those looking to take control of their health with data-
 *
 
 #### Examples:
-1.1
+1.1 <br/>
 **Given**  <br/>
 **When**  <br/>
 **Then**
@@ -79,7 +79,7 @@ The app is designed for those looking to take control of their health with data-
 * User will either manually log exercises or will have a compatible device that will automatically log exercises
 
 #### Examples:
-1.1
+1.1 <br/>
 **Given**  <br/>
 **When**  <br/>
 **Then**
@@ -95,9 +95,9 @@ The app is designed for those looking to take control of their health with data-
 *
 
 #### Examples:
-1.1
-**Given**
-**When**
+1.1 <br/>
+**Given**  <br/>
+**When**  <br/>
 **Then**
 
 
@@ -111,9 +111,9 @@ The app is designed for those looking to take control of their health with data-
 *
 
 #### Examples:
-1.1
-**Given**
-**When**
+1.1 <br/>
+**Given**  <br/>
+**When**  <br/>
 **Then**
 
 ## Data Sources
