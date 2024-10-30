@@ -28,14 +28,55 @@ The app is designed for those looking to take control of their health with data-
 
 <img src="Home.png" alt="Home page"> <img src="Nutrition.png" alt="Food page"> <img src="Activities.png" alt="Exercise page"> <img src="Reports.png" alt="Reports page"> <img src="Settings.png" alt="Settings page">
 ## Requirements
+### Requirement #1: Tracking Daily Nutrition
+*As a user, I want to track my nutritional intake so I can monitor my health more efficiently.*
 
+#### Dependencies:
 
+#### Assumptions:
+
+##### Examples:
+
+### Requirement #2:
+*As a user,...*
+
+#### Dependencies:
+
+#### Assumptions:
+
+##### Examples:
+
+### Requirement #3:
+*As a user,...*
+
+#### Dependencies:
+
+#### Assumptions:
+
+##### Examples:
+
+### Requirement #4:
+*As a user,...*
+
+#### Dependencies:
+
+#### Assumptions:
+
+##### Examples:
+
+### Requirement #5:
+*As a user,...*
+
+#### Dependencies:
+
+#### Assumptions:
+
+##### Examples:
 
 ## Data Sources
 
 [CDC Health Data](https://data.cdc.gov/)  
 [USDA FoodData Central](https://fdc.nal.usda.gov/fdc-app.html#/food-search?type=Foundation&query=)
-
 
 ## Development Team
 - Rhiannon Wallace
@@ -45,7 +86,7 @@ The app is designed for those looking to take control of their health with data-
 - Sahana Sathiyanarayanan
 
 ## Meeting Schedule
-* Fall 2024 - Flex II
-* Mondays at 1:00pm via Microsoft Teams
+* Semester: Fall 2024 - Flex II
+* Meeting Time & Location: Mondays at 1:00pm via Microsoft Teams
 
 
