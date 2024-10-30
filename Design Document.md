@@ -85,36 +85,110 @@ The app is designed for those looking to take control of their health with data-
 **Then**
 
 
-### Requirement #4:
-*As a user,...*
+### Requirement #4: Personalized Health Goals
+*As a user, I want to set personal health goals so that I can stay motivated and track my progress over time.*
 
 #### Dependencies:
-*
+* Goal-setting feature within the app
+* Progress tracking and visualization tools (e.g., charts, milestones)
+* Notifications and reminders system
 
 #### Assumptions:
-*
+* Users are interested in setting and achieving personal health goals
+* The app can accurately track progress towards these goals
+* Users will engage with reminders and notifications
 
 #### Examples:
 1.1 <br/>
-**Given**  <br/>
-**When**  <br/>
-**Then**
+**Given** the user wants to improve their cardiovascular health, <br/>
+**When** the user sets a goal to run 5 kilometers without stopping within two months, <br/>
+**Then** the app should provide a training plan, track the user's runs, and display progress updates.
 
 
-### Requirement #5:
-*As a user,...*
+2.1 <br/>
+**Given** the user aims to reduce daily sugar intake, <br/>
+**When** the user sets a nutritional goal to consume less than 25 grams of sugar per day, <br/>
+**Then** the app should monitor the user's food logs and alert them when they are approaching their daily limit.
+
+
+### Requirement #5: Personalized Health Recommendations
+*As a user, I want to receive personalized recommendations for improving my health based on my tracked data.*
 
 #### Dependencies:
-*
+* Analytics engine to interpret user data
+* Access to reliable health guidelines and resources (e.g., WHO, CDC)
+* Content management system for delivering recommendations
 
 #### Assumptions:
-*
+* Users are open to receiving health recommendations
+* The app can accurately analyze user data to provide relevant suggestions
+* Recommendations are tailored to individual user profiles and preferences
 
 #### Examples:
 1.1 <br/>
-**Given**  <br/>
-**When**  <br/>
-**Then**
+**Given** the user has consistently low fiber intake, <br/>
+**When** the app analyzes the user's nutritional data over a week, <br/>
+**Then** it should recommend high-fiber foods and recipes to incorporate into their diet.
+
+
+2.1 <br/>
+**Given** the user shows a trend of poor sleep quality, <br/>
+**When** the app detects less than 6 hours of sleep per night over a month (from synced sleep data), <br/>
+**Then** it should provide tips on improving sleep hygiene and suggest setting a regular sleep schedule.
+
+
+### Requirement #6: Medication Tracking and Reminders
+*As a user, I want to track my medication intake and receive reminders so that I can adhere to my prescribed schedule.*
+
+#### Dependencies:
+* Medication database with dosing schedules
+* Reminder and notification system
+* User interface for logging medication intake
+
+#### Assumptions:
+* Users are willing to input their medication schedules
+* The app can send timely notifications
+* Users will interact with reminders (e.g., mark as taken, snooze)
+
+#### Examples:
+1.1 <br/>
+**Given** he user is prescribed a medication to be taken twice daily, <br/>
+**When** the user inputs the medication name and schedule into the app, <br/>
+**Then** the app should send reminders at the specified times and allow the user to confirm intake.
+
+
+2.1 <br/>
+**Given** the user missed a medication dose, <br/>
+**When** the user does not confirm intake within 30 minutes of the scheduled time, <br/>
+**Then** the app should send a follow-up notification and adjust the medication log accordingly.
+
+
+### Requirement #7: Integration with Healthcare Providers
+*As a user, I want to share my health data with my healthcare provider so that they can monitor my progress and adjust my care plan as needed.*
+
+#### Dependencies:
+* Secure data sharing protocols (e.g., HIPAA-compliant)
+* Consent management system
+* Interface for healthcare providers to view user data
+
+#### Assumptions:
+* Users are willing to share data with their providers
+* Healthcare providers are willing and able to access data through the app
+* Data sharing complies with all legal and privacy regulations such as HIPAA
+Examples:
+
+#### Examples:
+1.1 <br/>
+**Given** the user has granted consent to share data, <br/>
+**When** the user's blood glucose levels are consistently high, <br/>
+**Then** the app should notify the healthcare provider, allowing them to intervene or adjust treatment.
+
+
+2.1 <br/>
+**Given** the user is participating in a remote monitoring program, <br/>
+**When** the user logs their daily blood pressure readings, <br/>
+**Then** the healthcare provider can access this data in real-time to monitor for any concerning trends.
+
 
 ## Data Sources
 
