@@ -45,5 +45,7 @@ The app is designed for those looking to take control of their health with data-
 - Sahana Sathiyanarayanan
 
 ## Meeting Schedule
-[we will talk this thru]
+* Fall 2024 - Flex II
+* Mondays at 1:00pm via Microsoft Teams
+
 
