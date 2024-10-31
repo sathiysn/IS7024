@@ -193,7 +193,7 @@ Examples:
 ## Data Sources
 
 [CDC Health Data](https://data.cdc.gov/)  
-[USDA FoodData Central]([https://fdc.nal.usda.gov/fdc-app.html#/food-search?type=Foundation&query=](https://fdc.nal.usda.gov/download-datasets.html))
+[USDA FoodData Central](https://fdc.nal.usda.gov/download-datasets.html)
 
 ## Development Team
 - Rhiannon Wallace
