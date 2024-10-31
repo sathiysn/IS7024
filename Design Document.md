@@ -52,40 +52,8 @@ The app is designed for those looking to take control of their health with data-
 **When** the daily sodium level exceeds the recommended amount, <br/>
 **Then** the app will display a notification that the user should reduce their sodium intake to better manage their health.
 
-### Requirement #2:
-*As a user, I want to receive a personalized health risk assessment so I can better understand my health.*
 
-#### Dependencies:
-* Access to CDC Health Data for region-specific health risk information
-
-#### Assumptions:
-*
-
-#### Examples:
-1.1 <br/>
-**Given**  <br/>
-**When**  <br/>
-**Then**
-
-
-### Requirement #3:
-*As a user, I want to track my physical activity so that I can see how my exercise habits impact my health.*
-
-#### Dependencies:
-* Syncing with third-party devices, such as smart watches, to log activities automatically
-* User input of exercises into activity logging system
-
-#### Assumptions:
-* User will either manually log exercises or will have a compatible device that will automatically log exercises
-
-#### Examples:
-1.1 <br/>
-**Given**  <br/>
-**When**  <br/>
-**Then**
-
-
-### Requirement #4: Personalized Health Goals
+### Requirement #2: Personalized Health Goals
 *As a user, I want to set personal health goals so that I can stay motivated and track my progress over time.*
 
 #### Dependencies:
@@ -104,14 +72,13 @@ The app is designed for those looking to take control of their health with data-
 **When** the user sets a goal to run 5 kilometers without stopping within two months, <br/>
 **Then** the app should provide a training plan, track the user's runs, and display progress updates.
 
-
 2.1 <br/>
 **Given** the user aims to reduce daily sugar intake, <br/>
 **When** the user sets a nutritional goal to consume less than 25 grams of sugar per day, <br/>
 **Then** the app should monitor the user's food logs and alert them when they are approaching their daily limit.
 
 
-### Requirement #5: Personalized Health Recommendations
+### Requirement #3: Personalized Health Recommendations and Assessment
 *As a user, I want to receive personalized recommendations for improving my health based on my tracked data.*
 
 #### Dependencies:
@@ -137,7 +104,7 @@ The app is designed for those looking to take control of their health with data-
 **Then** it should provide tips on improving sleep hygiene and suggest setting a regular sleep schedule.
 
 
-### Requirement #6: Medication Tracking and Reminders
+### Requirement #4: Medication Tracking and Reminders
 *As a user, I want to track my medication intake and receive reminders so that I can adhere to my prescribed schedule.*
 
 #### Dependencies:
@@ -156,38 +123,10 @@ The app is designed for those looking to take control of their health with data-
 **When** the user inputs the medication name and schedule into the app, <br/>
 **Then** the app should send reminders at the specified times and allow the user to confirm intake.
 
-
 2.1 <br/>
 **Given** the user missed a medication dose, <br/>
 **When** the user does not confirm intake within 30 minutes of the scheduled time, <br/>
 **Then** the app should send a follow-up notification and adjust the medication log accordingly.
-
-
-### Requirement #7: Integration with Healthcare Providers
-*As a user, I want to share my health data with my healthcare provider so that they can monitor my progress and adjust my care plan as needed.*
-
-#### Dependencies:
-* Secure data sharing protocols (e.g., HIPAA-compliant)
-* Consent management system
-* Interface for healthcare providers to view user data
-
-#### Assumptions:
-* Users are willing to share data with their providers
-* Healthcare providers are willing and able to access data through the app
-* Data sharing complies with all legal and privacy regulations such as HIPAA
-Examples:
-
-#### Examples:
-1.1 <br/>
-**Given** the user has granted consent to share data, <br/>
-**When** the user's blood glucose levels are consistently high, <br/>
-**Then** the app should notify the healthcare provider, allowing them to intervene or adjust treatment.
-
-
-2.1 <br/>
-**Given** the user is participating in a remote monitoring program, <br/>
-**When** the user logs their daily blood pressure readings, <br/>
-**Then** the healthcare provider can access this data in real-time to monitor for any concerning trends.
 
 
 ## Data Sources
