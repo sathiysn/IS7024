@@ -104,7 +104,7 @@ The app is designed for those looking to take control of their health with data-
 **Then** it should provide tips on improving sleep hygiene and suggest setting a regular sleep schedule.
 
 
-### Requirement #4: Medication Tracking and Reminders
+### Requirement #3: Medication Tracking and Reminders
 *As a user, I want to track my medication intake and receive reminders so that I can adhere to my prescribed schedule.*
 
 #### Dependencies:
