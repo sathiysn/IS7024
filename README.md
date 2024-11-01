@@ -55,6 +55,7 @@ The app is designed for those looking to take control of their health with data-
 **Then** the app will display a notification that the user should reduce their sodium intake to better manage their health.
 <br/>
 <br/>
+<br/>
 
 ### Requirement #2: Personalized Health Goals
 *As a user, I want to set personal health goals so that I can stay motivated and track my progress over time.*
@@ -79,6 +80,7 @@ The app is designed for those looking to take control of their health with data-
 **Given** the user aims to reduce daily sugar intake, <br/>
 **When** the user sets a nutritional goal to consume less than 25 grams of sugar per day, <br/>
 **Then** the app should monitor the user's food logs and alert them when they are approaching their daily limit.
+<br/>
 <br/>
 <br/>
 
@@ -106,9 +108,11 @@ The app is designed for those looking to take control of their health with data-
 **Given** the user shows a trend of poor sleep quality, <br/>
 **When** the app detects less than 6 hours of sleep per night over a month (from synced sleep data), <br/>
 **Then** it should provide tips on improving sleep hygiene and suggest setting a regular sleep schedule.
+<br/>
+<br/>
+<br/>
 
-
-### Requirement #3: Medication Tracking and Reminders
+### Requirement #4: Medication Tracking and Reminders
 *As a user, I want to track my medication intake and receive reminders so that I can adhere to my prescribed schedule.*
 
 #### Dependencies:
