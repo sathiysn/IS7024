@@ -31,7 +31,6 @@ The app is designed for those looking to take control of their health with data-
 ## Requirements
 <br/>
 <br/>
-<br/>
 
 ### Requirement #1: Tracking Daily Nutrition
 *As a user, I want to track my nutritional intake so I can monitor my health more efficiently.*
@@ -55,9 +54,8 @@ The app is designed for those looking to take control of their health with data-
 **Given** the user is tracking their food intake, <br/>
 **When** the daily sodium level exceeds the recommended amount, <br/>
 **Then** the app will display a notification that the user should reduce their sodium intake to better manage their health.
-
-
-
+<br/>
+<br/>
 
 ### Requirement #2: Personalized Health Goals
 *As a user, I want to set personal health goals so that I can stay motivated and track my progress over time.*
@@ -82,9 +80,8 @@ The app is designed for those looking to take control of their health with data-
 **Given** the user aims to reduce daily sugar intake, <br/>
 **When** the user sets a nutritional goal to consume less than 25 grams of sugar per day, <br/>
 **Then** the app should monitor the user's food logs and alert them when they are approaching their daily limit.
-
-
-
+<br/>
+<br/>
 
 ### Requirement #3: Personalized Health Recommendations and Assessment
 *As a user, I want to receive personalized recommendations for improving my health based on my tracked data.*
