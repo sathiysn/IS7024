@@ -29,9 +29,9 @@ The app is designed for those looking to take control of their health with data-
 <img src="Home.png" alt="Home page"> <img src="Nutrition.png" alt="Food page"> <img src="Activities.png" alt="Exercise page"> <img src="Reports.png" alt="Reports page"> <img src="Settings.png" alt="Settings page">
 
 ## Requirements
-
-
-
+<br/>
+<br/>
+<br/>
 ### Requirement #1: Tracking Daily Nutrition
 *As a user, I want to track my nutritional intake so I can monitor my health more efficiently.*
 
