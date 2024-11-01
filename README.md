@@ -32,6 +32,7 @@ The app is designed for those looking to take control of their health with data-
 <br/>
 <br/>
 <br/>
+
 ### Requirement #1: Tracking Daily Nutrition
 *As a user, I want to track my nutritional intake so I can monitor my health more efficiently.*
 
