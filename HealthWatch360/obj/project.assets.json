@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\sahan\\.nuget\\packages\\": {}
+    "C:\\Users\\Rhian\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sahan\\OneDrive - University of Cincinnati\\Documents\\IS 7024\\HealthWatch360\\HealthWatch360.csproj",
+      "projectUniqueName": "C:\\Users\\Rhian\\Source\\Repos\\IS702402\\HealthWatch360\\HealthWatch360.csproj",
       "projectName": "HealthWatch360",
-      "projectPath": "C:\\Users\\sahan\\OneDrive - University of Cincinnati\\Documents\\IS 7024\\HealthWatch360\\HealthWatch360.csproj",
-      "packagesPath": "C:\\Users\\sahan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sahan\\OneDrive - University of Cincinnati\\Documents\\IS 7024\\HealthWatch360\\obj\\",
+      "projectPath": "C:\\Users\\Rhian\\Source\\Repos\\IS702402\\HealthWatch360\\HealthWatch360.csproj",
+      "packagesPath": "C:\\Users\\Rhian\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Rhian\\Source\\Repos\\IS702402\\HealthWatch360\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sahan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Rhian\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
