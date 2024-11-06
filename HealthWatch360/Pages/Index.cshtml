@@ -4,6 +4,55 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to HealthWatch 360</h1>
+<div class="jumbotron text-center text-light bg-dark">
+    <div class="container">
+        <h1 class="display-4">Welcome to HealthWatch 360</h1>
+        <p class="lead">Your ultimate health and wellness companion. Track your health, stay informed, and live better!</p>
+    </div>
+</div>
+
+<!-- Health Summary -->
+<div class="card bg-dark text-light mb-4">
+    <div class="card-body">
+        <h5 class="card-title">Health Summary</h5>
+        <div class="d-flex justify-content-between">
+            <p class="mb-0">Weight: 70kg</p>
+            <p class="mb-0">BMI: 22.3</p>
+            <p class="mb-0">Heart Rate: 72 bpm</p>
+        </div>
+    </div>
+</div>
+
+<!-- Nutrition Overview -->
+<div class="card bg-dark text-light mb-4">
+    <div class="card-body">
+        <h5 class="card-title">Nutrition Overview</h5>
+        <p>Daily Caloric Intake: 1800 kcal</p>
+        <!-- Placeholder Pie Chart -->
+        <div class="d-flex justify-content-center my-3">
+            <div class="pie-chart" style="width: 150px; height: 150px; background: conic-gradient(#dc3545 0% 40%, #17a2b8 40% 100%); border-radius: 50%;"></div>
+        </div>
+        <small class="text-muted">Macronutrients and Micronutrients Balance</small>
+    </div>
+</div>
+
+<!-- Activity Level -->
+<div class="card bg-dark text-light mb-4">
+    <div class="card-body">
+        <h5 class="card-title">Activity Level</h5>
+        <p>Steps Taken: 8000 steps</p>
+        <p>Active Minutes: 45 min</p>
+        <!-- Progress Bar -->
+        <div class="progress" style="height: 10px;">
+            <div class="progress-bar bg-danger" role="progressbar" style="width: 60%;" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Health Tips -->
+<div class="card bg-dark text-light mb-4">
+    <div class="card-body">
+        <h5 class="card-title">Health Tips</h5>
+        <p>Stay hydrated and maintain a balanced diet for optimal health.</p>
+    </div>
 </div>
