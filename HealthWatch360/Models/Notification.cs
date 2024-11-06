@@ -21,12 +21,14 @@ namespace HealthWatch360.Models
 
         //Notification <-> User Relationship
         public User? User { get; set; }
+        public int? UserID { get; set; }
 
         //Notification <-> MedicationTracker Relationship
         public MedicationTracker? MedicationTracker { get; set; }
+        public int? MedicationTrackerID { get; set; }
 
         //Notification <-> HealthGoal Relationship
         public HealthGoal? HealthGoal { get; set; }
-
+        public int? HealthGoalID { get; set; }
     }
 }

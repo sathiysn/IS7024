@@ -9,6 +9,10 @@
 
         //RiskAssessment <-> User Relationship
         public User? User { get; set; }
+        public int? UserID { get; set; }
 
+        //Risk Assessment <-> HealthRecommendation Relationship
+        public HealthRecommendation? HealthRecommendation { get; set; }
+        public int? HealthRecommendationID { get; set; }
     }
 }
