@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 //Purpose: tracks and stores users' nutrition information for each meal 
 //Use: works alongside the USDA FoodData API
 
+
 namespace HealthWatch360.Models
 {
     public class NutritionLog
