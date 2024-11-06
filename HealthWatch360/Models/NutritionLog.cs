@@ -2,15 +2,14 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
+//Purpose: tracks and stores users' nutrition information for each meal 
+//Use: works alongside the USDA FoodData API
+
 namespace HealthWatch360.Models
 {
-    public class HealthData
+    public class NutritionLog
     {
         public int HealthDataID { get; set; }
-
-        [DisplayName("Date of Workout")]
-        [DataType(DataType.Date)]
-        public DateTime? WorkoutDate { get; set; }
 
         public int? Calories { get; set; }
 
@@ -25,5 +24,12 @@ namespace HealthWatch360.Models
         public int? Sugar { get; set; }
 
         public int? Sodium { get; set; }
+
+
+        //NutritionLog <-> User Relationship
+        public User? User { get; set; }
+
+        //NutritionLog <-> HealthGoal Relationship
+        public HealthGoal? HealthGoal { get; set; }
     }
 }

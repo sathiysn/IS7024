@@ -1,6 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.Security.Cryptography.X509Certificates;
+
+//Purpose: Manages user exercise and activity tracking
 
 namespace HealthWatch360.Models
 {
@@ -19,5 +22,11 @@ namespace HealthWatch360.Models
         [DataType(DataType.Date)]
         public DateTime? Date { get; set; }
 
+
+        //User <-> ExerciseLog Relationship
+        public User? User { get; set; }
+        public int? UserID { get; set; }
+
+        //
     }
 }

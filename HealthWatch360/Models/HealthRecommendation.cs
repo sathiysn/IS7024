@@ -13,5 +13,8 @@ namespace HealthWatch360.Models
         public string? Notification { get; set; }
 
         public DateTime? Timestamp { get; set; }
+
+        //HealthRecommendation <-> User Relationship
+        public User? User { get; set; }
     }
 }

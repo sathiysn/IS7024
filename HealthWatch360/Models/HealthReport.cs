@@ -24,5 +24,8 @@ namespace HealthWatch360.Models
 
         [DisplayName("Recommendation Summary")]
         public string? RecommmendationSummary { get; set; }
+
+        //HealthReport <-> User Relationship
+        public User? User { get; set; }
     }
 }

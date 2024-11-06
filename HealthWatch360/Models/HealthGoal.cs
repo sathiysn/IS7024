@@ -21,5 +21,15 @@ namespace HealthWatch360.Models
         [DisplayName("Date of Workout")]
         [DataType(DataType.Date)]
         public DateTime? StartDate { get; set; }
+
+
+        //HealthGoal <-> Notification Relationship
+        public List<Notification>? Notification { get; set; }
+
+        //HealthGoal <-> User Relationship
+        public User? User { get; set; }
+
+        //HealthGoal <-> NutritionLog Relationship
+        public List<NutritionLog>? NutritionLog { get; set; }
     }
 }
