@@ -1,4 +1,11 @@
-﻿namespace HealthWatch360.Models
+﻿using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+
+//Purpose: tracks and stores users' risk factors based off of their lifestyle 
+//Use: works alongside the CDC API and Notification to provide tailored health recommendations
+
+namespace HealthWatch360.Models
 {
     public class RiskAssessment
     {
