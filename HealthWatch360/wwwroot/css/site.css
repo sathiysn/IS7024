@@ -1,22 +1,117 @@
+/* Base font size */
 html {
-  font-size: 14px;
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
+/* Button and form focus states */
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+/* Body styling */
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-image: url('https://wallpapercave.com/wp/wp7535600.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    position: relative;
 }
+
+    /* Dark overlay on background */
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+        z-index: -1; /* Places the overlay behind all content */
+    }
+
+/* Ensuring other content layers on top */
+html, .card, .footer-nav {
+    position: relative;
+    z-index: 1;
+}
+
+/* Layout card styles */
+.card {
+    background-color: #333333; /* Dark card background */
+    border: none;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    color: #ffffff;
+}
+
+/* Health summary styling */
+.health-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Nutrition overview chart styling */
+.nutrition-overview {
+    text-align: center;
+    padding: 10px 20px;
+}
+
+.nutrition-chart {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+}
+
+/* Activity level progress bar styling */
+.activity-level {
+    padding: 10px 20px;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #258cfb; /* Primary color for progress */
+}
+
+    .progress-bar .progress {
+        background-color: #ff4b5c; /* Highlight color */
+    }
+
+/* Footer navigation bar */
+.footer-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #333333; /* Footer background */
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.2); /* Top shadow */
+}
+
+    .footer-nav a {
+        color: #ffffff;
+        font-size: 1.2rem;
+        text-decoration: none;
+    }
+
+        .footer-nav a:hover {
+            color: #258cfb; /* Highlight on hover */
+        }
