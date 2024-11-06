@@ -142,7 +142,7 @@ The app is designed for those looking to take control of their health with data-
 [CDC Health Data](https://data.cdc.gov/)  
 * [Link to Download Source](https://data.cdc.gov/Nutrition-Physical-Activity-and-Obesity/Nutrition-Physical-Activity-and-Obesity-Behavioral/hn4x-zwk7/about_data) </br>
 
-[USDA FoodData Central](https://fdc.nal.usda.gov/download-datasets.html)
+[Cincinnati Recreation Commission Listing](https://data.cincinnati-oh.gov/Thriving-Neighborhoods/Cincinnati-Recreation-Commission-Facility-Listing/vset-45gc/about_data)
 
 ## Development Team
 - Rhiannon Wallace
