@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/HealthWatch360/.vs/HealthWatch360/v17
+/HealthWatch360/.vs/HealthWatch360/FileContentIndex
+/HealthWatch360/.vs/HealthWatch360/DesignTimeBuild
+/HealthWatch360/obj/Debug/net8.0
+/.gitignore
