@@ -33,6 +33,13 @@ namespace HealthWatch360.Models
 
         public string? Gender { get; set; }
 
+        [DisplayName("Street Address")]
+        public string? StreetAddress { get; set; }
+
+        [DisplayName("Zip Code")]
+        public string? ZipCode { get; set; }
+
+        public string? State { get; set; }
 
         //User <-> ExerciseLog Relationship
         public List<ExerciseLog>? ExerciseLog { get; set; }
