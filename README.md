@@ -85,11 +85,11 @@ The app is designed for those looking to take control of their health with data-
 <br/>
 
 ### Requirement #3: Personalized Health Recommendations and Assessment
-*As a user, I want to receive personalized recommendations for improving my health based on my tracked data.*
+*As a user, I want to receive personalized recommendations so that I can improve my health based on my tracked data and region's data.*
 
 #### Dependencies:
 * Analytics engine to interpret user data
-* Access to reliable health guidelines and resources (e.g., WHO, CDC)
+* Access to reliable health programs and recreational activities (e.g., City of Cincinnati)
 * Content management system for delivering recommendations
 
 #### Assumptions:
@@ -99,15 +99,15 @@ The app is designed for those looking to take control of their health with data-
 
 #### Examples:
 1.1 <br/>
-**Given** the user has consistently low fiber intake, <br/>
-**When** the app analyzes the user's nutritional data over a week, <br/>
-**Then** it should recommend high-fiber foods and recipes to incorporate into their diet.
+**Given** the user recognizes that they are a smoker, <br/>
+**When** the user creates a goal to quit smoking <br/>
+**Then** the app will display a personalized set of activites and resources to quit smoking based on the user's zipcode.
 
 
 2.1 <br/>
-**Given** the user shows a trend of poor sleep quality, <br/>
-**When** the app detects less than 6 hours of sleep per night over a month (from synced sleep data), <br/>
-**Then** it should provide tips on improving sleep hygiene and suggest setting a regular sleep schedule.
+**Given** the user shows a trend of working out via sports, <br/>
+**When** the app detects more than three sport-based workouts, <br/>
+**Then** a user will be recommended a set of locations with sports available and local sports programs.
 <br/>
 <br/>
 <br/>
@@ -123,26 +123,23 @@ The app is designed for those looking to take control of their health with data-
 #### Assumptions:
 * Users are willing to input their medication schedules
 * The app can send timely notifications
-* Users will interact with reminders (e.g., mark as taken, snooze)
+* Users will interact with reminders (e.g., mark as taken, snooze, or no longer taking this medication)
 
 #### Examples:
 1.1 <br/>
-**Given** he user is prescribed a medication to be taken twice daily, <br/>
-**When** the user inputs the medication name and schedule into the app, <br/>
-**Then** the app should send reminders at the specified times and allow the user to confirm intake.
+**Given** the user is prescribed Chateal EQ (or another birth control pill) to be taken once daily, <br/>
+**When** the user inputs the name and time the medication should be taken into the app, <br/>
+**Then** the app will then send a reminder one hour before the specified time and will request the user to confirm when the medication is consumed.
 
 2.1 <br/>
 **Given** the user missed a medication dose, <br/>
 **When** the user does not confirm intake within 30 minutes of the scheduled time, <br/>
-**Then** the app should send a follow-up notification and adjust the medication log accordingly.
+**Then** the app will send a follow-up notification stating the medication has not been taken and will automatically mark the missing does in the medication log.
 
 
 ## Data Sources
-
-[CDC Health Data](https://data.cdc.gov/)  
-* [Link to Download Source](https://data.cdc.gov/Nutrition-Physical-Activity-and-Obesity/Nutrition-Physical-Activity-and-Obesity-Behavioral/hn4x-zwk7/about_data) </br>
-
-[USDA FoodData Central](https://fdc.nal.usda.gov/download-datasets.html)
+[Cincinnati Creating Health Communities Coalition Activities](https://data.cincinnati-oh.gov/Thriving-Neighborhoods/Creating-Healthy-Communities-Coalition-CHCC-Activi/skqm-k58y/about_data) </br>
+[Cincinnati Recreation Commission Listing](https://data.cincinnati-oh.gov/Thriving-Neighborhoods/Cincinnati-Recreation-Commission-Facility-Listing/vset-45gc/about_data)
 
 ## Development Team
 - Rhiannon Wallace

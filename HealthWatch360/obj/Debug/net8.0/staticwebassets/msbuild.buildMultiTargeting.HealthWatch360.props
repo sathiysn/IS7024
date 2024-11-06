@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\HealthWatch360.props" />
+</Project>
