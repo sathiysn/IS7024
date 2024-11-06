@@ -3,7 +3,8 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Security.Cryptography.X509Certificates;
 
-//Purpose: Manages user exercise and activity tracking
+//Purpose: manages user exercise activity
+//Uses: records exercise sessions and will be used to summarize workout information on the home screen
 
 namespace HealthWatch360.Models
 {

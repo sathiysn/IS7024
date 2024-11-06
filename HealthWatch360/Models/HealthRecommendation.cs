@@ -2,6 +2,9 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
+//Purpose: used to generate personalized health recommendations based on a user's data
+//Uses: analyzes user data to provide personalized health recommendations tailored to user's needs/wants
+
 namespace HealthWatch360.Models
 {
     public class HealthRecommendation

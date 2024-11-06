@@ -2,6 +2,9 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
+//Purpose: tracks and manages a user's personal health goals
+//Uses: allows a user to set health-related goals, track their progress, and provides updates and reminders to motivate a user
+
 namespace HealthWatch360.Models
 {
     public class HealthGoal
