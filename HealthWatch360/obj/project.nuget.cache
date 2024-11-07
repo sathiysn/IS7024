@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "SYgshWQxf+g=",
+  "dgSpecHash": "DEg5AxLqjKU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\sahan\\OneDrive - University of Cincinnati\\Documents\\IS 7024\\HealthWatch360\\HealthWatch360.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\HealthWatch360.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\benge\\.nuget\\packages\\system.net.http.json\\8.0.1\\system.net.http.json.8.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

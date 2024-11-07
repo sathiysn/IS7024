@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sahan\\OneDrive - University of Cincinnati\\Documents\\IS 7024\\HealthWatch360\\HealthWatch360.csproj": {}
+    "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\HealthWatch360.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sahan\\OneDrive - University of Cincinnati\\Documents\\IS 7024\\HealthWatch360\\HealthWatch360.csproj": {
+    "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\HealthWatch360.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sahan\\OneDrive - University of Cincinnati\\Documents\\IS 7024\\HealthWatch360\\HealthWatch360.csproj",
+        "projectUniqueName": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\HealthWatch360.csproj",
         "projectName": "HealthWatch360",
-        "projectPath": "C:\\Users\\sahan\\OneDrive - University of Cincinnati\\Documents\\IS 7024\\HealthWatch360\\HealthWatch360.csproj",
-        "packagesPath": "C:\\Users\\sahan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sahan\\OneDrive - University of Cincinnati\\Documents\\IS 7024\\HealthWatch360\\obj\\",
+        "projectPath": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\HealthWatch360.csproj",
+        "packagesPath": "C:\\Users\\benge\\.nuget\\packages\\",
+        "outputPath": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\sahan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\benge\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -45,6 +45,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "System.Net.Http.Json": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
