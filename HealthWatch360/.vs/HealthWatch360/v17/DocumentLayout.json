@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|d:\\coding\\github\\xml\\is7024\\healthwatch360\\pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|solutionrelative:pages\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|d:\\coding\\github\\xml\\is7024\\healthwatch360\\healthwatch360.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|solutionrelative:healthwatch360.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
@@ -19,6 +23,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Pages\\Index.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Index.cshtml",
+              "ToolTip": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Pages\\Index.cshtml",
+              "RelativeToolTip": "Pages\\Index.cshtml",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAAAHIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-07T01:26:35.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "HealthWatch360.csproj",
               "DocumentMoniker": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\HealthWatch360.csproj",
               "RelativeDocumentMoniker": "HealthWatch360.csproj",
