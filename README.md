@@ -35,19 +35,20 @@ The app is designed for those looking to take control of their health with data-
 *As a user, I want to track my nutritional intake so I can monitor my health more efficiently.*
 
 #### Dependencies:
-* User authentification for personal meal tracking
-* USDA FoodData Central API data available and accessible
+* User authentication for personal meal tracking
+* User knows the nutrient information of their food
 * Ability to allow for easy search and logging of meals
   
 #### Assumptions:
-* USDA API provides up-to-date and accurate nutritional data
-* USDA API provides a sufficient coverage of food items applicable to users
+* Nutrition statistics page provides up-to-date and accurate nutritional data
+* User understands the nutrient information of the food they are consuming
+* Nutrition statistics page provides a sufficient coverage of food items applicable to users
 
 ##### Examples:
 1.1<br/>
-**Given** the user is logged in, <br/>
-**When** the user logs a meal or snack, <br/>
-**Then** the app should automatically calculate the total calories and nutrient for the day using the USDA API as its source.
+**Given** the user eats hummus <br/>
+**When** the user logs hummus nutrients, <br/>
+**Then** the app should automatically calculate the total calories and nutrient for the day using the logged in nutrient information as its source.
 
 2.1 <br/>
 **Given** the user is tracking their food intake, <br/>
@@ -85,11 +86,11 @@ The app is designed for those looking to take control of their health with data-
 <br/>
 
 ### Requirement #3: Personalized Health Recommendations and Assessment
-*As a user, I want to receive personalized recommendations for improving my health based on my tracked data.*
+*As a user, I want to receive personalized recommendations so that I can improve my health based on my tracked data and region's data.*
 
 #### Dependencies:
 * Analytics engine to interpret user data
-* Access to reliable health guidelines and resources (e.g., WHO, CDC)
+* Access to reliable health programs and recreational activities (e.g., City of Cincinnati)
 * Content management system for delivering recommendations
 
 #### Assumptions:
@@ -99,15 +100,15 @@ The app is designed for those looking to take control of their health with data-
 
 #### Examples:
 1.1 <br/>
-**Given** the user has consistently low fiber intake, <br/>
-**When** the app analyzes the user's nutritional data over a week, <br/>
-**Then** it should recommend high-fiber foods and recipes to incorporate into their diet.
+**Given** the user recognizes that they are a smoker, <br/>
+**When** the user creates a goal to quit smoking <br/>
+**Then** the app will display a personalized set of activites and resources to quit smoking based on the user's zipcode.
 
 
 2.1 <br/>
-**Given** the user shows a trend of poor sleep quality, <br/>
-**When** the app detects less than 6 hours of sleep per night over a month (from synced sleep data), <br/>
-**Then** it should provide tips on improving sleep hygiene and suggest setting a regular sleep schedule.
+**Given** the user shows a trend of working out via sports, <br/>
+**When** the app detects more than three sport-based workouts, <br/>
+**Then** a user will be recommended a set of locations with sports available and local sports programs.
 <br/>
 <br/>
 <br/>
@@ -123,24 +124,23 @@ The app is designed for those looking to take control of their health with data-
 #### Assumptions:
 * Users are willing to input their medication schedules
 * The app can send timely notifications
-* Users will interact with reminders (e.g., mark as taken, snooze)
+* Users will interact with reminders (e.g., mark as taken, snooze, or no longer taking this medication)
 
 #### Examples:
 1.1 <br/>
-**Given** he user is prescribed a medication to be taken twice daily, <br/>
-**When** the user inputs the medication name and schedule into the app, <br/>
-**Then** the app should send reminders at the specified times and allow the user to confirm intake.
+**Given** the user is prescribed Chateal EQ (or another birth control pill) to be taken once daily, <br/>
+**When** the user inputs the name and time the medication should be taken into the app, <br/>
+**Then** the app will then send a reminder one hour before the specified time and will request the user to confirm when the medication is consumed.
 
 2.1 <br/>
 **Given** the user missed a medication dose, <br/>
 **When** the user does not confirm intake within 30 minutes of the scheduled time, <br/>
-**Then** the app should send a follow-up notification and adjust the medication log accordingly.
+**Then** the app will send a follow-up notification stating the medication has not been taken and will automatically mark the missing does in the medication log.
 
 
 ## Data Sources
-
-[CDC Health Data](https://data.cdc.gov/)  
-[USDA FoodData Central](https://fdc.nal.usda.gov/download-datasets.html)
+[Cincinnati Creating Health Communities Coalition Activities](https://data.cincinnati-oh.gov/Thriving-Neighborhoods/Creating-Healthy-Communities-Coalition-CHCC-Activi/skqm-k58y/about_data) </br>
+[Cincinnati Recreation Commission Listing](https://data.cincinnati-oh.gov/Thriving-Neighborhoods/Cincinnati-Recreation-Commission-Facility-Listing/vset-45gc/about_data)
 
 ## Development Team
 - Rhiannon Wallace
