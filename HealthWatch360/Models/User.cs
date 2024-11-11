@@ -49,14 +49,10 @@ namespace HealthWatch360.Models
         //User <-> Goal Relationship
         public List<Goal>? Goal { get; set; }
 
-        //User <-> HealthReport Relationship
-        public HealthReport? HealthReport { get; set; }
-        public int? HealthReportID { get; set; }
 
         //User <-> MedicationTracker Relationship
         public List<MedicationTracker>? MedicationTracker { get; set; }
 
         //User <-> NutritionLog Relationship
         public List<NutritionLog>? NutritionLog { get; set; }
-    }
-}
+
