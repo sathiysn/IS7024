@@ -53,12 +53,14 @@
             </label>
         </div>
     </fieldset>
-    
-    
+
+
+
     <div class="row mb-3">
         <label for="zipcode">Zip Code:</label>
         <input type="text" id="zipcode" name="zipcode" maxlength="5" pattern="\d{5}" placeholder="Enter 5-digit ZIP code" required>
-        
+
+
     </div>
     <div>
         <input type="range" id="slider" min="0" max="30" value="0" oninput="updateValue(this.value)">
@@ -71,6 +73,6 @@
             }
         </script>
     </div>
-    
+
     <button type="submit" class="btn btn-primary">Sign in</button>
 </form>
