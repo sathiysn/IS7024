@@ -7,9 +7,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HealthWatch360.Models
 {
-    public class HealthGoal
+    public class Goal
     {
-        public int HealthGoalID { get; set; }
+        public int GoalID { get; set; }
 
         public string? Type { get; set; }
 
@@ -26,14 +26,14 @@ namespace HealthWatch360.Models
         public DateTime? StartDate { get; set; }
 
 
-        //HealthGoal <-> User Relationship
+        //Goal <-> User Relationship
         public User? User { get; set; }
         public int? UserID { get; set; }
 
-        //HealthGoal <-> NutritionLog Relationship
-        public List<NutritionLog>? NutritionLog { get; set; }
+        ////Goal <-> NutritionLog Relationship
+        //public List<NutritionLog>? NutritionLog { get; set; }
 
-        //HealthGoal <-> ExerciseLog Relationship
-        public List<ExerciseLog>? ExerciseLog { get; set; }
+        ////Goal <-> ExerciseLog Relationship
+        //public List<ExerciseLog>? ExerciseLog { get; set; }
     }
 }

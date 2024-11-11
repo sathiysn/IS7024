@@ -40,8 +40,21 @@ namespace HealthWatch360.Models
 
         public string? State { get; set; }
 
+        public string? City { get; set; }
+
+
         //User <-> ExerciseLog Relationship
         public List<ExerciseLog>? ExerciseLog { get; set; }
+
+        //User <-> Goal Relationship
+        public List<Goal>? Goal { get; set; }
+
+        //User <-> Recommendation Relationship
+        public List<Recommendation>? Recommendation { get; set; }
+
+        //User <-> HealthReport Relationship
+        public HealthReport? HealthReport { get; set; }
+        public int? HealthReportID { get; set; }
 
         //User <-> MedicationTracker Relationship
         public List<MedicationTracker>? MedicationTracker { get; set; }
@@ -51,14 +64,5 @@ namespace HealthWatch360.Models
 
         //User <-> RiskAssessment Relationship
         public List<RiskAssessment>? RiskAssessment { get; set; }
-
-        //User <-> HealthGoal Relationship
-        public List<HealthGoal>? HealthGoal { get; set; }
-
-        //User <-> HealthRecommendation Relationship
-        public List<HealthRecommendation>? HealthRecommendation { get; set; }
-
-        //User <-> HealthReport Relationship
-        public List<HealthReport>? HealthReport { get; set; }
     }
 }

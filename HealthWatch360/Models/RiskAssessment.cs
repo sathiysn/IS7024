@@ -19,8 +19,8 @@ namespace HealthWatch360.Models
         public User? User { get; set; }
         public int? UserID { get; set; }
 
-        //Risk Assessment <-> HealthRecommendation Relationship
-        public HealthRecommendation? HealthRecommendation { get; set; }
-        public int? HealthRecommendationID { get; set; }
+        ////RiskAssessment <-> Recommendation Relationship
+        //public Recommendation? Recommendation { get; set; }
+        //public int? RecommendationID { get; set; }
     }
 }

@@ -7,9 +7,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace HealthWatch360.Models
 {
-    public class HealthRecommendation
+    public class Recommendation
     {
-        public int HealthRecommendationID { get; set; }
+        public int RecommendationID { get; set; }
 
         public string? Category { get; set; }
 
@@ -18,12 +18,12 @@ namespace HealthWatch360.Models
         public DateTime? Timestamp { get; set; }
 
 
-        //HealthRecommendation <-> User Relationship
+        //Recommendation <-> User Relationship
         public User? User { get; set; }
         public int? UserID { get; set; }
 
-        //HealthRecommendation <-> RiskAssessment Relationship
-        public RiskAssessment? RiskAssessment { get; set; }
-        public int? RiskAssessmentID { get; set; }
+        ////Recommendation <-> RiskAssessment Relationship
+        //public RiskAssessment? RiskAssessment { get; set; }
+        //public int? RiskAssessmentID { get; set; }
     }
 }
