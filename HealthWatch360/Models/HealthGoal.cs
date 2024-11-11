@@ -26,9 +26,6 @@ namespace HealthWatch360.Models
         public DateTime? StartDate { get; set; }
 
 
-        //HealthGoal <-> Notification Relationship
-        public List<Notification>? Notification { get; set; }
-
         //HealthGoal <-> User Relationship
         public User? User { get; set; }
         public int? UserID { get; set; }

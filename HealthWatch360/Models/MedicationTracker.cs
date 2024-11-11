@@ -34,8 +34,5 @@ namespace HealthWatch360.Models
         //MedicationTracker <-> User Relationship
         public User? User { get; set; }
         public int? UserID { get; set; }
-
-        //MedicationTracker <-> Notification Relationship
-        public List<Notification>? Notification { get; set; }
     }
 }
