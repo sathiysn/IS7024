@@ -56,3 +56,6 @@ namespace HealthWatch360.Models
         //User <-> NutritionLog Relationship
         public List<NutritionLog>? NutritionLog { get; set; }
 
+    }
+}
+
