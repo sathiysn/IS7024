@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HealthWatch360")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+75554626871b53ebbba479e75f4ffa3aff90ad98")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7dbdae0dd668bb5aa3d1457c78d21b75b81ba2e2")]
 [assembly: System.Reflection.AssemblyProductAttribute("HealthWatch360")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HealthWatch360")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
