@@ -1,7 +1,12 @@
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using HealthWatch360.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<HealthWatch360Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("HealthWatch360Context") ?? throw new InvalidOperationException("Connection string 'HealthWatch360Context' not found.")));
 
 var app = builder.Build();
 
