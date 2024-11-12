@@ -28,8 +28,8 @@ namespace HealthWatch360.Models
         public User? User { get; set; }
         public int? UserID { get; set; }
 
-        //ExerciseLog <-> HealthGoal Relationship
-        public HealthGoal? HealthGoal { get; set; }
-        public int? HealthGoalID { get; set; }
+        ////ExerciseLog <-> Goal Relationship
+        //public Goal? Goal { get; set; }
+        //public int? GoalID { get; set; }
     }
 }

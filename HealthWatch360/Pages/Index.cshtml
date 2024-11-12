@@ -4,64 +4,8 @@
     ViewData["Title"] = "Home page";
 }
 
-<style>
-         .jumbotro
-    n {
-         padding: 4rem 2rem;
-
-         margin-bottom: 2rem;
-         background: linear-gradient(to right, #343a40, #495057);
-         border-radius: 10px;
-         }
-     .jumbotron h1 {
-
-         font-size: 3rem;
-         font-weight: bold;
-         margin-bottom: 0.5rem;
-         }
-     .jumbotron p {
-
-         font-size: 1.25rem;
-     }
-     .card {
-         border: none;
-         border-radius: 10px;
-         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-     }
-     .card-title {
-         font-size: 1.5rem;
-         font-weight: 600;
-         color: #ffcc00;
-     }
-     .card-body p {
-         font-size: 1.1rem;
-     }
-     .pie-chart {
-         width: 150px;
-         height: 150px;
-         background: conic-gradient(#dc3545 0% 40%, #17a2b8 40% 100%);
-         border-radius: 50%;
-         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-     }
-     .progress {
-         height: 10px;
-         border-radius: 5px;
-         background-color: #6c757d;
-     }
-     .progress-bar {
-         background-color: #ff6347;
-     }
-     .health-section {
-         margin-bottom: 1.5rem;
-         padding: 1rem 0;
-     }
-     .health-section p {
-         margin: 0.3rem 0;
-     }
-</style>
-
-<div class="jumbotron text-center text-light">
-    <div class="container">
+<div class="card text-center text-light bg-dark">
+    <div class="card-body">
         <h1 class="display-4">Welcome to HealthWatch 360</h1>
         <p class="lead">Your ultimate health and wellness companion. Track your health, stay informed, and live better!</p>
     </div>
@@ -70,19 +14,94 @@
 <!-- Health Summary -->
 <div class="card bg-dark text-light mb-4">
     <div class="card-body">
-        <h5 class="card-title">Health Summary</h5>
+        <h5 class="text-center">Health Summary</h5>
+
+
+        <!-- Input Form for User Data -->
+        <form id="healthForm" class="text-center">
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="age" class="form-label">Age</label>
+                    <input type="number" id="age" class="form-control" placeholder="Age" min="0" required>
+                </div>
+                <div class="col">
+                    <label for="gender" class="form-label">Gender</label>
+                    <select id="gender" class="form-select" required>
+                        <option value="" disabled selected>Select</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label for="height" class="form-label">Height (Feet/Inches)</label>
+                <div class="col">
+                    <input type="number" id="heightFeet" class="form-control" placeholder="Feet" min="0" required>
+                </div>
+                <div class="col">
+                    <input type="number" id="heightInches" class="form-control" placeholder="Inches" min="0" max="11" required>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="weight" class="form-label">Weight</label>
+                    <input type="number" id="weight" class="form-control" placeholder="Enter weight" min="0" required>
+                </div>
+                <div class="col">
+                    <label for="weightUnit" class="form-label">Unit</label>
+                    <select id="weightUnit" class="form-select">
+                        <option value="kg">Kg</option>
+                        <option value="lbs">Lbs</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="button" class="btn btn-primary" onclick="calculateBMI()">Calculate BMI</button>
+        </form>
+
+        <!-- Display Results -->
+        <div id="healthSummary" class="mt-4">
+            <p class="mb-0" id="displayWeight">Weight: N/A </p>
+            <p class="mb-0" id="displayBMI">BMI: N/A</p>
+
         <div class="d-flex justify-content-between">
             <p class="mb-0">Weight: 70kg</p>
             <p class="mb-0">BMI: 22.3</p>
             <p class="mb-0">Heart Rate: 72 bpm</p>
+
         </div>
     </div>
 </div>
 
+<script>
+    function calculateBMI() {
+        // Get input values
+        const weight = parseFloat(document.getElementById("weight").value);
+        const weightUnit = document.getElementById("weightUnit").value;
+        const heightFeet = parseFloat(document.getElementById("heightFeet").value);
+        const heightInches = parseFloat(document.getElementById("heightInches").value);
+
+        // Convert weight to kilograms if needed
+        const weightInKg = weightUnit === "lbs" ? weight * 0.453592 : weight;
+
+        // Convert height to meters (1 ft = 0.3048 m, 1 inch = 0.0254 m)
+        const heightMeters = ((heightFeet * 0.3048) + (heightInches * 0.0254));
+
+        // Calculate BMI (BMI = weight in kg / height in m^2)
+        const bmi = weightInKg / (heightMeters * heightMeters);
+
+        // Update the display values
+        document.getElementById("displayWeight").innerText = `Weight: ${weight} ${weightUnit}`;
+        document.getElementById("displayBMI").innerText = `BMI: ${bmi.toFixed(2)}`;
+    }
+</script>
+
 <!-- Nutrition Overview -->
 <div class="card bg-dark text-light mb-4">
     <div class="card-body">
-        <h5 class="card-title">Nutrition Overview</h5>
+        <h5 class="text-center">Nutrition Overview</h5>
         <p>Daily Caloric Intake: 1800 kcal</p>
         <!-- Placeholder Pie Chart -->
         <div class="d-flex justify-content-center my-3">
@@ -95,7 +114,7 @@
 <!-- Activity Level -->
 <div class="card bg-dark text-light mb-4">
     <div class="card-body">
-        <h5 class="card-title">Activity Level</h5>
+        <h5 class="text-center">Activity Level</h5>
         <p>Steps Taken: 8000 steps</p>
         <p>Active Minutes: 45 min</p>
         <!-- Progress Bar -->

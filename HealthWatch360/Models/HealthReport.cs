@@ -31,6 +31,6 @@ namespace HealthWatch360.Models
 
         //HealthReport <-> User Relationship
         public User? User { get; set; }
-        public int? UserID { get; set; }
+        //public int? UserID { get; set; }
     }
 }
