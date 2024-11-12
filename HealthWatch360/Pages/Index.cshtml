@@ -16,9 +16,27 @@
     <div class="card-body">
         <h5 class="text-center">Health Summary</h5>
 
-
         <!-- Input Form for User Data -->
         <form id="healthForm" class="text-center">
+            <!-- New Input Fields for First Name and Last Name -->
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" id="firstName" class="form-control" placeholder="First Name" required>
+                </div>
+                <div class="col">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" id="lastName" class="form-control" placeholder="Last Name" required>
+                </div>
+            </div>
+
+            <!-- New Input Field for Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="Email" required>
+            </div>
+
+            <!-- Existing Input Fields -->
             <div class="row mb-3">
                 <div class="col">
                     <label for="age" class="form-label">Age</label>
@@ -63,14 +81,16 @@
 
         <!-- Display Results -->
         <div id="healthSummary" class="mt-4">
+            <!-- Display User's Name -->
+            <h3 id="displayName"></h3>
             <p class="mb-0" id="displayWeight">Weight: N/A </p>
             <p class="mb-0" id="displayBMI">BMI: N/A</p>
 
-        <div class="d-flex justify-content-between">
-            <p class="mb-0">Weight: 70kg</p>
-            <p class="mb-0">BMI: 22.3</p>
-            <p class="mb-0">Heart Rate: 72 bpm</p>
-
+            <div class="d-flex justify-content-between">
+                <p class="mb-0">Weight: 70kg</p>
+                <p class="mb-0">BMI: 22.3</p>
+                <p class="mb-0">Heart Rate: 72 bpm</p>
+            </div>
         </div>
     </div>
 </div>
@@ -78,6 +98,9 @@
 <script>
     function calculateBMI() {
         // Get input values
+        const firstName = document.getElementById("firstName").value;
+        const lastName = document.getElementById("lastName").value;
+        const email = document.getElementById("email").value;
         const weight = parseFloat(document.getElementById("weight").value);
         const weightUnit = document.getElementById("weightUnit").value;
         const heightFeet = parseFloat(document.getElementById("heightFeet").value);
@@ -93,6 +116,7 @@
         const bmi = weightInKg / (heightMeters * heightMeters);
 
         // Update the display values
+        document.getElementById("displayName").innerText = `Hello, ${firstName} ${lastName}!`;
         document.getElementById("displayWeight").innerText = `Weight: ${weight} ${weightUnit}`;
         document.getElementById("displayBMI").innerText = `BMI: ${bmi.toFixed(2)}`;
     }
