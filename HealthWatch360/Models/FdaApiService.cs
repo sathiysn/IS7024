@@ -33,16 +33,7 @@ namespace HealthWatch360.Services
 
                 /* TODO
 
-                 * Deserialise the json_response using  -> JsonConvert.DeserializeObject<List<MedicalInfo>>(jsonResponse) and store the result in List<MedicalInfo>
-                 * Ensure the medical Info class is able to handle the conversion. 
-                 * For example, if your response is 
-                 *     [{ "name": "test", "thing":"test"}, {"name":"test","thing": "test"}] The poosible Medical Info class is
-                 *    class MedicalInfo{
-                 *      public string? name;
-                 *      public string? thing;
-                 *     }
-                 * Ensure that you make changes to the MedicalInfo Model similar to above example, for the deserialisation to work.
-                 * Return this response instead of the empty list that is being returned in the next line (Line 49)
+                 Logic to Deserialise response
 
                  END OF TODO */
 
