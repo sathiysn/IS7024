@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Threading.Tasks;
 using HealthWatch360.Models;
+using Newtonsoft.Json;
 
 namespace HealthWatch360.Services
 {
@@ -10,7 +11,7 @@ namespace HealthWatch360.Services
     {
         private readonly HttpClient _httpClient;
 
-        public FdaApiService(HttpClient httpClient)
+       public FdaApiService(HttpClient httpClient)
         {
             _httpClient = httpClient;
         }
@@ -21,15 +22,40 @@ namespace HealthWatch360.Services
             try
             {
                 // Fetch and deserialize data into a list of MedicalInfo objects
-                var response = await _httpClient.GetFromJsonAsync<List<MedicalInfo>>(apiUrl);
-                return response;
+            
+              
+                //Before deserialising, fetch the response content
+                HttpResponseMessage response = await _httpClient.GetAsync(apiUrl);
+                string jsonResponse = await response.Content.ReadAsStringAsync();
+
+
+                //var response = await _httpClient.GetFromJsonAsync<List<MedicalInfo>>(apiUrl);  This line does not convert the json into List<MedicalInfo>.
+
+                /* TODO
+
+                 * Deserialise the json_response using  -> JsonConvert.DeserializeObject<List<MedicalInfo>>(jsonResponse) and store the result in List<MedicalInfo>
+                 * Ensure the medical Info class is able to handle the conversion. 
+                 * For example, if your response is 
+                 *     [{ "name": "test", "thing":"test"}, {"name":"test","thing": "test"}] The poosible Medical Info class is
+                 *    class MedicalInfo{
+                 *      public string? name;
+                 *      public string? thing;
+                 *     }
+                 * Ensure that you make changes to the MedicalInfo Model similar to above example, for the deserialisation to work.
+                 * Return this response instead of the empty list that is being returned in the next line (Line 49)
+
+                 END OF TODO */
+
+                return new List<MedicalInfo>(); // Replace this with deserizlised response
             }
             catch (HttpRequestException ex)
             {
                 // Handle exceptions, log error messages, etc.
                 Console.WriteLine($"Error fetching data: {ex.Message}");
-                return null;
+                //return null;
+                return new List<MedicalInfo>();
             }
         }
     }
+
 }
