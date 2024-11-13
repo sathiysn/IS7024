@@ -9,6 +9,9 @@
 </head>
 <body class="bg-dark text-light">
 
+    <!-- Skip to Main Content Link -->
+    <a href="#mainContent" class="sr-only sr-only-focusable">Skip to main content</a>
+
     <!-- Background Image & Dark Overlay Container -->
     <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
         <img src="https://wallpapercave.com/wp/wp7535600.jpg" alt="Background Image" style="width: 100%; height: 100%; object-fit: cover;" />
@@ -42,7 +45,7 @@
     </nav>
 
     <!-- Main Content -->
-    <main role="main" class="container my-5">
+    <main role="main" id="mainContent" class="container my-5">
         @RenderBody()
     </main>
 
@@ -52,9 +55,9 @@
             <p>&copy; 2024 HealthWatch 360. All rights reserved.</p>
             <p>
                 Follow us on:
-                <a href="#" class="text-light mx-2">Twitter</a> |
-                <a href="#" class="text-light mx-2">Instagram</a> |
-                <a href="#" class="text-light mx-2">Facebook</a>
+                <a href="#" class="text-light mx-2" aria-label="Follow us on Twitter">Twitter</a> |
+                <a href="#" class="text-light mx-2" aria-label="Follow us on Instagram">Instagram</a> |
+                <a href="#" class="text-light mx-2" aria-label="Follow us on Facebook">Facebook</a>
             </p>
         </div>
     </footer>
