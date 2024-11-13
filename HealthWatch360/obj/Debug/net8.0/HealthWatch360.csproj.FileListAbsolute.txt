@@ -60,3 +60,36 @@ C:\Users\sahan\OneDrive - University of Cincinnati\Documents\IS 7024\IS7024\Heal
 C:\Users\sahan\OneDrive - University of Cincinnati\Documents\IS 7024\IS7024\HealthWatch360\obj\Debug\net8.0\HealthWatch360.pdb
 C:\Users\sahan\OneDrive - University of Cincinnati\Documents\IS 7024\IS7024\HealthWatch360\obj\Debug\net8.0\HealthWatch360.genruntimeconfig.cache
 C:\Users\sahan\OneDrive - University of Cincinnati\Documents\IS 7024\IS7024\HealthWatch360\obj\Debug\net8.0\ref\HealthWatch360.dll
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\bin\Debug\net8.0\appsettings.json
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\bin\Debug\net8.0\CHCC.json
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\bin\Debug\net8.0\CRCF.json
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\bin\Debug\net8.0\HealthWatch360.staticwebassets.runtime.json
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\bin\Debug\net8.0\HealthWatch360.exe
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\bin\Debug\net8.0\HealthWatch360.deps.json
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\bin\Debug\net8.0\HealthWatch360.runtimeconfig.json
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\bin\Debug\net8.0\HealthWatch360.dll
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\bin\Debug\net8.0\HealthWatch360.pdb
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\HealthWatch360.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\HealthWatch360.AssemblyInfoInputs.cache
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\HealthWatch360.AssemblyInfo.cs
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\HealthWatch360.csproj.CoreCompileInputs.cache
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\HealthWatch360.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\HealthWatch360.RazorAssemblyInfo.cache
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\HealthWatch360.RazorAssemblyInfo.cs
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\HealthWatch360.sourcelink.json
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\staticwebassets\msbuild.HealthWatch360.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\staticwebassets\msbuild.build.HealthWatch360.props
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.HealthWatch360.props
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.HealthWatch360.props
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\scopedcss\Pages\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\scopedcss\bundle\HealthWatch360.styles.css
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\scopedcss\projectbundle\HealthWatch360.bundle.scp.css
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\HealthWatch360.dll
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\refint\HealthWatch360.dll
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\HealthWatch360.pdb
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\HealthWatch360.genruntimeconfig.cache
+C:\Users\satya\Source\Repos\IS7024\HealthWatch360\obj\Debug\net8.0\ref\HealthWatch360.dll
