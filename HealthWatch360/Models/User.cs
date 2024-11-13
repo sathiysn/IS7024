@@ -9,17 +9,18 @@ namespace HealthWatch360.Models
 {
     public class User
     {
+        [Key]
         public int UserID { get; set; }
 
         [DisplayName("First Name")]
-        [StringLength(40)]
+        [StringLength(40, ErrorMessage = "First Name cannot exceed 40 characters.")]
         public string? FirstName { get; set; }
 
         [DisplayName("Last Name")]
-        [StringLength(40)]
+        [StringLength(40, ErrorMessage = "Last Name cannot exceed 40 characters.")]
         public string? LastName { get; set; }
 
-        [StringLength(40)]
+        [EmailAddress(ErrorMessage = "Invalid Email Address.")]
         public string? Email { get; set; }
 
         [DisplayName("Date of Birth")]
@@ -56,3 +57,5 @@ namespace HealthWatch360.Models
         //User <-> NutritionLog Relationship
         public List<NutritionLog>? NutritionLog { get; set; }
 
+    }
+}

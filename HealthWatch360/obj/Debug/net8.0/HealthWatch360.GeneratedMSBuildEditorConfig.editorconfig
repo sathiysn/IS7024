@@ -1,47 +1,79 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = HealthWatch360
 build_property.RootNamespace = HealthWatch360
-build_property.ProjectDir = C:\Users\sahan\OneDrive - University of Cincinnati\Documents\IS 7024\IS7024\HealthWatch360\
+build_property.ProjectDir = C:\Users\joshikn\Source\Repos\IS7024\HealthWatch360\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\sahan\OneDrive - University of Cincinnati\Documents\IS 7024\IS7024\HealthWatch360
+build_property.MSBuildProjectDirectory = C:\Users\joshikn\Source\Repos\IS7024\HealthWatch360
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/sahan/OneDrive - University of Cincinnati/Documents/IS 7024/IS7024/HealthWatch360/Pages/Error.cshtml]
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahan/OneDrive - University of Cincinnati/Documents/IS 7024/IS7024/HealthWatch360/Pages/Index.cshtml]
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/Exercise.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhlcmNpc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahan/OneDrive - University of Cincinnati/Documents/IS 7024/IS7024/HealthWatch360/Pages/Privacy.cshtml]
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahan/OneDrive - University of Cincinnati/Documents/IS 7024/IS7024/HealthWatch360/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahan/OneDrive - University of Cincinnati/Documents/IS 7024/IS7024/HealthWatch360/Pages/_ViewImports.cshtml]
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/Users/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/Users/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/Users/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahan/OneDrive - University of Cincinnati/Documents/IS 7024/IS7024/HealthWatch360/Pages/_ViewStart.cshtml]
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/sahan/OneDrive - University of Cincinnati/Documents/IS 7024/IS7024/HealthWatch360/Pages/Shared/_Layout.cshtml]
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-oxmwzct8tc
