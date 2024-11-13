@@ -16,17 +16,17 @@
     <div class="card-body">
         <h5 class="text-center">Health Summary</h5>
 
-
         <!-- Input Form for User Data -->
         <form id="healthForm" class="text-center">
             <div class="row mb-3">
                 <div class="col">
-                    <label for="age" class="form-label">Age</label>
-                    <input type="number" id="age" class="form-control" placeholder="Age" min="0" required>
+                    <label for="age" class="form-label" aria-label="Age input">Age</label>
+                    <input type="number" id="age" class="form-control" placeholder="Age" min="0" required aria-required="true" aria-describedby="ageHelp">
+                    <small id="ageHelp" class="text-muted">Enter your age in years.</small>
                 </div>
                 <div class="col">
-                    <label for="gender" class="form-label">Gender</label>
-                    <select id="gender" class="form-select" required>
+                    <label for="gender" class="form-label" aria-label="Gender selection">Gender</label>
+                    <select id="gender" class="form-select" required aria-required="true">
                         <option value="" disabled selected>Select</option>
                         <option value="Male">Male</option>
                         <option value="Female">Female</option>
@@ -35,23 +35,23 @@
             </div>
 
             <div class="row mb-3">
-                <label for="height" class="form-label">Height (Feet/Inches)</label>
+                <label for="height" class="form-label" aria-label="Height input">Height (Feet/Inches)</label>
                 <div class="col">
-                    <input type="number" id="heightFeet" class="form-control" placeholder="Feet" min="0" required>
+                    <input type="number" id="heightFeet" class="form-control" placeholder="Feet" min="0" required aria-required="true">
                 </div>
                 <div class="col">
-                    <input type="number" id="heightInches" class="form-control" placeholder="Inches" min="0" max="11" required>
+                    <input type="number" id="heightInches" class="form-control" placeholder="Inches" min="0" max="11" required aria-required="true">
                 </div>
             </div>
 
             <div class="row mb-3">
                 <div class="col">
-                    <label for="weight" class="form-label">Weight</label>
-                    <input type="number" id="weight" class="form-control" placeholder="Enter weight" min="0" required>
+                    <label for="weight" class="form-label" aria-label="Weight input">Weight</label>
+                    <input type="number" id="weight" class="form-control" placeholder="Enter weight" min="0" required aria-required="true">
                 </div>
                 <div class="col">
-                    <label for="weightUnit" class="form-label">Unit</label>
-                    <select id="weightUnit" class="form-select">
+                    <label for="weightUnit" class="form-label" aria-label="Weight unit selection">Unit</label>
+                    <select id="weightUnit" class="form-select" required aria-required="true">
                         <option value="kg">Kg</option>
                         <option value="lbs">Lbs</option>
                     </select>
@@ -66,11 +66,11 @@
             <p class="mb-0" id="displayWeight">Weight: N/A </p>
             <p class="mb-0" id="displayBMI">BMI: N/A</p>
 
-        <div class="d-flex justify-content-between">
-            <p class="mb-0">Weight: 70kg</p>
-            <p class="mb-0">BMI: 22.3</p>
-            <p class="mb-0">Heart Rate: 72 bpm</p>
-
+            <div class="d-flex justify-content-between">
+                <p class="mb-0">Weight: 70kg</p>
+                <p class="mb-0">BMI: 22.3</p>
+                <p class="mb-0">Heart Rate: 72 bpm</p>
+            </div>
         </div>
     </div>
 </div>
@@ -83,13 +83,24 @@
         const heightFeet = parseFloat(document.getElementById("heightFeet").value);
         const heightInches = parseFloat(document.getElementById("heightInches").value);
 
+        // Basic form validation
+        if (isNaN(weight) || isNaN(heightFeet) || isNaN(heightInches)) {
+            alert("Please fill out all fields correctly.");
+            return;
+        }
+
         // Convert weight to kilograms if needed
         const weightInKg = weightUnit === "lbs" ? weight * 0.453592 : weight;
 
-        // Convert height to meters (1 ft = 0.3048 m, 1 inch = 0.0254 m)
+        // Convert height to meters
         const heightMeters = ((heightFeet * 0.3048) + (heightInches * 0.0254));
 
-        // Calculate BMI (BMI = weight in kg / height in m^2)
+        if (heightMeters === 0) {
+            alert("Height cannot be zero.");
+            return;
+        }
+
+        // Calculate BMI
         const bmi = weightInKg / (heightMeters * heightMeters);
 
         // Update the display values
