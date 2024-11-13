@@ -30,6 +30,26 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/ExceriseLogs/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhjZXJpc2VMb2dzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/ExceriseLogs/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhjZXJpc2VMb2dzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/ExceriseLogs/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhjZXJpc2VMb2dzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/ExceriseLogs/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhjZXJpc2VMb2dzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/ExceriseLogs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhjZXJpc2VMb2dzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/joshikn/Source/Repos/IS7024/HealthWatch360/Pages/Exercise.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXhlcmNpc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
