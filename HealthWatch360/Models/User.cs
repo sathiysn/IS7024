@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
 
 //Purpose: represents an individual user of the app
+
 //Uses: stores user details and maintains personalized settings
 
 namespace HealthWatch360.Models
@@ -19,6 +21,8 @@ namespace HealthWatch360.Models
         [StringLength(40)]
         public string? LastName { get; set; }
 
+        [Required]
+        [EmailAddress]
         [StringLength(40)]
         public string? Email { get; set; }
 
@@ -26,34 +30,39 @@ namespace HealthWatch360.Models
         [DataType(DataType.Date)]
         public DateTime? DOB { get; set; }
 
+        [Range(1, 500)]
         public decimal? Weight { get; set; }
 
+        [Range(1, 300)]
         public decimal? Height { get; set; }
 
+        [StringLength(10)]
         public string? Gender { get; set; }
 
         [DisplayName("Street Address")]
+        [StringLength(100)]
         public string? StreetAddress { get; set; }
 
         [DisplayName("Zip Code")]
+        [StringLength(10)]
         public string? ZipCode { get; set; }
 
+        [StringLength(20)]
         public string? State { get; set; }
 
+        [StringLength(30)]
         public string? City { get; set; }
 
-
-        //User <-> ExerciseLog Relationship
+        // User <-> ExerciseLog Relationship
         public List<ExerciseLog>? ExerciseLog { get; set; }
 
-        //User <-> Goal Relationship
+        // User <-> Goal Relationship
         public List<Goal>? Goal { get; set; }
 
-        //User <-> MedicationTracker Relationship
+        // User <-> MedicationTracker Relationship
         public List<MedicationTracker>? MedicationTracker { get; set; }
 
-        //User <-> NutritionLog Relationship
+        // User <-> NutritionLog Relationship
         public List<NutritionLog>? NutritionLog { get; set; }
     }
 }
-
