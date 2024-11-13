@@ -31,13 +31,9 @@ namespace HealthWatch360.Services
 
                 //var response = await _httpClient.GetFromJsonAsync<List<MedicalInfo>>(apiUrl);  This line does not convert the json into List<MedicalInfo>.
 
-                /* TODO
-
-                 Logic to Deserialise response
-
-                 END OF TODO */
-
-                return new List<MedicalInfo>(); // Replace this with deserizlised response
+                var parsedJson =  JsonConvert.DeserializeObject<ApiResponse>(jsonResponse);
+                var medicalInfoList = parsedJson.Results;
+                return medicalInfoList; // Replace this with deserizlised response
             }
             catch (HttpRequestException ex)
             {
@@ -47,6 +43,18 @@ namespace HealthWatch360.Services
                 return new List<MedicalInfo>();
             }
         }
+    }
+    public class ApiResponse
+    {
+        public Meta Meta { get; set; }
+        public List<MedicalInfo> Results { get; set; }
+    }
+    public class Meta
+    {
+        public string Disclaimer { get; set; }
+        public string Terms { get; set; }
+        public string License { get; set; }
+        public string LastUpdated { get; set; }
     }
 
 }
