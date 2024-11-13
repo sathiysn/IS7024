@@ -33,8 +33,11 @@ bld/
 [Ll]og/
 [Ll]ogs/
 
+
+
 # Visual Studio 2015/2017 cache/options directory
 .vs/
+/obj/*
 # Uncomment if you have tasks that create the project's static files in wwwroot
 #wwwroot/
 
@@ -361,3 +364,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/.vs/slnx.sqlite
+/HealthWatch360/.vs/HealthWatch360/DesignTimeBuild/.dtbcache.v2
+/HealthWatch360/.vs/HealthWatch360/FileContentIndex/1f2e0866-b417-4cd9-9d98-5dcd89c3785b.vsidx
+/HealthWatch360/.vs/HealthWatch360/FileContentIndex/3b3b1c32-86fb-4230-9b4d-931d97fa3b47.vsidx
+/HealthWatch360/.vs/HealthWatch360/FileContentIndex/a20db52b-b1dc-4160-accc-cf8c517ebf64.vsidx
+/HealthWatch360/.vs/HealthWatch360/FileContentIndex/cd94affe-bd0f-4127-b83c-299cdae80251.vsidx
+/HealthWatch360/.vs/HealthWatch360/FileContentIndex/e26c3f03-584e-42af-a171-80701c1058e5.vsidx
