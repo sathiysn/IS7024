@@ -18,7 +18,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
         <div class="container">
-            <a class="navbar-brand" href="/">Hello, @(User.FindFirst("FirstName")?.Value ?? "Guest") </a>
+            <a class="navbar-brand" href="/">HealthWatch360 <span id="navbarUserName"></span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -59,6 +59,18 @@
         </div>
     </footer>
 
+    <!-- Bootstrap JS Bundle -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script to Update Navbar with User's First Name -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Retrieve the first name from localStorage
+            const firstName = localStorage.getItem("firstName");
+            if (firstName) {
+                document.getElementById("navbarUserName").innerText = firstName;
+            }
+        });
+    </script>
 </body>
 </html>

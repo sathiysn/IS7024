@@ -30,12 +30,7 @@
                 </div>
             </div>
 
-            <!-- Input Field for Email -->
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" class="form-control" placeholder="Email" required>
-            </div>
-
+       
             <!-- Existing Input Fields -->
             <div class="row mb-3">
                 <div class="col">
@@ -51,6 +46,7 @@
                     </select>
                 </div>
             </div>
+
 
             <div class="row mb-3">
                 <label for="height" class="form-label">Height (Feet/Inches)</label>
@@ -75,9 +71,14 @@
                     </select>
                 </div>
             </div>
-
+            <!-- Input Field for Email -->
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" class="form-control" placeholder="Email" required>
+            </div>
             <button type="button" class="btn btn-primary" onclick="calculateBMI()">Calculate BMI</button>
         </form>
+      
 
         <!-- Display Results -->
         <div id="healthSummary" class="mt-4">
