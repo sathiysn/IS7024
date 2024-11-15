@@ -13,38 +13,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|d:\\coding\\github\\xml\\is7024\\healthwatch360\\pages\\reports\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|solutionrelative:pages\\reports\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|d:\\coding\\github\\xml\\is7024\\healthwatch360\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|d:\\coding\\github\\xml\\is7024\\healthwatch360\\data\\healthwatch360context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|solutionrelative:data\\healthwatch360context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|d:\\coding\\github\\xml\\is7024\\healthwatch360\\pages\\medicalinfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|solutionrelative:pages\\medicalinfo.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|d:\\coding\\github\\xml\\is7024\\healthwatch360\\pages\\medicalinfo.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|solutionrelative:pages\\medicalinfo.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|d:\\coding\\github\\xml\\is7024\\healthwatch360\\models\\fdaapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|solutionrelative:models\\fdaapiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|d:\\coding\\github\\xml\\is7024\\healthwatch360\\models\\medicalinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|solutionrelative:models\\medicalinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|d:\\coding\\github\\xml\\is7024\\healthwatch360\\healthwatch360.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|solutionrelative:healthwatch360.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|d:\\coding\\github\\xml\\is7024\\healthwatch360\\migrations\\20241112192641_reports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BD2B8BA8-C72C-4E28-A184-7DDC6246EC77}|HealthWatch360.csproj|solutionrelative:migrations\\20241112192641_reports.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -66,7 +34,8 @@
               "RelativeToolTip": "Pages\\Reports\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-15T17:50:15.8Z"
+              "WhenOpened": "2024-11-15T17:50:15.8Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -76,7 +45,7 @@
               "RelativeDocumentMoniker": "Pages\\Index.cshtml",
               "ToolTip": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Pages\\Index.cshtml",
               "RelativeToolTip": "Pages\\Index.cshtml",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAFAAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-07T01:26:35.99Z",
               "EditorCaption": ""
@@ -89,105 +58,10 @@
               "RelativeDocumentMoniker": "Pages\\Shared\\_Layout.cshtml",
               "ToolTip": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Pages\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Pages\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAtAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAIwE4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-12T19:27:23.437Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T19:22:22.567Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "HealthWatch360Context.cs",
-              "DocumentMoniker": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Data\\HealthWatch360Context.cs",
-              "RelativeDocumentMoniker": "Data\\HealthWatch360Context.cs",
-              "ToolTip": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Data\\HealthWatch360Context.cs",
-              "RelativeToolTip": "Data\\HealthWatch360Context.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T19:22:22.368Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "MedicalInfo.cshtml.cs",
-              "DocumentMoniker": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Pages\\MedicalInfo.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\MedicalInfo.cshtml.cs",
-              "ToolTip": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Pages\\MedicalInfo.cshtml.cs",
-              "RelativeToolTip": "Pages\\MedicalInfo.cshtml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T01:54:14.992Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "FdaApiService.cs",
-              "DocumentMoniker": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Models\\FdaApiService.cs",
-              "RelativeDocumentMoniker": "Models\\FdaApiService.cs",
-              "ToolTip": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Models\\FdaApiService.cs",
-              "RelativeToolTip": "Models\\FdaApiService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T01:50:30.711Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "20241112192641_Reports.cs",
-              "DocumentMoniker": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Migrations\\20241112192641_Reports.cs",
-              "RelativeDocumentMoniker": "Migrations\\20241112192641_Reports.cs",
-              "ToolTip": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Migrations\\20241112192641_Reports.cs",
-              "RelativeToolTip": "Migrations\\20241112192641_Reports.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-12T19:26:41.626Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MedicalInfo.cshtml",
-              "DocumentMoniker": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Pages\\MedicalInfo.cshtml",
-              "RelativeDocumentMoniker": "Pages\\MedicalInfo.cshtml",
-              "ToolTip": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Pages\\MedicalInfo.cshtml",
-              "RelativeToolTip": "Pages\\MedicalInfo.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-07T01:44:16.844Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MedicalInfo.cs",
-              "DocumentMoniker": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Models\\MedicalInfo.cs",
-              "RelativeDocumentMoniker": "Models\\MedicalInfo.cs",
-              "ToolTip": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\Models\\MedicalInfo.cs",
-              "RelativeToolTip": "Models\\MedicalInfo.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-07T01:43:49.715Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "HealthWatch360.csproj",
-              "DocumentMoniker": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\HealthWatch360.csproj",
-              "RelativeDocumentMoniker": "HealthWatch360.csproj",
-              "ToolTip": "D:\\Coding\\GitHub\\XML\\IS7024\\HealthWatch360\\HealthWatch360.csproj",
-              "RelativeToolTip": "HealthWatch360.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-07T00:29:35.173Z"
+              "WhenOpened": "2024-11-12T19:27:23.437Z",
+              "EditorCaption": ""
             }
           ]
         }
