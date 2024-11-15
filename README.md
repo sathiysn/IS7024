@@ -35,19 +35,20 @@ The app is designed for those looking to take control of their health with data-
 *As a user, I want to track my nutritional intake so I can monitor my health more efficiently.*
 
 #### Dependencies:
-* User authentification for personal meal tracking
-* USDA FoodData Central API data available and accessible
+* User authentication for personal meal tracking
+* User knows the nutrient information of their food
 * Ability to allow for easy search and logging of meals
   
 #### Assumptions:
-* USDA API provides up-to-date and accurate nutritional data
-* USDA API provides a sufficient coverage of food items applicable to users
+* Nutrition statistics page provides up-to-date and accurate nutritional data
+* User understands the nutrient information of the food they are consuming
+* Nutrition statistics page provides a sufficient coverage of food items applicable to users
 
 ##### Examples:
 1.1<br/>
-**Given** the user is logged in, <br/>
-**When** the user logs a meal or snack, <br/>
-**Then** the app should automatically calculate the total calories and nutrient for the day using the USDA API as its source.
+**Given** the user eats hummus <br/>
+**When** the user logs hummus nutrients, <br/>
+**Then** the app should automatically calculate the total calories and nutrient for the day using the logged in nutrient information as its source.
 
 2.1 <br/>
 **Given** the user is tracking their food intake, <br/>
