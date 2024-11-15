@@ -3,6 +3,11 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+
+/HealthWatch360/obj/Release/net8.0
+/HealthWatch360/obj
+.vs/
+
 # User-specific files
 *.rsuser
 *.suo
@@ -371,3 +376,4 @@ FodyWeavers.xsd
 /HealthWatch360/.vs/HealthWatch360/FileContentIndex/a20db52b-b1dc-4160-accc-cf8c517ebf64.vsidx
 /HealthWatch360/.vs/HealthWatch360/FileContentIndex/cd94affe-bd0f-4127-b83c-299cdae80251.vsidx
 /HealthWatch360/.vs/HealthWatch360/FileContentIndex/e26c3f03-584e-42af-a171-80701c1058e5.vsidx
+
