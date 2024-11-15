@@ -1,0 +1,554 @@
+{
+  "items": [
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Bond Hill Pool",
+      "zip_code": "45237",
+      "phone": "513-242-6897",
+      "location": {
+        "human_address": "{\"address\": \"1580 Yarmouth Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Dempsey Aquatic Center",
+      "zip_code": "45205",
+      "phone": "513-921-6338",
+      "location": {
+        "human_address": "{\"address\": \"959 Hawthorne Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Filson Pool",
+      "zip_code": "45210",
+      "phone": "513-721-1209",
+      "location": {
+        "human_address": "{\"address\": \"461 Ringgold Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Pleasant Ridge Recreation Center",
+      "zip_code": "45213",
+      "phone": "513-731-7894",
+      "location": {
+        "human_address": "{\"address\": \"5915 Ridge Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Dunham Recreation Center",
+      "zip_code": "45238",
+      "phone": "513-251-5862",
+      "location": {
+        "human_address": "{\"address\": \"4356 Dunham Lane\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Oyler Sprayground",
+      "zip_code": "45204",
+      "phone": "N/A",
+      "location": {
+        "human_address": "{\"address\": \"2126 Storrs Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Bond Hill Recreation Center",
+      "zip_code": "45237",
+      "phone": "513-242-9565",
+      "location": {
+        "human_address": "{\"address\": \"1501 Elizabeth Place\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Pleasant Ridge Aquatic Center",
+      "zip_code": "45213",
+      "phone": "513-531-1707",
+      "location": {
+        "human_address": "{\"address\": \"5915 Ridge Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Mount Washington Recreation Center ",
+      "zip_code": "45230",
+      "phone": "513-232-9627",
+      "location": {
+        "human_address": "{\"address\": \"1715 Beacon Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "LeBlond Pool",
+      "zip_code": "45202",
+      "phone": "513-281-3717",
+      "location": {
+        "human_address": "{\"address\": \"2335 Riverside Drive\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Mount Auburn Indoor Pool",
+      "zip_code": "45219",
+      "phone": "513-381-6780",
+      "location": {
+        "human_address": "{\"address\": \"2034 Young Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "LeBlond Recreation Center",
+      "zip_code": "45202",
+      "phone": "513-352-4013",
+      "location": {
+        "human_address": "{\"address\": \"2335 Riverside Drive\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Price Hill Recreation Center",
+      "zip_code": "45205",
+      "phone": "513-251-4123",
+      "location": {
+        "human_address": "{\"address\": \"959 Hawthorne Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Winton Hills Pool ",
+      "zip_code": "45232",
+      "phone": "513-641-3688",
+      "location": {
+        "human_address": "{\"address\": \"5170 Winneste Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Bush Pool",
+      "zip_code": "45206",
+      "phone": "513-751-5085",
+      "location": {
+        "human_address": "{\"address\": \"2640 Kemper Lane\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Dickman Pool",
+      "zip_code": "45233",
+      "phone": "513-941-6270",
+      "location": {
+        "human_address": "{\"address\": \"6720 Home City Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Winton Hills Recreation Center ",
+      "zip_code": "45232",
+      "phone": "513-641-0422",
+      "location": {
+        "human_address": "{\"address\": \"5170 Winneste Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Spring Grove Village Pool",
+      "zip_code": "45232",
+      "phone": "513-542-2768",
+      "location": {
+        "human_address": "{\"address\": \"600 Hand Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Bush Recreation Center",
+      "zip_code": "45206",
+      "phone": "513-281-1286",
+      "location": {
+        "human_address": "{\"address\": \"2640 Kemper Lane\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Mount Washington Pool ",
+      "zip_code": "45230",
+      "phone": "513-232-5621",
+      "location": {
+        "human_address": "{\"address\": \"1715 Beacon Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Golf Course",
+      "name": "Glenview Golf Course ",
+      "zip_code": "45246",
+      "phone": "513-771-1747",
+      "location": {
+        "human_address": "{\"address\": \"10965 Springfield Pike\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Evanston Pool ",
+      "zip_code": "45207",
+      "phone": "513-221-5150",
+      "location": {
+        "human_address": "{\"address\": \"3204 Woodburn Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "North Avondale Recreation Center ",
+      "zip_code": "45229",
+      "phone": "513-961-1584",
+      "location": {
+        "human_address": "{\"address\": \"617 Clinton Springs Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Hirsch Otto Armleder Memorial Aquatic Center",
+      "zip_code": "45229",
+      "phone": "513-751-0601",
+      "location": {
+        "human_address": "{\"address\": \"3630 Reading Road\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Corryville Recreation Center ",
+      "zip_code": "45219",
+      "phone": "513-221-0888",
+      "location": {
+        "human_address": "{\"address\": \"2823 Eden Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Caldwell Sprayground",
+      "zip_code": "45216",
+      "phone": "N/A",
+      "location": {
+        "human_address": "{\"address\": \"316 West North Bend Road\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Golf Course",
+      "name": "California Golf Course ",
+      "zip_code": "45228",
+      "phone": "513-231-6513",
+      "location": {
+        "human_address": "{\"address\": \"5700 Kellogg Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Golf Course",
+      "name": "Neumann Golf Course ",
+      "zip_code": "45211",
+      "phone": "513-574-1320",
+      "location": {
+        "human_address": "{\"address\": \"7215 Bridgetown Road\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Hirsch Recreation Center",
+      "zip_code": "45229",
+      "phone": "513-751-3393",
+      "location": {
+        "human_address": "{\"address\": \"3630 Reading Road\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "McKie Pool ",
+      "zip_code": "45223",
+      "phone": "513-681-7669",
+      "location": {
+        "human_address": "{\"address\": \"1655 Chase Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "North Fairmount Sprayground",
+      "zip_code": "45225",
+      "phone": "N/A",
+      "location": {
+        "human_address": "{\"address\": \"1702 Carll Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Hartwell Recreation Center ",
+      "zip_code": "45216",
+      "phone": "513-821-5194",
+      "location": {
+        "human_address": "{\"address\": \"8275 Vine Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Westwood Town Hall Recreation Center",
+      "zip_code": "45211",
+      "phone": "513-662-9109",
+      "location": {
+        "human_address": "{\"address\": \"3017 Harrison Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "South Fairmount Sprayground",
+      "zip_code": "45214",
+      "phone": "N/A",
+      "location": {
+        "human_address": "{\"address\": \"1685 Queen City Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Hartwell Pool ",
+      "zip_code": "45216",
+      "phone": "513-821-2153",
+      "location": {
+        "human_address": "{\"address\": \"8275 Vine Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Oakley Recreation Center",
+      "zip_code": "45209",
+      "phone": "513-321-9320",
+      "location": {
+        "human_address": "{\"address\": \"3900 Paxton Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Madisonville Recreation Center ",
+      "zip_code": "45227",
+      "phone": "513-271-4190",
+      "location": {
+        "human_address": "{\"address\": \"5320 Stewart Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Dunham Otto Armleder Memorial Aquatic Center",
+      "zip_code": "45238",
+      "phone": "513-251-0150",
+      "location": {
+        "human_address": "{\"address\": \"4356 Dunham Lane\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Clifton Recreation Center",
+      "zip_code": "45220",
+      "phone": "513-961-5681",
+      "location": {
+        "human_address": "{\"address\": \"320 McAlpin Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Camp Washington Pool",
+      "zip_code": "45225",
+      "phone": "513-681-1241",
+      "location": {
+        "human_address": "{\"address\": \"1201 Stock Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Golf Course",
+      "name": "Reeves Golf Course",
+      "zip_code": "45226",
+      "phone": "513-321-2740",
+      "location": {
+        "human_address": "{\"address\": \"4757 Playfield Lane\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Lincoln Recreation Center",
+      "zip_code": "45203",
+      "phone": "513-721-6514",
+      "location": {
+        "human_address": "{\"address\": \"1027 Linn Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Millvale Pool ",
+      "zip_code": "45225",
+      "phone": "513-541-1707",
+      "location": {
+        "human_address": "{\"address\": \"3303 Beekman Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "McKie Recreation Center ",
+      "zip_code": "45223",
+      "phone": "513-681-8247",
+      "location": {
+        "human_address": "{\"address\": \"1655 Chase Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Madisonville Pool ",
+      "zip_code": "45227",
+      "phone": "513-271-3301",
+      "location": {
+        "human_address": "{\"address\": \"5320 Stewart Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Golf Course",
+      "name": "Avon Fields Golf Course",
+      "zip_code": "45229",
+      "phone": "513-281-0322",
+      "location": {
+        "human_address": "{\"address\": \"4081 Reading Road\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Hanna Otto Armleder Memorial Aquatic Center",
+      "zip_code": "45214",
+      "phone": "513-721-7521",
+      "location": {
+        "human_address": "{\"address\": \"226 Stark Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Evanston Recreation Center ",
+      "zip_code": "45207",
+      "phone": "513-861-9417",
+      "location": {
+        "human_address": "{\"address\": \"3204 Woodburn Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "College Hill Recreation Center ",
+      "zip_code": "45224",
+      "phone": "513-591-3555",
+      "location": {
+        "human_address": "{\"address\": \"5545 Belmont Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Ryan Pool",
+      "zip_code": "45211",
+      "phone": "513-661-3128",
+      "location": {
+        "human_address": "{\"address\": \"2856 Fischer Place\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Over The Rhine Recreation Center ",
+      "zip_code": "45202",
+      "phone": "513-381-1893",
+      "location": {
+        "human_address": "{\"address\": \"1715 Republic Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Oakley Pool",
+      "zip_code": "45209",
+      "phone": "513-631-4264",
+      "location": {
+        "human_address": "{\"address\": \"3900 Paxton Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Dyer Sprayground",
+      "zip_code": "45214",
+      "phone": "N/A",
+      "location": {
+        "human_address": "{\"address\": \"2124 Freeman Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Sayler Park Recreation Center ",
+      "zip_code": "45233",
+      "phone": "513-941-0102",
+      "location": {
+        "human_address": "{\"address\": \"6720 Home City Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Golf Course",
+      "name": "Woodland Golf Course ",
+      "zip_code": "45238",
+      "phone": "513-451-4408",
+      "location": {
+        "human_address": "{\"address\": \"5816 Muddy Creek Road\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Ziegler Pool",
+      "zip_code": "45210",
+      "phone": "513-621-3650",
+      "location": {
+        "human_address": "{\"address\": \"1311 Sycamore Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Millvale Recreation Center ",
+      "zip_code": "45225",
+      "phone": "513-352-4351",
+      "location": {
+        "human_address": "{\"address\": \"3303 Beekman Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Mount Adams Pool",
+      "zip_code": "45202",
+      "phone": "513-421-5073",
+      "location": {
+        "human_address": "{\"address\": \"966 Mount Adams Drive\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "College Hill Sprayground",
+      "zip_code": "45224",
+      "phone": "N/A",
+      "location": {
+        "human_address": "{\"address\": \"5660 Belmont Avenue\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Recreation Center",
+      "name": "Leonard Shore Senior Center",
+      "zip_code": "45226",
+      "phone": "513-321-7560",
+      "location": {
+        "human_address": "{\"address\": \"4745 Playfield Lane\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    },
+    {
+      "facility_type": "Aquatic Facility",
+      "name": "Lincoln Pool",
+      "zip_code": "45203",
+      "phone": "513-621-6783",
+      "location": {
+        "human_address": "{\"address\": \"1027 Linn Street\", \"city\": \"\", \"state\": \"\", \"zip\": \"\"}"
+      }
+    }
+  ]
+}
+

@@ -7,11 +7,12 @@ using System.Threading.Tasks;
 
 namespace HealthWatch360.Pages
 {
-    public class MedicineInfoModel : PageModel
+    public class MedicalInfoModel : PageModel
     {
         private readonly FdaApiService _fdaApiService;
 
-        public MedicineInfoModel(FdaApiService fdaApiService)
+        // You are using dependency injection model here. Re-consider the use case of this here. If using this model, 
+        public MedicalInfoModel(FdaApiService fdaApiService)
         {
             _fdaApiService = fdaApiService;
         }
