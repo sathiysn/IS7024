@@ -1,0 +1,60 @@
+﻿@page
+@model HealthWatch360.Pages.HealthReports.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.HealthReport[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HealthReport[0].EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HealthReport[0].HealthDataSummary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HealthReport[0].GoalSummary)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HealthReport[0].RecommmendationSummary)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.HealthReport) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HealthDataSummary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoalSummary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RecommmendationSummary)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.HealthReportID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.HealthReportID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.HealthReportID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

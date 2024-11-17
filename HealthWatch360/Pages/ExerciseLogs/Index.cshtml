@@ -1,0 +1,60 @@
+﻿@page
+@model HealthWatch360.Pages.ExerciseLogs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ExerciseLog[0].Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExerciseLog[0].Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExerciseLog[0].CaloriesBurned)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExerciseLog[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ExerciseLog[0].User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ExerciseLog) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CaloriesBurned)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.Email)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ExerciseLogID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ExerciseLogID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ExerciseLogID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

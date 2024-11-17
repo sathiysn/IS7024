@@ -130,11 +130,6 @@ namespace HealthWatch360.Models
         //NutritionLog <-> User Relationship
         public User? User { get; set; }
         public int? UserID { get; set; }
-
-        ////NutritionLog <-> Goal Relationship
-        //public Goal? Goal { get; set; }
-        //public int? GoalID { get; set; }
-
     }
 
 }
