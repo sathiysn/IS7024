@@ -15,5 +15,6 @@ namespace HealthWatch360.Data
         }
 
         public DbSet<HealthWatch360.Models.HealthReport> HealthReport { get; set; } = default!;
+        public DbSet<HealthWatch360.Models.User> User { get; set; } = default!;
     }
 }

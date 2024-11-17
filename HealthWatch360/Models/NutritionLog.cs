@@ -12,7 +12,9 @@ namespace HealthWatch360.Models
 {
     public class NutritionLog
     {
-        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+        [Key] // Indicates this is the primary key
+        public int NutritionLogId { get; set; }
+
         public class FoodCategory
         {
             public string? description { get; set; }
