@@ -8,13 +8,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using HealthWatch360.Data;
 using HealthWatch360.Models;
 
-namespace HealthWatch360.Pages.Reports
+namespace HealthWatch360.Pages
 {
-    public class CreateModel : PageModel
+    public class ProfileModel : PageModel
     {
         private readonly HealthWatch360.Data.HealthWatch360Context _context;
 
-        public CreateModel(HealthWatch360.Data.HealthWatch360Context context)
+        public ProfileModel(HealthWatch360.Data.HealthWatch360Context context)
         {
             _context = context;
         }
@@ -25,17 +25,26 @@ namespace HealthWatch360.Pages.Reports
         }
 
         [BindProperty]
-        public HealthReport HealthReport { get; set; } = default!;
+        public User User { get; set; } = default!;
 
-        // For more information, see https://aka.ms/RazorPagesCRUD.
         public async Task<IActionResult> OnPostAsync()
         {
+            if (User.HeightFeet < 0 || User.HeightFeet > 8) // Example range
+            {
+                ModelState.AddModelError("User.HeightFeet", "Feet must be between 0 and 8.");
+            }
+
+            if (User.HeightInches < 0 || User.HeightInches >= 12) // 0-11 inches
+            {
+                ModelState.AddModelError("User.HeightInches", "Inches must be between 0 and 11.");
+            }
+
             if (!ModelState.IsValid)
             {
                 return Page();
             }
 
-            _context.HealthReport.Add(HealthReport);
+            _context.User.Add(User);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -12,14 +12,17 @@ namespace HealthWatch360.Models
         public int UserID { get; set; }
 
         [DisplayName("First Name")]
-        [StringLength(40)]
+        [Required(ErrorMessage = "First name is required")]
+        [StringLength(50, ErrorMessage = "First name can't be longer than 50 characters")]
         public string? FirstName { get; set; }
 
         [DisplayName("Last Name")]
-        [StringLength(40)]
+        [Required(ErrorMessage = "Last name is required")]
+        [StringLength(50, ErrorMessage = "Last name can't be longer than 50 characters")]
         public string? LastName { get; set; }
 
-        [StringLength(40)]
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid email address")]
         public string? Email { get; set; }
 
         [DisplayName("Date of Birth")]
@@ -28,7 +31,9 @@ namespace HealthWatch360.Models
 
         public decimal? Weight { get; set; }
 
-        public decimal? Height { get; set; }
+        public int? HeightFeet { get; set; }
+
+        public int? HeightInches { get; set; }
 
         public string? Gender { get; set; }
 
@@ -48,9 +53,6 @@ namespace HealthWatch360.Models
 
         //User <-> Goal Relationship
         public List<Goal>? Goal { get; set; }
-
-        //User <-> MedicationTracker Relationship
-        public List<MedicationTracker>? MedicationTracker { get; set; }
 
         //User <-> NutritionLog Relationship
         public List<NutritionLog>? NutritionLog { get; set; }
