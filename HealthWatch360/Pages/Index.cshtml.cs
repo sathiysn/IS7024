@@ -21,7 +21,7 @@ namespace HealthWatch360.Pages
 
         public void OnGet()
         {
-            var jsonData = System.IO.File.ReadAllText("C:\\Users\\sahan\\OneDrive - University of Cincinnati\\Documents\\IS7024\\HealthWatch360\\NutritionInfo.json");
+            var jsonData = System.IO.File.ReadAllText("NutritionInfo.json");
             Root = JsonConvert.DeserializeObject<Root>(jsonData);
         }
     }

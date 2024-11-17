@@ -51,9 +51,6 @@ namespace HealthWatch360.Models
         //User <-> ExerciseLog Relationship
         public List<ExerciseLog>? ExerciseLog { get; set; }
 
-        //User <-> Goal Relationship
-        public List<Goal>? Goal { get; set; }
-
         //User <-> NutritionLog Relationship
         public List<NutritionLog>? NutritionLog { get; set; }
     }
