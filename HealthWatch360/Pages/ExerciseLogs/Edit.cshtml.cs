@@ -30,7 +30,7 @@ namespace HealthWatch360.Pages.ExerciseLogs
                 return NotFound();
             }
 
-            var exerciselog =  await _context.ExerciseLog.FirstOrDefaultAsync(m => m.ExerciseLogID == id);
+            var exerciselog =  await _context.ExerciseLog.FirstOrDefaultAsync(m => m.ExerciseLogId == id);
             if (exerciselog == null)
             {
                 return NotFound();
@@ -57,7 +57,7 @@ namespace HealthWatch360.Pages.ExerciseLogs
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ExerciseLogExists(ExerciseLog.ExerciseLogID))
+                if (!ExerciseLogExists(ExerciseLog.ExerciseLogId))
                 {
                     return NotFound();
                 }
@@ -72,7 +72,7 @@ namespace HealthWatch360.Pages.ExerciseLogs
 
         private bool ExerciseLogExists(int id)
         {
-            return _context.ExerciseLog.Any(e => e.ExerciseLogID == id);
+            return _context.ExerciseLog.Any(e => e.ExerciseLogId == id);
         }
     }
 }

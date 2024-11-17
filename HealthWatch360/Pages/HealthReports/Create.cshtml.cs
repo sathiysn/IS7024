@@ -21,6 +21,7 @@ namespace HealthWatch360.Pages.HealthReports
 
         public IActionResult OnGet()
         {
+        ViewData["UserID"] = new SelectList(_context.User, "UserID", "Email");
             return Page();
         }
 

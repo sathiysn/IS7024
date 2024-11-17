@@ -14,19 +14,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.HealthReport[0].StartDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HealthReport[0].EndDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HealthReport[0].HealthDataSummary)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HealthReport[0].GoalSummary)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HealthReport[0].RecommmendationSummary)
+                @Html.DisplayNameFor(model => model.HealthReport[0].User)
             </th>
             <th></th>
         </tr>
@@ -35,24 +23,12 @@
 @foreach (var item in Model.HealthReport) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.StartDate)
+                @Html.DisplayFor(modelItem => item.User.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.EndDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HealthDataSummary)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GoalSummary)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RecommmendationSummary)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.HealthReportID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.HealthReportID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.HealthReportID">Delete</a>
+                <a asp-page="./Edit" asp-route-id="@item.HealthReportId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.HealthReportId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.HealthReportId">Delete</a>
             </td>
         </tr>
 }

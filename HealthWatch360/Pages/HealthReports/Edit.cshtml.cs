@@ -30,12 +30,13 @@ namespace HealthWatch360.Pages.HealthReports
                 return NotFound();
             }
 
-            var healthreport =  await _context.HealthReport.FirstOrDefaultAsync(m => m.HealthReportID == id);
+            var healthreport =  await _context.HealthReport.FirstOrDefaultAsync(m => m.HealthReportId == id);
             if (healthreport == null)
             {
                 return NotFound();
             }
             HealthReport = healthreport;
+           ViewData["UserID"] = new SelectList(_context.User, "UserID", "Email");
             return Page();
         }
 
@@ -56,7 +57,7 @@ namespace HealthWatch360.Pages.HealthReports
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!HealthReportExists(HealthReport.HealthReportID))
+                if (!HealthReportExists(HealthReport.HealthReportId))
                 {
                     return NotFound();
                 }
@@ -71,7 +72,7 @@ namespace HealthWatch360.Pages.HealthReports
 
         private bool HealthReportExists(int id)
         {
-            return _context.HealthReport.Any(e => e.HealthReportID == id);
+            return _context.HealthReport.Any(e => e.HealthReportId == id);
         }
     }
 }

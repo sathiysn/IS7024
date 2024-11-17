@@ -13,39 +13,15 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HealthReport.StartDate)
+            @Html.DisplayNameFor(model => model.HealthReport.User)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.HealthReport.StartDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HealthReport.EndDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.HealthReport.EndDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HealthReport.HealthDataSummary)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.HealthReport.HealthDataSummary)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HealthReport.GoalSummary)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.HealthReport.GoalSummary)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.HealthReport.RecommmendationSummary)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.HealthReport.RecommmendationSummary)
+            @Html.DisplayFor(model => model.HealthReport.User.Email)
         </dd>
     </dl>
     
     <form method="post">
-        <input type="hidden" asp-for="HealthReport.HealthReportID" />
+        <input type="hidden" asp-for="HealthReport.HealthReportId" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
         <a asp-page="./Index">Back to List</a>
     </form>

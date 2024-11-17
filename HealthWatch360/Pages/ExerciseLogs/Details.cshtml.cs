@@ -28,7 +28,7 @@ namespace HealthWatch360.Pages.ExerciseLogs
                 return NotFound();
             }
 
-            var exerciselog = await _context.ExerciseLog.FirstOrDefaultAsync(m => m.ExerciseLogID == id);
+            var exerciselog = await _context.ExerciseLog.FirstOrDefaultAsync(m => m.ExerciseLogId == id);
             if (exerciselog == null)
             {
                 return NotFound();

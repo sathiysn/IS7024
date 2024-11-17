@@ -23,7 +23,8 @@ namespace HealthWatch360.Pages.HealthReports
 
         public async Task OnGetAsync()
         {
-            HealthReport = await _context.HealthReport.ToListAsync();
+            HealthReport = await _context.HealthReport
+                .Include(h => h.User).ToListAsync();
         }
     }
 }
