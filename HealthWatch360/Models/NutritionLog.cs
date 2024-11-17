@@ -10,7 +10,7 @@ namespace HealthWatch360.Models
 {
     public class NutritionLog
     {
-        public int HealthDataID { get; set; }
+        public int NutritionLogID { get; set; }
 
         public int? Calories { get; set; }
 
@@ -30,9 +30,5 @@ namespace HealthWatch360.Models
         //NutritionLog <-> User Relationship
         public User? User { get; set; }
         public int? UserID { get; set; }
-
-        //NutritionLog <-> HealthGoal Relationship
-        public HealthGoal? HealthGoal { get; set; }
-        public int? HealthGoalID { get; set; }
     }
 }
