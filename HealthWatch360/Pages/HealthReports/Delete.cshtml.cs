@@ -29,7 +29,7 @@ namespace HealthWatch360.Pages.HealthReports
                 return NotFound();
             }
 
-            var healthreport = await _context.HealthReport.FirstOrDefaultAsync(m => m.HealthReportID == id);
+            var healthreport = await _context.HealthReport.FirstOrDefaultAsync(m => m.HealthReportId == id);
 
             if (healthreport == null)
             {

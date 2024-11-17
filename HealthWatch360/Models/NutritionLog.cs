@@ -12,7 +12,7 @@ namespace HealthWatch360.Models
 {
     public class NutritionLog
     {
-        [Key] // Indicates this is the primary key
+        [Key]
         public int NutritionLogId { get; set; }
 
         public class FoodCategory

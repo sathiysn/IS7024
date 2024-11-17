@@ -13,31 +13,11 @@
     <div class="col-md-4">
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="HealthReport.HealthReportID" />
+            <input type="hidden" asp-for="HealthReport.HealthReportId" />
             <div class="form-group">
-                <label asp-for="HealthReport.StartDate" class="control-label"></label>
-                <input asp-for="HealthReport.StartDate" class="form-control" />
-                <span asp-validation-for="HealthReport.StartDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="HealthReport.EndDate" class="control-label"></label>
-                <input asp-for="HealthReport.EndDate" class="form-control" />
-                <span asp-validation-for="HealthReport.EndDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="HealthReport.HealthDataSummary" class="control-label"></label>
-                <input asp-for="HealthReport.HealthDataSummary" class="form-control" />
-                <span asp-validation-for="HealthReport.HealthDataSummary" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="HealthReport.GoalSummary" class="control-label"></label>
-                <input asp-for="HealthReport.GoalSummary" class="form-control" />
-                <span asp-validation-for="HealthReport.GoalSummary" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="HealthReport.RecommmendationSummary" class="control-label"></label>
-                <input asp-for="HealthReport.RecommmendationSummary" class="form-control" />
-                <span asp-validation-for="HealthReport.RecommmendationSummary" class="text-danger"></span>
+                <label asp-for="HealthReport.UserID" class="control-label"></label>
+                <select asp-for="HealthReport.UserID" class="form-control" asp-items="ViewBag.UserID"></select>
+                <span asp-validation-for="HealthReport.UserID" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
