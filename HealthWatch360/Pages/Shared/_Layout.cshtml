@@ -12,14 +12,16 @@
 
     <!-- Background Image & Dark Overlay Container -->
     <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;">
-        <img src="https://wallpapercave.com/wp/wp7535600.jpg" alt="Background Image" style="width: 100%; height: 100%; object-fit: cover;" />
+        <img src="https://wallpapercave.com/wp/wp7535600.jpg" alt="Image of Young Person Exercising" style="width: 100%; height: 100%; object-fit: cover;" />
         <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.8);"></div>
     </div>
 
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow">
         <div class="container">
-            <a class="navbar-brand" href="/">Hello, @(User.FindFirst("FirstName")?.Value ?? "Guest") </a>
+            <!-- Logo -->
+            <img src="https://raw.githubusercontent.com/sathiysn/IS7024/f9581f4be4d5a580f88255bae636ab09d946e660/HealthWatch360/Logo.png?token=GHSAT0AAAAAACWW6V2ULZHWMKZLYH3DJW7KZZ3NSMQ" alt="HealthWatch 360 Logo" style="height: 40px; margin-right: 10px;">
+            <a class="navbar-brand" href="/"><span id="navbarUserName">Hello, Guest</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,13 +31,13 @@
                         <a class="nav-link active" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/Nutrition">Nutrition</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link active" href="/Exercise">Exercise</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="/Reports">Reports</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/Profile">Profile</a>
                     </li>
                 </ul>
             </div>

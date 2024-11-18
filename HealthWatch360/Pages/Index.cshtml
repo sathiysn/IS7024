@@ -1,4 +1,5 @@
 ﻿@page
+@using Newtonsoft.Json
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
@@ -18,25 +19,6 @@
 
         <!-- Input Form for User Data -->
         <form id="healthForm" class="text-center">
-            <!-- Input Fields for First Name and Last Name -->
-            <div class="row mb-3">
-                <div class="col">
-                    <label for="firstName" class="form-label">First Name</label>
-                    <input type="text" id="firstName" class="form-control" placeholder="First Name" required>
-                </div>
-                <div class="col">
-                    <label for="lastName" class="form-label">Last Name</label>
-                    <input type="text" id="lastName" class="form-control" placeholder="Last Name" required>
-                </div>
-            </div>
-
-            <!-- Input Field for Email -->
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" class="form-control" placeholder="Email" required>
-            </div>
-
-            <!-- Existing Input Fields -->
             <div class="row mb-3">
                 <div class="col">
                     <label for="age" class="form-label">Age</label>
@@ -76,7 +58,7 @@
                 </div>
             </div>
 
-            <button type="button" class="btn btn-primary" onclick="calculateBMI()">Calculate BMI</button>
+            <button type="button" class="btn btn-primary" onclick="calculateBMI()">Calculate Your BMI</button>
         </form>
 
         <!-- Display Results -->
@@ -85,12 +67,6 @@
             <h3 id="displayName"></h3>
             <p class="mb-0" id="displayWeight">Weight: N/A </p>
             <p class="mb-0" id="displayBMI">BMI: N/A</p>
-
-            <div class="d-flex justify-content-between">
-                <p class="mb-0">Weight: 70kg</p>
-                <p class="mb-0">BMI: 22.3</p>
-                <p class="mb-0">Heart Rate: 72 bpm</p>
-            </div>
         </div>
     </div>
 </div>
@@ -126,7 +102,42 @@
 <div class="card bg-dark text-light mb-4">
     <div class="card-body">
         <h5 class="text-center">Nutrition Overview</h5>
-        <p>Daily Caloric Intake: 1800 kcal</p>
+        
+        <input type="text" id="foodSearch" placeholder="Search for food..." oninput="searchFoods()" />
+        <ul id="searchResults" style="list-style-type: none; padding: 0; margin: 0;"></ul>
+        
+        <script>
+            // Assuming you load your JSON data into this variable
+            const foundationFoods = @Html.Raw(JsonConvert.SerializeObject(Model.Root.FoundationFoods));
+
+            function searchFoods() {
+                const searchQuery = document.getElementById('foodSearch').value.toLowerCase();
+                const resultsContainer = document.getElementById('searchResults');
+                resultsContainer.innerHTML = '';
+
+                if (searchQuery) {
+                    const matchingFoods = foundationFoods.filter(food =>
+                        food.description.toLowerCase().includes(searchQuery)
+                    );
+
+                    matchingFoods.forEach(food => {
+                        const li = document.createElement('li');
+                        li.textContent = food.description;
+                        li.onclick = () => selectFood(food);
+                        resultsContainer.appendChild(li);
+                    });
+                }
+            }
+
+            function selectFood(food) {
+                document.getElementById('foodSearch').value = food.description;
+                document.getElementById('searchResults').innerHTML = '';
+                console.log(`Selected food: ${food.description}, ID: ${food.fdcId}`);
+                // You could also store the selected food in a hidden input or submit it to your backend here
+            }
+        </script>
+
+
         <!-- Placeholder Pie Chart -->
         <div class="d-flex justify-content-center my-3">
             <div class="pie-chart"></div>
@@ -166,7 +177,7 @@
                 </div>
                 <!-- Tip 3 -->
                 <div class="carousel-item">
-                    <p class="text-center">3. Eat more fish, including a portion of oily fish</p>
+                    <p class="text-center">3. Drink more Water, Stay Hydrated!</p>
                 </div>
                 <!-- Tip 4 -->
                 <div class="carousel-item">
@@ -187,15 +198,6 @@
                 <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
-
-            <!-- Carousel Indicators -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#healthTipsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Tip 1"></button>
-                <button type="button" data-bs-target="#healthTipsCarousel" data-bs-slide-to="1" aria-label="Tip 2"></button>
-                <button type="button" data-bs-target="#healthTipsCarousel" data-bs-slide-to="2" aria-label="Tip 3"></button>
-                <button type="button" data-bs-target="#healthTipsCarousel" data-bs-slide-to="3" aria-label="Tip 4"></button>
-                <button type="button" data-bs-target="#healthTipsCarousel" data-bs-slide-to="4" aria-label="Tip 5"></button>
-            </div>
         </div>
         <!-- Carousel End -->
     </div>
