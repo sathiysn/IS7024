@@ -39,6 +39,7 @@ namespace HealthWatch360.Models
         [Range(0, 11, ErrorMessage = "Height (Inches) must be between 0 and 11.")]
         public int? HeightInches { get; set; }
 
+        [RegularExpression("^(Male|Female|Other|Prefer not to say)$", ErrorMessage = "Invalid gender option.")]
         public string? Gender { get; set; }
 
         [DisplayName("Street Address")]
@@ -56,7 +57,7 @@ namespace HealthWatch360.Models
         public string? State { get; set; }
 
         [Required(ErrorMessage = "City is required.")]
-        [StringLength(50, ErrorMessage = "City can't be longer than 50 characters")]
+        [StringLength(50, ErrorMessage = "City can't be longer than 50 characters.")]
         public string? City { get; set; }
 
 
