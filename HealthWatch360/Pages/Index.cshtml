@@ -163,15 +163,16 @@
         </div>
 
         <script>
-            // Data and configuration for the charts
-            function createPieChart(ctx, data) {
+            // Function to create a pie chart
+            function createPieChart(canvasId, data, titleText) {
+                const ctx = document.getElementById(canvasId).getContext('2d');
                 new Chart(ctx, {
-                    type: 'doughnut', // 'doughnut' for a donut chart, 'pie' for a pie chart
+                    type: 'doughnut',
                     data: {
                         labels: ['Consumed', 'Remaining'],
                         datasets: [{
                             data: data,
-                            backgroundColor: ['#4CAF50', '#D3D3D3'], // Colors for segments
+                            backgroundColor: ['#e74c3c', '#D3D3D3'],
                             borderWidth: 1
                         }]
                     },
@@ -179,27 +180,27 @@
                         responsive: true,
                         plugins: {
                             legend: {
-                                position: 'top'
+                                position: 'top',
+                                labels: {
+                                    color: '#f2f3f4' // Change legend labels to white
+                                }
+                            },
+                            title: {
+                                display: true, // Always display the title
+                                text: titleText,
+                                color: '#f2f3f4' // Change title to white
                             }
                         },
-                        cutout: '70%' // Optional for a donut chart effect
+                        cutout: '70%'
                     }
                 });
             }
 
-            // Sample data for each chart
-            const dataSets = [
-                [60, 40], // Chart 1 data (60% consumed, 40% remaining)
-                [80, 20], // Chart 2 data
-                [50, 50], // Chart 3 data
-                [30, 70], // Chart 4 data
-            ];
-
-            // Initialize charts
-            for (let i = 0; i < 4; i++) {
-                const ctx = document.getElementById(`chart${i+1}`).getContext('2d');
-                createPieChart(ctx, dataSets[i]);
-            }
+            // Create four pie charts with example data and titles
+            createPieChart('chart1', [75, 25], 'Calories');
+            createPieChart('chart2', [50, 50], 'Protein');
+            createPieChart('chart3', [30, 70], 'Sodium');
+            createPieChart('chart4', [90, 10], 'Sugar');
         </script>
         <!-- End of Added by Rhiannon -->
 
