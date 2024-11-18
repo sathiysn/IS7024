@@ -17,179 +17,59 @@ namespace HealthWatch360.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.10")
+                .HasAnnotation("ProductVersion", "8.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("HealthWatch360.Models.ExerciseLog", b =>
                 {
-                    b.Property<int>("ExerciseLogID")
+                    b.Property<int>("ExerciseLogId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExerciseLogID"));
-
-                    b.Property<int?>("CaloriesBurned")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<decimal?>("Duration")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ExerciseLogId"));
 
                     b.Property<int?>("UserID")
                         .HasColumnType("int");
 
-                    b.HasKey("ExerciseLogID");
+                    b.HasKey("ExerciseLogId");
 
                     b.HasIndex("UserID");
 
                     b.ToTable("ExerciseLog");
                 });
 
-            modelBuilder.Entity("HealthWatch360.Models.Goal", b =>
-                {
-                    b.Property<int>("GoalID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("GoalID"));
-
-                    b.Property<int?>("CurrentValue")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("StartDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int?>("TargetValue")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("UserID")
-                        .HasColumnType("int");
-
-                    b.HasKey("GoalID");
-
-                    b.HasIndex("UserID");
-
-                    b.ToTable("Goal");
-                });
-
             modelBuilder.Entity("HealthWatch360.Models.HealthReport", b =>
                 {
-                    b.Property<int>("HealthReportID")
+                    b.Property<int>("HealthReportId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HealthReportID"));
-
-                    b.Property<DateTime?>("EndDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("GoalSummary")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("HealthDataSummary")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("RecommmendationSummary")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("StartDate")
-                        .HasColumnType("datetime2");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("HealthReportId"));
 
                     b.Property<int?>("UserID")
                         .HasColumnType("int");
 
-                    b.HasKey("HealthReportID");
+                    b.HasKey("HealthReportId");
 
                     b.HasIndex("UserID");
 
                     b.ToTable("HealthReport");
                 });
 
-            modelBuilder.Entity("HealthWatch360.Models.MedicationTracker", b =>
-                {
-                    b.Property<int>("MedicationTrackerID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MedicationTrackerID"));
-
-                    b.Property<decimal?>("Dosage")
-                        .HasColumnType("decimal(18,2)");
-
-                    b.Property<string>("Frequency")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("MedicationName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ReminderTime")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool?>("TakenStatus")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("Time")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Type")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("UserID")
-                        .HasColumnType("int");
-
-                    b.HasKey("MedicationTrackerID");
-
-                    b.HasIndex("UserID");
-
-                    b.ToTable("MedicationTracker");
-                });
-
             modelBuilder.Entity("HealthWatch360.Models.NutritionLog", b =>
                 {
-                    b.Property<int>("NutritionLogID")
+                    b.Property<int>("NutritionLogId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NutritionLogID"));
-
-                    b.Property<int?>("Calories")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Carbohydrates")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Fats")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Fiber")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Proteins")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Sodium")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Sugar")
-                        .HasColumnType("int");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("NutritionLogId"));
 
                     b.Property<int?>("UserID")
                         .HasColumnType("int");
 
-                    b.HasKey("NutritionLogID");
+                    b.HasKey("NutritionLogId");
 
                     b.HasIndex("UserID");
 
@@ -205,40 +85,53 @@ namespace HealthWatch360.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("UserID"));
 
                     b.Property<string>("City")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<DateTime?>("DOB")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("Gender")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<decimal?>("Height")
-                        .HasColumnType("decimal(18,2)");
+                    b.Property<int?>("HeightFeet")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("HeightInches")
+                        .HasColumnType("int");
 
                     b.Property<string>("LastName")
-                        .HasMaxLength(40)
-                        .HasColumnType("nvarchar(40)");
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<string>("State")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(2)
+                        .HasColumnType("nvarchar(2)");
 
                     b.Property<string>("StreetAddress")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal?>("Weight")
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("ZipCode")
-                        .HasColumnType("nvarchar(max)");
+                        .IsRequired()
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)");
 
                     b.HasKey("UserID");
 
@@ -254,28 +147,10 @@ namespace HealthWatch360.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("HealthWatch360.Models.Goal", b =>
-                {
-                    b.HasOne("HealthWatch360.Models.User", "User")
-                        .WithMany("Goal")
-                        .HasForeignKey("UserID");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("HealthWatch360.Models.HealthReport", b =>
                 {
                     b.HasOne("HealthWatch360.Models.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserID");
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("HealthWatch360.Models.MedicationTracker", b =>
-                {
-                    b.HasOne("HealthWatch360.Models.User", "User")
-                        .WithMany("MedicationTracker")
                         .HasForeignKey("UserID");
 
                     b.Navigation("User");
@@ -293,10 +168,6 @@ namespace HealthWatch360.Migrations
             modelBuilder.Entity("HealthWatch360.Models.User", b =>
                 {
                     b.Navigation("ExerciseLog");
-
-                    b.Navigation("Goal");
-
-                    b.Navigation("MedicationTracker");
 
                     b.Navigation("NutritionLog");
                 });

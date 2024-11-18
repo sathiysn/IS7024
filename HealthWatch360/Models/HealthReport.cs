@@ -9,28 +9,38 @@ namespace HealthWatch360.Models
 {
     public class HealthReport
     {
-        public int HealthReportID { get; set; }
+        //Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+        [Key]
+        public int HealthReportId { get; set; }
 
-        [DisplayName("Start Date")]
-        [DataType(DataType.Date)]
-        public DateTime? StartDate { get; set; }
+        public class Item
+        {
+            public string category { get; set; }
+            public string topics { get; set; }
+            public string intervention { get; set; }
+            public string description { get; set; }
+            public string status { get; set; }
+            public string outcome { get; set; }
+            public DateTime implementation_date { get; set; }
+            public string location { get; set; }
+            public string address { get; set; }
+            public string zip_code { get; set; }
+            public string zipcode_pop_2016 { get; set; }
+            public string partners { get; set; }
+            public string longitude { get; set; }
+            public string latitude { get; set; }
+            public string neighborhood { get; set; }
+            public string zipcode_pop_2010 { get; set; }
+            public string notes { get; set; }
+        }
 
-        [DisplayName("End Date")]
-        [DataType(DataType.Date)]
-        public DateTime? EndDate { get; set; }
+        public class Root
+        {
+            public List<Item> items { get; set; }
+        }
 
-        [DisplayName("Health Data Summary")]
-        public string? HealthDataSummary { get; set; }
-
-        [DisplayName("Goal Summary")]
-        public string? GoalSummary { get; set; }
-
-        [DisplayName("Recommendation Summary")]
-        public string? RecommmendationSummary { get; set; }
-
-
-        //HealthReport <-> User Relationship
         public User? User { get; set; }
-        //public int? UserID { get; set; }
+        public int? UserID { get; set; }
+
     }
 }

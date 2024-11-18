@@ -12,7 +12,9 @@ namespace HealthWatch360.Models
 {
     public class NutritionLog
     {
-        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+        [Key]
+        public int NutritionLogId { get; set; }
+
         public class FoodCategory
         {
             public string? description { get; set; }
@@ -128,11 +130,6 @@ namespace HealthWatch360.Models
         //NutritionLog <-> User Relationship
         public User? User { get; set; }
         public int? UserID { get; set; }
-
-        ////NutritionLog <-> Goal Relationship
-        //public Goal? Goal { get; set; }
-        //public int? GoalID { get; set; }
-
     }
 
 }

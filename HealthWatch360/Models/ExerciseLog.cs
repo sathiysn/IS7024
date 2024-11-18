@@ -10,26 +10,32 @@ namespace HealthWatch360.Models
 {
     public class ExerciseLog
     {
-        public int ExerciseLogID { get; set; }
+        // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
+        [Key]
+        public int ExerciseLogId { get; set; }
 
-        public string? Type { get; set; }
+        public class Item
+        {
+            public string facility_type { get; set; }
+            public string name { get; set; }
+            public string zip_code { get; set; }
+            public string phone { get; set; }
+            public Location location { get; set; }
+        }
 
-        public decimal? Duration { get; set; }
+        public class Location
+        {
+            public string human_address { get; set; }
+        }
 
-        [DisplayName("Calories Burned")]
-        public int? CaloriesBurned { get; set; }
-
-        [DisplayName("Exercise Date")]
-        [DataType(DataType.Date)]
-        public DateTime? Date { get; set; }
-
+        public class Root
+        {
+            public List<Item> items { get; set; }
+        }
 
         //User <-> ExerciseLog Relationship
         public User? User { get; set; }
         public int? UserID { get; set; }
 
-        ////ExerciseLog <-> Goal Relationship
-        //public Goal? Goal { get; set; }
-        //public int? GoalID { get; set; }
     }
 }
