@@ -137,6 +137,71 @@
             }
         </script>
 
+        <!-- Added by Rhiannon -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <style>
+            .chart-container {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap; /* Allows wrapping if screen size is small */
+                gap: 20px; /* Spacing between charts */
+                max-width: 100%;
+            }
+
+            .chart-item {
+                width: 20%; /* Adjust the width as needed */
+                min-width: 150px; /* Ensures a minimum size for smaller screens */
+            }
+        </style>           
+        <!-- Canvas for the charts -->
+        <div class="chart-container">
+            <div class="chart-item"><canvas id="chart1"></canvas></div>
+            <div class="chart-item"><canvas id="chart2"></canvas></div>
+            <div class="chart-item"><canvas id="chart3"></canvas></div>
+            <div class="chart-item"><canvas id="chart4"></canvas></div>
+        </div>
+
+        <script>
+            // Data and configuration for the charts
+            function createPieChart(ctx, data) {
+                new Chart(ctx, {
+                    type: 'doughnut', // 'doughnut' for a donut chart, 'pie' for a pie chart
+                    data: {
+                        labels: ['Consumed', 'Remaining'],
+                        datasets: [{
+                            data: data,
+                            backgroundColor: ['#4CAF50', '#D3D3D3'], // Colors for segments
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                position: 'top'
+                            }
+                        },
+                        cutout: '70%' // Optional for a donut chart effect
+                    }
+                });
+            }
+
+            // Sample data for each chart
+            const dataSets = [
+                [60, 40], // Chart 1 data (60% consumed, 40% remaining)
+                [80, 20], // Chart 2 data
+                [50, 50], // Chart 3 data
+                [30, 70], // Chart 4 data
+            ];
+
+            // Initialize charts
+            for (let i = 0; i < 4; i++) {
+                const ctx = document.getElementById(`chart${i+1}`).getContext('2d');
+                createPieChart(ctx, dataSets[i]);
+            }
+        </script>
+        <!-- End of Added by Rhiannon -->
 
         <!-- Placeholder Pie Chart -->
         <div class="d-flex justify-content-center my-3">
