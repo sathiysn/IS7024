@@ -1,4 +1,142 @@
 ﻿@page
+@using HealthWatch360.Models
+@using Newtonsoft.Json
 @model HealthWatch360.Pages.ReportsModel
 @{
+    ViewData["Title"] = "Reports Page";
 }
+
+<div class="card bg-dark text-light mb-4">
+    <div class="card-body">
+        <h5 class="text-center">Nutrition Overview</h5>
+
+        <!-- Food Search and Selection -->
+        <input type="text" id="foodSearch" placeholder="Search for food..." oninput="searchFoods()" class="form-control" />
+        <ul id="searchResults" style="list-style-type: none; padding: 0; margin: 0; max-height: 200px; overflow-y: auto;"></ul>
+
+        <!-- Selected Foods -->
+        <h6 class="mt-3">Selected Foods:</h6>
+        <ul id="selectedFoodsList" style="list-style-type: none; padding: 0; margin: 0;"></ul>
+        <button class="btn btn-primary mt-2" onclick="generateNutritionBreakdown()">View Nutrition Breakdown</button>
+
+        <!-- Chart.js Visualization -->
+        <canvas id="nutrientChart" class="mt-4"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const allFoods = @Html.Raw(Json.Serialize(Model.FoundationFoods)); // Serialized food items
+    let selectedFoods = []; // List of selected foods
+    let nutrientChart; // Global variable for the Chart.js instance
+
+    // Function to search foods
+    function searchFoods() {
+        const searchInput = document.getElementById("foodSearch").value.toLowerCase();
+        const searchResults = document.getElementById("searchResults");
+        searchResults.innerHTML = ''; // Clear previous results
+
+        const filteredFoods = allFoods.filter(food => food.description.toLowerCase().includes(searchInput));
+        filteredFoods.forEach(food => {
+            const li = document.createElement("li");
+            li.innerHTML = `<button class="btn btn-link text-light" onclick="addFood(${food.fdcId})">${food.description}</button>`;
+            searchResults.appendChild(li);
+        });
+    }
+
+    // Function to add food to the selected list
+    function addFood(fdcId) {
+        const food = allFoods.find(f => f.fdcId === fdcId);
+
+        if (!selectedFoods.some(f => f.fdcId === fdcId)) {
+            selectedFoods.push(food);
+
+            const selectedFoodsList = document.getElementById("selectedFoodsList");
+            const li = document.createElement("li");
+            li.id = `selectedFood-${fdcId}`;
+            li.innerHTML = `
+                    ${food.description}
+                    <button class="btn btn-danger btn-sm ml-2" onclick="removeFood(${fdcId})">Remove</button>
+                `;
+            selectedFoodsList.appendChild(li);
+        }
+    }
+
+    // Function to remove food from the selected list
+    function removeFood(fdcId) {
+        selectedFoods = selectedFoods.filter(f => f.fdcId !== fdcId);
+        const foodItem = document.getElementById(`selectedFood-${fdcId}`);
+        if (foodItem) foodItem.remove();
+    }
+
+    // Function to generate nutrition breakdown
+    function generateNutritionBreakdown() {
+        const aggregatedNutrients = {};
+
+        selectedFoods.forEach(food => {
+            food.foodNutrients.forEach(nutrient => {
+                const nutrientName = nutrient.nutrient.name;
+                const unitName = nutrient.nutrient.unitName;
+
+                if (!aggregatedNutrients[nutrientName]) {
+                    aggregatedNutrients[nutrientName] = {
+                        amount: 0,
+                        unitName: unitName
+                    };
+                }
+                aggregatedNutrients[nutrientName].amount += nutrient.amount;
+            });
+        });
+
+        updateNutrientChart(aggregatedNutrients);
+    }
+
+    // Function to update the chart
+    function updateNutrientChart(aggregatedNutrients) {
+        const labels = Object.keys(aggregatedNutrients);
+        const data = labels.map(label => aggregatedNutrients[label].amount);
+
+        const ctx = document.getElementById("nutrientChart").getContext("2d");
+
+        // Destroy previous chart instance if it exists
+        if (nutrientChart) {
+            nutrientChart.destroy();
+        }
+
+        nutrientChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Nutrient Amounts',
+                    data: data,
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        callbacks: {
+                            label: function (context) {
+                                const nutrientName = labels[context.dataIndex];
+                                const unit = aggregatedNutrients[nutrientName].unitName;
+                                return `${context.raw.toFixed(2)} ${unit}`;
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+</script>

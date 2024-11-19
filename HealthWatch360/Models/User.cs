@@ -33,9 +33,12 @@ namespace HealthWatch360.Models
         [Range(1, 1000, ErrorMessage = "Weight must be between 1 and 1000 pounds.")]
         public decimal? Weight { get; set; }
 
+
+        [DisplayName("Feet")]
         [Range(0, 8, ErrorMessage = "Height (Feet) must be between 0 and 8.")]
         public int? HeightFeet { get; set; }
-
+      
+        [DisplayName("Inches")]
         [Range(0, 11, ErrorMessage = "Height (Inches) must be between 0 and 11.")]
         public int? HeightInches { get; set; }
 
@@ -48,6 +51,7 @@ namespace HealthWatch360.Models
         public string? StreetAddress { get; set; }
 
         [DisplayName("Zip Code")]
+
         [Required(ErrorMessage = "Zip Code is required.")]
         [StringLength(5, ErrorMessage = "Zip Code should be exactly 5 characters.")]
         public string? ZipCode { get; set; }
@@ -66,6 +70,7 @@ namespace HealthWatch360.Models
 
         //User <-> NutritionLog Relationship
         public List<NutritionLog>? NutritionLog { get; set; }
+        
     }
 }
 

@@ -2,21 +2,21 @@
 @model HealthWatch360.Pages.Userz.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Profile";
 }
 
-<h1>Create</h1>
+<h1>Create Profile</h1>
 
 <h4>User</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post">
+        <form method="post" onsubmit="saveFirstName(); window.location.href='/Index'; return false;">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <span class="text-danger">*</span>
                 <label asp-for="User.FirstName" class="control-label"></label>
-                <input asp-for="User.FirstName" class="form-control" />
+                <input asp-for="User.FirstName" class="form-control" id="firstNameInput" />
                 <span asp-validation-for="User.FirstName" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -38,22 +38,28 @@
             </div>
             <div class="form-group">
                 <label asp-for="User.Weight" class="control-label"></label>
-                <input asp-for="User.Weight" class="form-control" />
+                <input asp-for="User.Weight" class="form-control" min="0" id="weight"/>
                 <span asp-validation-for="User.Weight" class="text-danger"></span>
+                <div>
+                    <label for="weightUnit" class="form-label">Unit</label>
+                    <select id="weightUnit" class="form-select">
+                        <option value="kg">Kg</option>
+                        <option value="lbs">Lbs</option>
+                    </select>
+                </div>
             </div>
             <div class="form-group">
-                <label asp-for="User.HeightFeet" class="control-label"></label>
-                <input asp-for="User.HeightFeet" class="form-control" />
+                <label for="HeightFeet">Height (Feet and Inches)</label>
+                <div class="d-flex align-items-center">
+                    <input asp-for="User.HeightFeet" class="form-control me-2" placeholder="Feet" style="width: 70px;" id="heightFeet" />
+                    <input asp-for="User.HeightInches" class="form-control" placeholder="Inches" style="width: 70px;" id="heightInches"/>
+                </div>
                 <span asp-validation-for="User.HeightFeet" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="User.HeightInches" class="control-label"></label>
-                <input asp-for="User.HeightInches" class="form-control" />
                 <span asp-validation-for="User.HeightInches" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="User.Gender" class="control-label"></label>
-                <input asp-for="User.Gender" class="form-control" />
+                <input asp-for="User.Gender" class="form-control" id="userGender"/>
                 <span asp-validation-for="User.Gender" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -62,6 +68,7 @@
                 <span asp-validation-for="User.StreetAddress" class="text-danger"></span>
             </div>
             <div class="form-group">
+                <span class="text-danger">*</span>
                 <label asp-for="User.ZipCode" class="control-label"></label>
                 <input asp-for="User.ZipCode" class="form-control" />
                 <span asp-validation-for="User.ZipCode" class="text-danger"></span>
@@ -84,9 +91,34 @@
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+    <a asp-page="Index">My Info</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<script>
+    function saveFirstName() {
+        const firstName = document.getElementById("firstNameInput").value.trim();
+        const weight = document.getElementById("weight").value.trim();
+        const weightUnit = document.getElementById("weightUnit").value;
+        const heightFeet = document.getElementById("heightFeet").value.trim();
+        const heightInches = document.getElementById("heightInches").value.trim();
+
+        if (firstName && weight && heightFeet && heightInches) {
+            localStorage.setItem("firstName", firstName);
+            localStorage.setItem("weight", weight);
+            localStorage.setItem("weightUnit", weightUnit);
+            localStorage.setItem("heightFeet", heightFeet);
+            localStorage.setItem("heightInches", heightInches);
+            console.log("Data saved successfully to localStorage");
+        } else {
+            console.error("Incomplete data: all fields are required.");
+            alert("Please fill in all required fields before submitting.");
+        }
+    }
+
+</script>

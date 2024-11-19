@@ -88,3 +88,24 @@
     <a asp-page="./Edit" asp-route-id="@Model.User.UserID">Edit</a> |
     <a asp-page="./Index">Back to List</a>
 </div>
+
+<script>
+    // Save user details to localStorage when the page loads
+    document.addEventListener("DOMContentLoaded", function () {
+        const firstName = document.getElementById("userFirstName").innerText.trim();
+        const lastName = document.getElementById("userLastName").innerText.trim();
+        const weight = document.getElementById("userWeight").innerText.trim();
+        const heightFeet = document.getElementById("userHeightFeet").innerText.trim();
+        const heightInches = document.getElementById("userHeightInches").innerText.trim();
+        const gender = document.getElementById("userGender").innerText.trim();
+
+        // Store data in localStorage
+        localStorage.setItem("firstName", firstName);
+        localStorage.setItem("lastName", lastName);
+        localStorage.setItem("weight", weight);
+        localStorage.setItem("weightUnit"); // Adjust as needed if you use different units
+        localStorage.setItem("heightFeet", heightFeet);
+        localStorage.setItem("heightInches", heightInches);
+        localStorage.setItem("gender", gender);
+    });
+</script>
