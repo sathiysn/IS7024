@@ -100,3 +100,21 @@
 }
     </tbody>
 </table>
+<script>
+
+    // Save user details to localStorage when the page loads
+    document.addEventListener("DOMContentLoaded", function () {
+        const weight = document.getElementById("userWeight").innerText.trim();
+        const weightUnit = document.getElementById("weightUnit").innerText.trim();
+        const heightFeet = document.getElementById("userHeightFeet").innerText.trim();
+        const heightInches = document.getElementById("userHeightInches").innerText.trim();
+        const gender = document.getElementById("userGender").innerText.trim();
+
+        // Store data in localStorage
+        localStorage.setItem("weight", weight);
+        localStorage.setItem("weightUnit", "kg"); // Adjust as needed if you use different units
+        localStorage.setItem("heightFeet", heightFeet);
+        localStorage.setItem("heightInches", heightInches);
+        localStorage.setItem("gender", gender);
+    };
+</script>
