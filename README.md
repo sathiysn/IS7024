@@ -16,7 +16,7 @@ By integrating health risk statistics and nutritional data, HealthWatch 360 enab
 The app is designed for those looking to take control of their health with data-driven insights, empowering users to make better lifestyle choices and prevent common health issues like heart disease, diabetes, and obesity. 
 
 ## Logo
-<img src="healthcare.png" alt="HealthWatch Logo" width="100" height="100">
+<img src="Logo.png" alt="HealthWatch Logo" width="100" height="100">
 
 ## Story Board
 
