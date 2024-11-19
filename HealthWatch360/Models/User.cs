@@ -31,8 +31,10 @@ namespace HealthWatch360.Models
 
         public decimal? Weight { get; set; }
 
+        [DisplayName("Feet")]
         public int? HeightFeet { get; set; }
 
+        [DisplayName("Inches")]
         public int? HeightInches { get; set; }
 
         public string? Gender { get; set; }
@@ -41,6 +43,7 @@ namespace HealthWatch360.Models
         public string? StreetAddress { get; set; }
 
         [DisplayName("Zip Code")]
+        [Required(ErrorMessage = "Zipcode is required")]
         public string? ZipCode { get; set; }
 
         public string? State { get; set; }
@@ -53,6 +56,7 @@ namespace HealthWatch360.Models
 
         //User <-> NutritionLog Relationship
         public List<NutritionLog>? NutritionLog { get; set; }
+        
     }
 }
 

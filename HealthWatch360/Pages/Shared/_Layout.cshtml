@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=screen-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@ViewData["Title"] - HealthWatch 360</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="~/css/site.css" rel="stylesheet">
-
 </head>
 <body class="bg-dark text-light">
 
@@ -35,7 +34,7 @@
                         <a class="nav-link active" href="/Reports">Reports</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="/Profile">Profile</a>
+                        <a class="nav-link active" href="/Userz/Create">Profile</a>
                     </li>
                 </ul>
             </div>
@@ -64,5 +63,15 @@
     <!-- The line below ensures there are no internal server errors while loading scripts in razor pages.-->
     @RenderSection("Scripts", required: false)
 
+    <script>
+        // Function to update navbar greeting from localStorage
+        function updateNavbarGreeting() {
+            const firstName = localStorage.getItem("firstName") || "Guest";
+            document.getElementById("navbarUserName").textContent = `Hello, ${firstName}`;
+        }
+
+        // Initialize greeting on page load
+        document.addEventListener("DOMContentLoaded", updateNavbarGreeting);
+    </script>
 </body>
 </html>
