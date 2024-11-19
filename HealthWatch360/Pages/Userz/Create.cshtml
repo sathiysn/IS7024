@@ -11,7 +11,7 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form method="post" onsubmit="saveFirstName()">
+        <form method="post" onsubmit="saveFirstName(); window.location.href='/Index'; return false;">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <span class="text-danger">*</span>
@@ -38,7 +38,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="User.Weight" class="control-label"></label>
-                <input asp-for="User.Weight" class="form-control" min="0" id="userWeight"/>
+                <input asp-for="User.Weight" class="form-control" min="0" id="weight"/>
                 <span asp-validation-for="User.Weight" class="text-danger"></span>
                 <div>
                     <label for="weightUnit" class="form-label">Unit</label>
@@ -51,8 +51,8 @@
             <div class="form-group">
                 <label for="HeightFeet">Height (Feet and Inches)</label>
                 <div class="d-flex align-items-center">
-                    <input asp-for="User.HeightFeet" class="form-control me-2" placeholder="Feet" style="width: 70px;" id="userHeightFeet" />
-                    <input asp-for="User.HeightInches" class="form-control" placeholder="Inches" style="width: 70px;" id="userHeightInches"/>
+                    <input asp-for="User.HeightFeet" class="form-control me-2" placeholder="Feet" style="width: 70px;" id="heightFeet" />
+                    <input asp-for="User.HeightInches" class="form-control" placeholder="Inches" style="width: 70px;" id="heightInches"/>
                 </div>
                 <span asp-validation-for="User.HeightFeet" class="text-danger"></span>
                 <span asp-validation-for="User.HeightInches" class="text-danger"></span>
@@ -101,21 +101,24 @@
 }
 
 <script>
-    // Save first name to localStorage when the form is submitted
     function saveFirstName() {
         const firstName = document.getElementById("firstNameInput").value.trim();
-        if (firstName) {
+        const weight = document.getElementById("weight").value.trim();
+        const weightUnit = document.getElementById("weightUnit").value;
+        const heightFeet = document.getElementById("heightFeet").value.trim();
+        const heightInches = document.getElementById("heightInches").value.trim();
+
+        if (firstName && weight && heightFeet && heightInches) {
             localStorage.setItem("firstName", firstName);
+            localStorage.setItem("weight", weight);
+            localStorage.setItem("weightUnit", weightUnit);
+            localStorage.setItem("heightFeet", heightFeet);
+            localStorage.setItem("heightInches", heightInches);
+            console.log("Data saved successfully to localStorage");
+        } else {
+            console.error("Incomplete data: all fields are required.");
+            alert("Please fill in all required fields before submitting.");
         }
     }
-
-    // Update the navbar greeting immediately when typing (optional enhancement)
-    document.getElementById("firstNameInput").addEventListener("input", function () {
-        const firstName = this.value.trim() || "Guest";
-        const navbarUserName = document.getElementById("navbarUserName");
-        if (navbarUserName) {
-            navbarUserName.textContent = `Hello, ${firstName}`;
-        }
-    };
 
 </script>
