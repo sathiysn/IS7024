@@ -7,6 +7,7 @@
 /HealthWatch360/obj/Release/net8.0
 /HealthWatch360/obj
 .vs/
+/HealthWatch360/bin/Debug/net8.0
 
 # User-specific files
 *.rsuser
