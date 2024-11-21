@@ -8,7 +8,7 @@
 
 <div class="card bg-dark text-light mb-4">
     <div class="card-body">
-        <h5 class="text-center">Nutrition Overview</h5>
+        <h5 class="text-center">Nutrient Breakdown</h5>
 
         <!-- Food Search and Selection -->
         <input type="text" id="foodSearch" placeholder="Search for food..." oninput="searchFoods()" class="form-control" />
@@ -17,7 +17,7 @@
         <!-- Selected Foods -->
         <h6 class="mt-3">Selected Foods:</h6>
         <ul id="selectedFoodsList" style="list-style-type: none; padding: 0; margin: 0;"></ul>
-        <button class="btn btn-primary mt-2" onclick="generateNutritionBreakdown()">View Nutrition Breakdown</button>
+        <button class="btn btn-primary mt-2" onclick="generateNutritionBreakdown(), saveMacroMicroBreakdown()">View Nutrition Breakdown</button>
 
         <!-- Chart.js Visualization -->
         <canvas id="nutrientChart" class="mt-4"></canvas>
@@ -49,16 +49,26 @@
         const food = allFoods.find(f => f.fdcId === fdcId);
 
         if (!selectedFoods.some(f => f.fdcId === fdcId)) {
-            selectedFoods.push(food);
+            selectedFoods.push({ ...food, grams: 100 }); // Default grams: 100
 
             const selectedFoodsList = document.getElementById("selectedFoodsList");
             const li = document.createElement("li");
             li.id = `selectedFood-${fdcId}`;
             li.innerHTML = `
                     ${food.description}
+                    <input type="number" class="form-control d-inline-block ml-2" style="width: 80px;" value="100" min="1" onchange="updateGrams(${fdcId}, this.value)" />
+                    grams
                     <button class="btn btn-danger btn-sm ml-2" onclick="removeFood(${fdcId})">Remove</button>
                 `;
             selectedFoodsList.appendChild(li);
+        }
+    }
+
+    // Function to update grams for a food item
+    function updateGrams(fdcId, grams) {
+        const food = selectedFoods.find(f => f.fdcId === fdcId);
+        if (food) {
+            food.grams = parseFloat(grams);
         }
     }
 
@@ -74,9 +84,14 @@
         const aggregatedNutrients = {};
 
         selectedFoods.forEach(food => {
+            const gramsConsumed = food.grams;
+            const foodWeight = food.foodPortions?.[0]?.gramWeight || 100; // Default to 100 grams if no portion info
+
             food.foodNutrients.forEach(nutrient => {
                 const nutrientName = nutrient.nutrient.name;
                 const unitName = nutrient.nutrient.unitName;
+                const nutrientAmountPerGram = nutrient.amount / foodWeight; // Per gram amount
+                const totalNutrientAmount = nutrientAmountPerGram * gramsConsumed; // Adjusted for grams consumed
 
                 if (!aggregatedNutrients[nutrientName]) {
                     aggregatedNutrients[nutrientName] = {
@@ -84,7 +99,7 @@
                         unitName: unitName
                     };
                 }
-                aggregatedNutrients[nutrientName].amount += nutrient.amount;
+                aggregatedNutrients[nutrientName].amount += totalNutrientAmount;
             });
         });
 
@@ -132,11 +147,57 @@
                     }
                 },
                 scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Nutrients'
+                        }
+                    },
                     y: {
-                        beginAtZero: true
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Amount'
+                        }
                     }
                 }
             }
         });
     }
 </script>
+
+<script>
+    // Function to generate macro and micro breakdown
+    function saveMacroMicroBreakdown() {
+        const macros = ["Water", "Protein", "Carbohydrate, by summation", "Carbohydrate, by difference", "Total lipid (fat)", "Fiber, total dietary", "Sugars, Total", "Carbohydrate Other" ];
+        const micros = ["Nitrogen", "Vitamin C, total ascorbic acid", "Calcium, Ca", "Iron, Fe", "Potassium", "Sodium", "Potassium, K", "Vitamin B-6", "Vitamin B-12", "Vitamin A", "Vitamin E", "Vitamin D", "Vitamin K"];
+
+        let macroTotal = 0;
+        let microTotal = 0;
+
+        selectedFoods.forEach(food => {
+            const gramsConsumed = food.grams;
+            const foodWeight = food.foodPortions?.[0]?.gramWeight || 100;
+
+            food.foodNutrients.forEach(nutrient => {
+                const nutrientName = nutrient.nutrient.name;
+                const nutrientAmountPerGram = nutrient.amount / foodWeight;
+                const totalNutrientAmount = nutrientAmountPerGram * gramsConsumed;
+
+                if (macros.includes(nutrientName)) {
+                    macroTotal += totalNutrientAmount;
+                } else if (micros.includes(nutrientName)) {
+                    microTotal += totalNutrientAmount;
+                }
+            });
+        });
+
+        // Save data to session storage
+        sessionStorage.setItem("macroMicroBreakdown", JSON.stringify({
+            macro: macroTotal,
+            micro: microTotal
+        }));
+
+    }
+</script>
+
