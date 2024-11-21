@@ -102,9 +102,30 @@
             <div class="chart-item"><canvas id="chart2"></canvas></div>
             <div class="chart-item"><canvas id="chart3"></canvas></div>
             <div class="chart-item"><canvas id="chart4"></canvas></div>
+            <div class="chart-item"><canvas id="chart5"></canvas></div>
         </div>
 
         <script>
+            // Function to load macro and micro breakdown
+            function loadMacroMicroBreakdown() {
+                const breakdownData = sessionStorage.getItem("macroMicroBreakdown");
+                if (breakdownData) {
+                    const breakdown = JSON.parse(breakdownData);
+                    const macro = breakdown.macro || 0;
+                    const micro = breakdown.micro || 0;
+                    const total = macro + micro;
+
+                    // Generate pie chart for macro vs micro
+                    createPieChart("chart5", [macro, micro], "Macro vs Micro Nutrients");
+                }
+            }
+
+            // Create charts and load data on page load
+            window.onload = function () {
+                loadMacroMicroBreakdown();
+
+               
+            };
             // Function to create a pie chart
             function createPieChart(canvasId, data, titleText) {
                 const ctx = document.getElementById(canvasId).getContext('2d');
@@ -144,6 +165,8 @@
             createPieChart('chart3', [30, 70], 'Sodium');
             createPieChart('chart4', [90, 10], 'Sugar');
         </script>
+    </div>
+</div>
 
 <!-- Activity Level -->
 <div class="card bg-dark text-light mb-4">
