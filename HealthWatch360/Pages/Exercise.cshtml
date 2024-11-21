@@ -1,78 +1,58 @@
 ﻿@page
+@using Newtonsoft.Json
 @model HealthWatch360.Pages.ExerciseModel
 @{
-    ViewData["Title"] = "Excercise Page";
+    ViewData["Title"] = "Facility Finder";
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Track your schedule and fitness goals here!</p>
-<h5>Insert your schedule below:</h5>
-<script src="https://cdn.commoninja.com/sdk/latest/commonninja.js" defer></script>
-<div class="commonninja_component pid-d6443234-a9ad-403e-a7e9-e8ae9ea49790"></div>
+<p>Choose a facility type to see available locations and their details:</p>
 
-<p>Want to learn more about different exercises? Follow the dropdowns below to select which exercises you'd like to learn about! Basic instructions are included for each exercise.'</p>
-<div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Example Exercises
-    </button>
-    <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Legs</a></li>
-        <li><a class="dropdown-item" href="#">Arms (Push/Pull)</a></li>
-        <li><a class="dropdown-item" href="#">Back</a></li>
-        <li><a class="dropdown-item" href="#">Core</a></li>
-    </ul>
-</div>
-
-<!-- Adding Drop down for Workout Types -->
-
-<h5>What kind of exercise or fitness routine do you enjoy?</h5>
-<form>
-    <fieldset class="row mb-3">
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-            <label class="form-check-label" for="flexCheckDefault">
-                Aquatic Exercises
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-                Sports
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-                Gym
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-            <label class="form-check-label" for="flexCheckChecked">
-                Group Fitness
-            </label>
-        </div>
-    </fieldset>
-
-
-
-    <div class="row mb-3">
-        <label for="zipcode">Zip Code:</label>
-        <input type="text" id="zipcode" name="zipcode" maxlength="5" pattern="\d{5}" placeholder="Enter 5-digit ZIP code" required>
-
-
-    </div>
-    <div>
-        <input type="range" id="slider" min="0" max="30" value="0" oninput="updateValue(this.value)">
-        <p>Miles willing to travel: <span id="sliderValue">0</span></p>
-
-        <script>
-            function updateValue(value) {
-                const displayValue = value == 30 ? '30+' : value;
-                document.getElementById("sliderValue").textContent = displayValue;
+<!-- Facility Type Dropdown -->
+<h5>Select a Facility Type</h5>
+<form method="post">
+    <div class="dropdown">
+        <select id="facilityDropdown" class="form-select" name="facilityType" required>
+            <option value="" disabled selected>Select a facility type</option>
+            @foreach (var facilityType in Model.FacilityTypes)
+            {
+                var isSelected = facilityType == Model.SelectedFacilityType ? "selected" : "";
+                <option value="@facilityType" isSelected > @facilityType </option>
             }
-        </script>
+        </select>
     </div>
 
-    <button type="submit" class="btn btn-primary">Sign in</button>
+    <button type="submit" class="btn btn-primary mt-3">Show Facilities</button>
 </form>
+
+@if (Model.FilteredFacilities.Any())
+{
+    <h3>Facilities for "@Model.SelectedFacilityType":</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Zip Code</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var facility in Model.FilteredFacilities)
+            {
+                var address = JsonConvert.DeserializeObject<dynamic>(facility.location.human_address)?.address ?? "No address provided";
+                var zipCode = facility.zip_code ?? "No Zip Code provided";
+                <tr>
+                    <td>@facility.name</td>
+                    <td>@address</td>
+                    <td>@zipCode</td>
+                    <td>@facility.phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (!string.IsNullOrEmpty(Model.SelectedFacilityType))
+{
+    <p>No facilities found for "@Model.SelectedFacilityType".</p>
+}
