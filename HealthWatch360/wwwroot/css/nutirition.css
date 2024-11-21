@@ -1,0 +1,64 @@
+.chart-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Allows wrapping if screen size is small */
+    gap: 20px; /* Spacing between charts */
+    max-width: 100%;
+}
+
+.chart-item {
+    width: 20%; /* Adjust the width as needed */
+    min-width: 150px; /* Ensures a minimum size for smaller screens */
+}
+
+.form-container {
+    margin-bottom: 20px;
+}
+
+    .form-container h6 {
+        margin-bottom: 10px;
+    }
+
+    .form-container label {
+        display: block;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+
+    .form-container input,
+    .form-container select,
+    .form-container button {
+        margin-top: 5px;
+        width: 100%;
+    }
+
+    .form-container button {
+        margin-top: 15px;
+    }
+
+/* Chart Labels */
+.chart-labels {
+    color: #f2f3f4; /* White labels for legend */
+    font-size: 14px; /* Adjust font size for readability */
+    font-weight: bold;
+}
+
+/* Chart Title */
+.chart-title {
+    color: #f2f3f4; /* White title */
+    font-size: 20px; /* Title font size */
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Doughnut Chart Styling */
+.chart-doughnut {
+    border-width: 1px;
+}
+
+/* Legend Container */
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}

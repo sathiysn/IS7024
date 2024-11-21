@@ -79,64 +79,48 @@
 <div class="card bg-dark text-light mb-4">
     <div class="card-body">
         <h5 class="text-center">Nutrition Overview</h5>
-        
-        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-        <style>
-            .chart-container {
-                display: flex;
-                justify-content: space-between;
-                flex-wrap: wrap; /* Allows wrapping if screen size is small */
-                gap: 20px; /* Spacing between charts */
-                max-width: 100%;
-            }
-
-            .chart-item {
-                width: 20%; /* Adjust the width as needed */
-                min-width: 150px; /* Ensures a minimum size for smaller screens */
-            }
-        </style>           
-        <!-- Canvas for the charts -->
+        <!-- Pie Charts for Nutrition Info of Users -->
         <div class="chart-container">
             <div class="chart-item"><canvas id="chart1"></canvas></div>
             <div class="chart-item"><canvas id="chart2"></canvas></div>
             <div class="chart-item"><canvas id="chart3"></canvas></div>
             <div class="chart-item"><canvas id="chart4"></canvas></div>
-            <div class="chart-item"><canvas id="chart5"></canvas></div>
         </div>
 
+        <!-- Form for User Input (Now Below the Charts) -->
+        <div class="form-container mt-4">
+            <h6>Update Nutrition Data</h6>
+            <label for="chartSelector">Select Chart:</label>
+            <select id="chartSelector" class="form-select">
+                <option value="chart1">Calories</option>
+                <option value="chart2">Protein</option>
+                <option value="chart3">Sodium</option>
+                <option value="chart4">Sugar</option>
+            </select>
+            <label for="consumedInput">Consumed:</label>
+            <input type="number" id="consumedInput" class="form-control" placeholder="Enter consumed value">
+            <label for="totalInput">Total Allowed:</label>
+            <input type="number" id="totalInput" class="form-control" placeholder="Enter total allowed value">
+            <button class="btn btn-primary mt-3" onclick="updateChart()">Update Chart</button>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
         <script>
-            // Function to load macro and micro breakdown
-            function loadMacroMicroBreakdown() {
-                const breakdownData = sessionStorage.getItem("macroMicroBreakdown");
-                if (breakdownData) {
-                    const breakdown = JSON.parse(breakdownData);
-                    const macro = breakdown.macro || 0;
-                    const micro = breakdown.micro || 0;
-                    const total = macro + micro;
+            // Store chart instances for easy updates
+            const charts = {};
 
-                    // Generate pie chart for macro vs micro
-                    createPieChart("chart5", [macro, micro], "Macro vs Micro Nutrients");
-                }
-            }
-
-            // Create charts and load data on page load
-            window.onload = function () {
-                loadMacroMicroBreakdown();
-
-               
-            };
             // Function to create a pie chart
             function createPieChart(canvasId, data, titleText) {
                 const ctx = document.getElementById(canvasId).getContext('2d');
-                new Chart(ctx, {
+                const chart = new Chart(ctx, {
                     type: 'doughnut',
                     data: {
                         labels: ['Consumed', 'Remaining'],
                         datasets: [{
                             data: data,
-                            backgroundColor: ['#11C5D9', '#D3D3D3'],
-                            borderWidth: 1
+                            backgroundColor: ['#11C5D9', '#D3D3D3'], // Keep this in JS for dynamic control
                         }]
                     },
                     options: {
@@ -145,25 +129,55 @@
                             legend: {
                                 position: 'top',
                                 labels: {
-                                    color: '#f2f3f4' // Change legend labels to white
+                                    font: {
+                                        family: 'Arial, sans-serif',
+                                        size: 14,
+                                        weight: 'bold'
+                                    },
+                                    color: '#f2f3f4'
                                 }
                             },
                             title: {
-                                display: true, // Always display the title
+                                display: true,
                                 text: titleText,
-                                color: '#f2f3f4' // Change title to white
+                                font: {
+                                    family: 'Arial, sans-serif',
+                                    size: 16,
+                                },
+                                color: '#f2f3f4'
                             }
                         },
                         cutout: '70%'
                     }
                 });
+                charts[canvasId] = chart; // Store the chart instance
             }
 
-            // Create four pie charts with example data and titles
+            // Create initial charts
             createPieChart('chart1', [75, 25], 'Calories');
             createPieChart('chart2', [50, 50], 'Protein');
             createPieChart('chart3', [30, 70], 'Sodium');
             createPieChart('chart4', [90, 10], 'Sugar');
+
+            // Function to update the selected chart
+            function updateChart() {
+                const chartId = document.getElementById('chartSelector').value;
+                const consumed = parseFloat(document.getElementById('consumedInput').value);
+                const total = parseFloat(document.getElementById('totalInput').value);
+
+                if (!isNaN(consumed) && !isNaN(total) && charts[chartId]) {
+                    if (consumed > total) {
+                        alert("Consumed value cannot exceed the total allowed value.");
+                        return;
+                    }
+
+                    const remaining = total - consumed; // Calculate remaining value
+                    charts[chartId].data.datasets[0].data = [consumed, remaining];
+                    charts[chartId].update(); // Redraw the chart
+                } else {
+                    alert("Please enter valid numeric values for Consumed and Total Allowed.");
+                }
+            }
         </script>
     </div>
 </div>
