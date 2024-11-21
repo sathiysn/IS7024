@@ -125,8 +125,8 @@
                 datasets: [{
                     label: 'Nutrient Amounts',
                     data: data,
-                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
-                    borderColor: 'rgba(54, 162, 235, 1)',
+                    backgroundColor: '#11C5D9',
+                    borderColor: '#11C5D9',
                     borderWidth: 1
                 }]
             },
@@ -148,16 +148,29 @@
                 },
                 scales: {
                     x: {
+                        ticks: {
+                            color: '#D3D3D3' // Change X-axis tick labels to white
+                        },
+                        grid: {
+                            color: '#444444' // Change X-axis grid lines to a dark gray
+                        },
                         title: {
                             display: true,
-                            text: 'Nutrients'
+                            text: 'Nutrients',
+                            color: '#D3D3D3' // Change X-axis title color to white
                         }
                     },
                     y: {
-                        beginAtZero: true,
+                        ticks: {
+                            color: '#D3D3D3' // Change Y-axis tick labels to white
+                        },
+                        grid: {
+                            color: '#444444' // Change Y-axis grid lines to a dark gray
+                        },
                         title: {
                             display: true,
-                            text: 'Amount'
+                            text: 'Amount',
+                            color: '#D3D3D3' // Change Y-axis title color to white
                         }
                     }
                 }
