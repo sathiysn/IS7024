@@ -380,3 +380,4 @@ FodyWeavers.xsd
 
 /HealthWatch360/.editorconfig
 /HealthWatch360/.vs/HealthWatch360/v17/.futdcache.v2
+/HealthWatch360/obj/Debug/net8.0/staticwebassets/msbuild.HealthWatch360.Microsoft.AspNetCore.StaticWebAssets.props

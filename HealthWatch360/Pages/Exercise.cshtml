@@ -4,6 +4,9 @@
 @{
     ViewData["Title"] = "Facility Finder";
 }
+
+<link rel="stylesheet" href="~/css/nutrition.css">
+
 <h1>@ViewData["Title"]</h1>
 
 <p>Choose a facility type to see available locations and their details:</p>
@@ -22,7 +25,7 @@
         </select>
     </div>
 
-    <button type="submit" class="btn btn-primary mt-3">Show Facilities</button>
+    <button type="submit" class="btn mt-3">Show Facilities</button>
 </form>
 
 @if (Model.FilteredFacilities.Any())
