@@ -6,12 +6,15 @@ Rhiannon Wallace, Sam Moushey, Megha Pawar, Bengeo George, Sahana Sathiyanarayan
 
 ## Introduction
 
-HealthWatch 360 is a mobile application that helps individuals monitor and improve their overall health and wellness.  
+HealthWatch 360 is a mobile application designed to help individuals monitor and improve their overall health and wellness. 
+By integrating health risk statistics and nutritional data, the app empowers users to make informed lifestyle choices, aiming to prevent common health issues such as heart disease, diabetes, and obesity.
 
-By integrating health risk statistics and nutritional data, HealthWatch 360 enables users to:
-* Track lifestle habits
-* Assess potential health risks
-* Receive personalized healthcare recommendations
+HealthWatch 360 enables users to:
+* Track Lifestyle & Exercise Habits
+* Assess Potential Health Risks
+* Discover Local Exercise Centers
+* Personalized Health Goals
+* Health Reports
   
 The app is designed for those looking to take control of their health with data-driven insights, empowering users to make better lifestyle choices and prevent common health issues like heart disease, diabetes, and obesity. 
 
@@ -21,10 +24,10 @@ The app is designed for those looking to take control of their health with data-
 ## Story Board
 
 1. Home Screen: Displays an overview of the user's health data, including nutrition intake, activity levels, and key health metrics. 
-2. Health Risk Analysis: A dashboard where users can view health risk assessments based on their data and local health statistics from CDC. 
-3. Nutrition Tracker: Allows users to log their meals and receive recommendations based on USDA food data. 
-4. Exercise & Activity Tracking: Users can log daily exercise and track their activity levels. 
-5. Health Reports: Users can generate weekly or monthly reports on their health and progress toward goals. 
+2. Profile Page: Users create and manage profiles, inputting personal details like age, gender, height, weight, and zip code.
+3. Exercise & Activity Tracking: Log daily exercises, track activity levels, view calories burned, and see exercise centers visited.
+4. Local Exercise Centers: Display nearby exercise facilities to help achieve fitness goals.
+5. Health Reports: Generate and view weekly or monthly health reports and progress towards goals.
 
 <img src="Home.png" alt="Home page"> <img src="Nutrition.png" alt="Food page"> <img src="Activities.png" alt="Exercise page"> <img src="Reports.png" alt="Reports page"> <img src="Settings.png" alt="Settings page">
 
