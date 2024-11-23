@@ -34,111 +34,87 @@ The app is designed for those looking to take control of their health with data-
 ## Requirements
 <br/>
 
-### Requirement #1: Tracking Daily Nutrition
-*As a user, I want to track my nutritional intake so I can monitor my health more efficiently.*
+### Requirement #1: Tracking Lifestyle & Exercise Habits
+*As a user, I want to track my lifestyle and exercise habits so that I can monitor my health and progress toward my fitness goals.*
 
 #### Dependencies:
-* User authentication for personal meal tracking
-* User knows the nutrient information of their food
-* Ability to allow for easy search and logging of meals
+* Secure user authentication.
+* User interface for logging daily activities and exercises.
+* Database of exercise types with calorie burn rates.
+* Access to location services for tracking visited exercise centers.
   
 #### Assumptions:
-* Nutrition statistics page provides up-to-date and accurate nutritional data
-* User understands the nutrient information of the food they are consuming
-* Nutrition statistics page provides a sufficient coverage of food items applicable to users
+* Users will regularly input their lifestyle and exercise data.
+* The app provides an intuitive interface for easy logging.
+* Calorie calculations are personalized based on user profiles.
 
 ##### Examples:
 1.1<br/>
-**Given** the user eats hummus <br/>
-**When** the user logs hummus nutrients, <br/>
-**Then** the app should automatically calculate the total calories and nutrient for the day using the logged in nutrient information as its source.
+**Given** the user completes a 5-mile run <br/>
+**When** they log this activity <br/>
+**Then** the app calculates the calories burned and updates their exercise statistics.
 
 2.1 <br/>
-**Given** the user is tracking their food intake, <br/>
-**When** the daily sodium level exceeds the recommended amount, <br/>
-**Then** the app will display a notification that the user should reduce their sodium intake to better manage their health.
+**Given** the user visits a new exercise center <br/>
+**When** the app detects this via location services <br/>
+**Then** it logs the visit and adds the center to their list of visited facilities
 <br/>
 <br/>
 <br/>
 
-### Requirement #2: Personalized Health Goals
-*As a user, I want to set personal health goals so that I can stay motivated and track my progress over time.*
+### Requirement #2: Providing Nutrition Facts About Food
+*As a user, I want to get nutritional information about the food I eat so that I can make healthier dietary choices.*
 
 #### Dependencies:
-* Goal-setting feature within the app
-* Progress tracking and visualization tools (e.g., charts, milestones)
-* Notifications and reminders system
+* Integration with USDA food database for accurate nutritional data.
+* Search and logging functionality for meals.
+* Ability to calculate daily nutritional intake and compare it with recommended values.
 
 #### Assumptions:
-* Users are interested in setting and achieving personal health goals
-* The app can accurately track progress towards these goals
-* Users will engage with reminders and notifications
+* Users are motivated to log their meals accurately.
+* The food database covers a wide range of foods.
+* Users have access to the internet to fetch the latest data.
 
 #### Examples:
 1.1 <br/>
-**Given** the user wants to improve their cardiovascular health, <br/>
-**When** the user sets a goal to run 5 kilometers without stopping within two months, <br/>
-**Then** the app should provide a training plan, track the user's runs, and display progress updates.
+**Given** the user eats a bowl of oatmeal with fruits <br/>
+**When** they log this meal <br/>
+**Then** the app displays the total calories and nutrient content, updating their daily intake
 
 2.1 <br/>
-**Given** the user aims to reduce daily sugar intake, <br/>
-**When** the user sets a nutritional goal to consume less than 25 grams of sugar per day, <br/>
-**Then** the app should monitor the user's food logs and alert them when they are approaching their daily limit.
+**Given** the user exceeds the recommended daily sodium intake <br/>
+**When** they view their nutrition summary <br/>
+**Then** the app alerts them and suggests ways to reduce sodium consumption.
 <br/>
 <br/>
 <br/>
 
-### Requirement #3: Personalized Health Recommendations and Assessment
-*As a user, I want to receive personalized recommendations so that I can improve my health based on my tracked data and region's data.*
+### Requirement #3: Analyzing Zip Code for Nearby Exercise Centers
+*As a user, I want the app to find nearby exercise centers based on my zip code so that I can easily access fitness facilities to fulfill my exercise schedule and goals.*
 
 #### Dependencies:
-* Analytics engine to interpret user data
-* Access to reliable health programs and recreational activities (e.g., City of Cincinnati)
-* Content management system for delivering recommendations
+* Database or API access to local exercise centers and gyms.
+* Geolocation services to map facilities relative to the user’s location.
+* User profile containing zip code information.
 
 #### Assumptions:
-* Users are open to receiving health recommendations
-* The app can accurately analyze user data to provide relevant suggestions
-* Recommendations are tailored to individual user profiles and preferences
+* Users provide accurate zip code information.
+* The database of exercise centers is current and comprehensive.
 
 #### Examples:
 1.1 <br/>
-**Given** the user recognizes that they are a smoker, <br/>
-**When** the user creates a goal to quit smoking <br/>
-**Then** the app will display a personalized set of activites and resources to quit smoking based on the user's zipcode.
+**Given** the user lives in zip code 12345 <br/>
+**When**  they search for nearby exercise centers as per their choice of excercise <br/>
+**Then** the app displays a list of exercise centers within a 10-mile radius, including contact information and directions.
 
 
 2.1 <br/>
-**Given** the user shows a trend of working out via sports, <br/>
-**When** the app detects more than three sport-based workouts, <br/>
-**Then** a user will be recommended a set of locations with sports available and local sports programs.
+**Given** the user wants to find a swimming pool <br/>
+**When** they apply this filter, <br/>
+**Then** he app shows only the facilities that have swimming pools.
 <br/>
 <br/>
 <br/>
-
-### Requirement #4: Medication Tracking and Reminders
-*As a user, I want to track my medication intake and receive reminders so that I can adhere to my prescribed schedule.*
-
-#### Dependencies:
-* Medication database with dosing schedules
-* Reminder and notification system
-* User interface for logging medication intake
-
-#### Assumptions:
-* Users are willing to input their medication schedules
-* The app can send timely notifications
-* Users will interact with reminders (e.g., mark as taken, snooze, or no longer taking this medication)
-
-#### Examples:
-1.1 <br/>
-**Given** the user is prescribed Chateal EQ (or another birth control pill) to be taken once daily, <br/>
-**When** the user inputs the name and time the medication should be taken into the app, <br/>
-**Then** the app will then send a reminder one hour before the specified time and will request the user to confirm when the medication is consumed.
-
-2.1 <br/>
-**Given** the user missed a medication dose, <br/>
-**When** the user does not confirm intake within 30 minutes of the scheduled time, <br/>
-**Then** the app will send a follow-up notification stating the medication has not been taken and will automatically mark the missing does in the medication log.
 
 
 ## Data Sources
