@@ -58,11 +58,29 @@ else if (!string.IsNullOrEmpty(Model.SelectedFacilityType))
 }
 @if (!string.IsNullOrEmpty(Model.SelectedFacilityType))
 {
-    var exerciseRecommendations = new Dictionary<string, List<string>>
+    var exerciseRecommendations = new Dictionary<string, List<(string Name, string Url)>>
     {
-        { "Recreation Center", new List<string> { "Weightlifting", "Yoga classes", "Treadmill running" } },
-        { "Aquatic Facility", new List<string> { "Lap swimming", "Water aerobics", "Pool-based resistance training" } },
-        { "Outdoor Park", new List<string> { "Jogging", "Bodyweight exercises", "Group bootcamp sessions" } }
+        { "Recreation Center", new List<(string, string)>
+            {
+                ("Weightlifting", "/ExerciseExamples/Weightlifting"),
+                ("Yoga", "/ExerciseExamples/Yoga"),
+                ("Cardio", "/ExerciseExamples/Cardio")
+            }
+        },
+        { "Aquatic Facility", new List<(string, string)>
+            {
+                ("Lap swimming", "/ExerciseExamples/LapSwimming"),
+                ("Water aerobics", "/ExerciseExamples/WaterAerobics"),
+                ("Pool-based resistance training", "/ExerciseExamples/PoolResistanceTraining")
+            }
+        },
+        { "Outdoor Park", new List<(string, string)>
+            {
+                ("Jogging", "/ExerciseExamples/Jogging"),
+                ("Bodyweight Exercises", "/ExerciseExamples/BodyweightExercises"),
+                ("Group bootcamp sessions", "/ExerciseExamples/Bootcamp")
+            }
+        }
     };
 
     if (exerciseRecommendations.ContainsKey(Model.SelectedFacilityType))
@@ -71,7 +89,9 @@ else if (!string.IsNullOrEmpty(Model.SelectedFacilityType))
         <ul>
             @foreach (var exercise in exerciseRecommendations[Model.SelectedFacilityType])
             {
-                <li>@exercise</li>
+                <li>
+                    <a asp-page="@exercise.Url">@exercise.Name</a>
+                </li>
             }
         </ul>
     }
