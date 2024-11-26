@@ -56,3 +56,27 @@ else if (!string.IsNullOrEmpty(Model.SelectedFacilityType))
 {
     <p>No facilities found for "@Model.SelectedFacilityType".</p>
 }
+@if (!string.IsNullOrEmpty(Model.SelectedFacilityType))
+{
+    var exerciseRecommendations = new Dictionary<string, List<string>>
+    {
+        { "Recreation Center", new List<string> { "Weightlifting", "Yoga classes", "Treadmill running" } },
+        { "Aquatic Facility", new List<string> { "Lap swimming", "Water aerobics", "Pool-based resistance training" } },
+        { "Outdoor Park", new List<string> { "Jogging", "Bodyweight exercises", "Group bootcamp sessions" } }
+    };
+
+    if (exerciseRecommendations.ContainsKey(Model.SelectedFacilityType))
+    {
+        <h3>Recommended Exercises for "@Model.SelectedFacilityType":</h3>
+        <ul>
+            @foreach (var exercise in exerciseRecommendations[Model.SelectedFacilityType])
+            {
+                <li>@exercise</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No exercise recommendations available for "@Model.SelectedFacilityType".</p>
+    }
+}
