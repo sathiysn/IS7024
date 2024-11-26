@@ -8,15 +8,25 @@ namespace HealthWatch360.Pages
     public class ExerciseModel : PageModel
     {
         public List<string> FacilityTypes { get; set; } = new List<string>();
-        public List<ExerciseLog.Item> FilteredFacilities { get; set; } = new List<ExerciseLog.Item>();
+        public List<FacilityWithProgram> FilteredFacilities { get; set; } = new List<FacilityWithProgram>();
         public string SelectedFacilityType { get; set; }
 
         public void OnGet()
         {
+            LoadFacilityTypes();
+        }
+
+        public void OnPost(string facilityType)
+        {
+            SelectedFacilityType = facilityType;
+            LoadFacilitiesWithPrograms(facilityType);
+            LoadFacilityTypes();
+        }
+
+        private void LoadFacilityTypes()
+        {
             var jsonData = System.IO.File.ReadAllText("Facilities.json");
             var facilities = JsonConvert.DeserializeObject<ExerciseLog.Root>(jsonData);
-
-            // Extract unique facility types
             if (facilities?.items != null)
             {
                 FacilityTypes = facilities.items
@@ -25,27 +35,37 @@ namespace HealthWatch360.Pages
                     .ToList();
             }
         }
-        public void OnPost(string facilityType)
+
+        private void LoadFacilitiesWithPrograms(string facilityType)
         {
-            SelectedFacilityType = facilityType;
+            var facilitiesJson = System.IO.File.ReadAllText("Facilities.json");
+            var programsJson = System.IO.File.ReadAllText("Programs.json");
 
-            // Load JSON data
-            var jsonData = System.IO.File.ReadAllText("Facilities.json");
-            var facilities = JsonConvert.DeserializeObject<ExerciseLog.Root>(jsonData);
+            var facilities = JsonConvert.DeserializeObject<ExerciseLog.Root>(facilitiesJson);
+            var programs = JsonConvert.DeserializeObject<HealthWatch360.Models.Program.Root>(programsJson);
 
-            // Filter facilities by the selected facility type
-            if (facilities?.items != null)
+            if (facilities?.items != null && programs?.items != null)
             {
                 FilteredFacilities = facilities.items
                     .Where(item => item.facility_type == facilityType)
+                    .Select(facility =>
+                    {
+                        var program = programs.items.FirstOrDefault(p => p.zip_code == facility.zip_code);
+                        return new FacilityWithProgram
+                        {
+                            Facility = facility,
+                            Program = program
+                        };
+                    })
                     .ToList();
             }
+        }
 
-            // Reload the facility types for the dropdown
-            FacilityTypes = facilities.items
-                .Select(item => item.facility_type)
-                .Distinct()
-                .ToList();
+        public class FacilityWithProgram
+        {
+            public ExerciseLog.Item Facility { get; set; }
+            public Models.Program.Item? Program { get; internal set; }
         }
     }
+
 }

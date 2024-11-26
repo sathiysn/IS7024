@@ -11,6 +11,21 @@ html {
     }
 }
 
+/* Custom button style for all buttons */
+.btn {
+    background-color: #9c34fc !important;
+    border-color: #9c34fc !important;
+    color: white; /* Ensure text is white */
+}
+
+    .btn:hover,
+    .btn:focus,
+    .btn:active {
+        background-color: #7a1adf !important; /* Darker shade on hover/focus */
+        border-color: #7a1adf !important;
+        color: white;
+    }
+
 /* Button and form focus states */
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
