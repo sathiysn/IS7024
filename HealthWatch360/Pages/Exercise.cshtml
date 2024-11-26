@@ -5,9 +5,9 @@
     ViewData["Title"] = "Facility Finder";
 }
 
-<link rel="stylesheet" href="~/css/nutrition.css">
-
 <h1>@ViewData["Title"]</h1>
+
+<link rel="stylesheet" href="~/css/FacilityFinder.css">
 
 <p>Choose a facility type to see available locations and their details:</p>
 
@@ -20,7 +20,7 @@
             @foreach (var facilityType in Model.FacilityTypes)
             {
                 var isSelected = facilityType == Model.SelectedFacilityType ? "selected" : "";
-                <option value="@facilityType" isSelected > @facilityType </option>
+                <option value="@facilityType" isSelected>@facilityType</option>
             }
         </select>
     </div>
@@ -31,31 +31,55 @@
 @if (Model.FilteredFacilities.Any())
 {
     <h3>Facilities for "@Model.SelectedFacilityType":</h3>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Address</th>
-                <th>Zip Code</th>
-                <th>Phone</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var facility in Model.FilteredFacilities)
-            {
-                var address = JsonConvert.DeserializeObject<dynamic>(facility.location.human_address)?.address ?? "No address provided";
-                var zipCode = facility.zip_code ?? "No Zip Code provided";
-                <tr>
-                    <td>@facility.name</td>
-                    <td>@address</td>
-                    <td>@zipCode</td>
-                    <td>@facility.phone</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <div class="facility-buttons">
+        @foreach (var item in Model.FilteredFacilities)
+        {
+            var facility = item.Facility;
+            var program = item.Program;
+
+            var facilityAddress = JsonConvert.DeserializeObject<dynamic>(facility.location.human_address)?.address ?? "No address provided";
+            var facilityZipCode = facility.zip_code ?? "No Zip Code provided";
+
+            <div class="facility-container">
+                <button class="btn btn-outline-primary facility-btn" type="button" onclick="toggleProgramDetails('@facility.zip_code')">
+                    <strong>@facility.name</strong>
+                    <span>Address: @facilityAddress</span>
+                    <span>Zip Code: @facilityZipCode</span>
+                    <span>Phone: @facility.phone</span>
+                </button>
+
+                @if (program != null)
+                {
+                    <div id="program-details-@facility.zip_code" class="program-details mt-2" style="display: none;">
+                        <ul class="program-list">
+                            <li><strong>Category:</strong> @program.category</li>
+                            <li><strong>Topics:</strong> @program.topics</li>
+                            <li><strong>Outcome:</strong> @program.outcome</li>
+                            <li><strong>Location:</strong> @program.location</li>
+                            <li><strong>Address:</strong> @program.address</li>
+                            <li><strong>Zip Code:</strong> @program.zip_code</li>
+                        </ul>
+                    </div>
+                }
+            </div>
+        }
+    </div>
 }
 else if (!string.IsNullOrEmpty(Model.SelectedFacilityType))
 {
     <p>No facilities found for "@Model.SelectedFacilityType".</p>
 }
+
+<script>
+    // JavaScript function to toggle the visibility of program details
+    function toggleProgramDetails(zipCode) {
+        var programDetails = document.getElementById('program-details-' + zipCode);
+        if (programDetails.style.display === "none" || programDetails.style.display === "") {
+            programDetails.style.display = "block";
+        } else {
+            programDetails.style.display = "none";
+        }
+    }
+</script>
+
+
