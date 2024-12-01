@@ -17,4 +17,8 @@
     <PackageReference Include="System.Net.Http.Json" Version="8.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Videos\" />
+  </ItemGroup>
+
 </Project>

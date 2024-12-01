@@ -4,7 +4,11 @@
     <ActiveDebugProfile>https</ActiveDebugProfile>
     <_SelectedScaffolderID>ModelBasedCrudRazorPageScaffolder</_SelectedScaffolderID>
     <_SelectedScaffolderCategoryPath>root/Common</_SelectedScaffolderCategoryPath>
+<<<<<<< HEAD
     <WebStackScaffolding_ViewDialogWidth>650.666666666667</WebStackScaffolding_ViewDialogWidth>
+=======
+    <WebStackScaffolding_ViewDialogWidth>650</WebStackScaffolding_ViewDialogWidth>
+>>>>>>> 2a0f78f2f63c823f934fc854fa161e9515174316
     <WebStackScaffolding_DbContextDialogWidth>650</WebStackScaffolding_DbContextDialogWidth>
     <WebStackScaffolding_IsLayoutPageSelected>True</WebStackScaffolding_IsLayoutPageSelected>
     <WebStackScaffolding_IsPartialViewSelected>False</WebStackScaffolding_IsPartialViewSelected>
