@@ -4,6 +4,7 @@ using HealthWatch360.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,13 +12,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace HealthWatch360.Migrations
 {
     [DbContext(typeof(HealthWatch360Context))]
-    partial class HealthWatch360ContextModelSnapshot : ModelSnapshot
+    [Migration("20241201145327_FixedYTIntegration")]
+    partial class FixedYTIntegration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "8.0.11")
+                .HasAnnotation("ProductVersion", "8.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -56,22 +59,6 @@ namespace HealthWatch360.Migrations
                     b.HasIndex("UserID");
 
                     b.ToTable("HealthReport");
-                });
-
-            modelBuilder.Entity("HealthWatch360.Models.Library", b =>
-                {
-                    b.Property<int>("LibraryID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("LibraryID"));
-
-                    b.Property<long>("NumFound")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("LibraryID");
-
-                    b.ToTable("Library");
                 });
 
             modelBuilder.Entity("HealthWatch360.Models.NutritionLog", b =>
@@ -152,6 +139,38 @@ namespace HealthWatch360.Migrations
                     b.HasKey("UserID");
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("HealthWatch360.Models.YouTubeVideo", b =>
+                {
+                    b.Property<string>("VideoId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ChannelTitle")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("LikeCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ThumbnailUrl")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ViewCount")
+                        .HasColumnType("int");
+
+                    b.HasKey("VideoId");
+
+                    b.ToTable("YoutubeVideos");
                 });
 
             modelBuilder.Entity("HealthWatch360.Models.ExerciseLog", b =>
