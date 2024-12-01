@@ -43,9 +43,11 @@
             <div class="facility-container">
                 <button class="btn btn-outline-primary facility-btn" type="button" onclick="toggleProgramDetails('@facility.zip_code')">
                     <strong>@facility.name</strong>
-                    <span>Address: @facilityAddress</span>
-                    <span>Zip Code: @facilityZipCode</span>
-                    <span>Phone: @facility.phone</span>
+                    <ul>
+                        <li>Address: @facilityAddress</li>
+                        <li>Zip Code: @facilityZipCode</li>
+                        <li>Phone: @facility.phone</li>
+                    </ul>
                 </button>
 
                 @if (program != null)
