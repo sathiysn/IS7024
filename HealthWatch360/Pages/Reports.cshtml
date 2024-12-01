@@ -7,22 +7,35 @@
 }
 
 <div class="card bg-dark text-light mb-4">
-    <div class="card-body">
-        <h5 class="text-center">Nutrient Breakdown</h5>
+    <div class="card-body d-flex flex-wrap">
+        <!-- Left Column: Food Search and Chart -->
+        <div class="col-md-8">
+            <h5 class="text-center">Nutrient Breakdown</h5>
 
-        <!-- Food Search and Selection -->
-        <input type="text" id="foodSearch" placeholder="Search for food..." oninput="searchFoods()" class="form-control" />
-        <ul id="searchResults" style="list-style-type: none; padding: 0; margin: 0; max-height: 200px; overflow-y: auto;"></ul>
+            <!-- Food Search and Selection -->
+            <input type="text" id="foodSearch" placeholder="Search for food..." oninput="searchFoods()" class="form-control mb-4" />
+            <ul id="searchResults" style="list-style-type: none; padding: 0; margin: 0; max-height: 200px; overflow-y: auto;"></ul>
 
-        <!-- Selected Foods -->
-        <h6 class="mt-3">Selected Foods:</h6>
-        <ul id="selectedFoodsList" style="list-style-type: none; padding: 0; margin: 0;"></ul>
-        <button class="btn btn-primary mt-2" onclick="generateNutritionBreakdown(), saveMacroMicroBreakdown()">View Nutrition Breakdown</button>
+            <!-- Selected Foods -->
+            <h6 class="mt-2">Selected Foods:</h6>
+            <ul id="selectedFoodsList" style="list-style-type: none; padding: 0; margin: 0;"></ul>
+            <button class="btn mt-2" onclick="generateNutritionBreakdown(), saveMacroMicroBreakdown()">View Nutrition Breakdown</button>
 
-        <!-- Chart.js Visualization -->
-        <canvas id="nutrientChart" class="mt-4"></canvas>
+            <!-- Chart.js Visualization -->
+            <canvas id="nutrientChart" class="mt-4"></canvas>
+        </div>
+
+        <!-- Right Column: Nutrient Filter -->
+        <div class="col-md-4 d-flex flex-column mt-4">
+            <h6>Filter Nutrients:</h6>
+            <div id="nutrientCheckboxContainer" class="form-group border rounded p-2" style="height: 300px; overflow-y: auto;">
+                <!-- Checkboxes will be dynamically populated here -->
+            </div>
+            <button class="btn btn-secondary mt-2" onclick="applyNutrientFilter()">Apply Filter</button>
+        </div>
     </div>
 </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
@@ -111,7 +124,13 @@
         const labels = Object.keys(aggregatedNutrients);
         const data = labels.map(label => aggregatedNutrients[label].amount);
 
-        const ctx = document.getElementById("nutrientChart").getContext("2d");
+        const chartContainer = document.getElementById("nutrientChart");
+
+        // Dynamically set the height of the canvas based on the number of nutrients
+        const chartHeight = Math.max(400, labels.length * 30); // Minimum 400px, 30px per label
+        chartContainer.style.height = `${chartHeight}px`;
+
+        const ctx = chartContainer.getContext("2d");
 
         // Destroy previous chart instance if it exists
         if (nutrientChart) {
@@ -131,6 +150,7 @@
                 }]
             },
             options: {
+                indexAxis: 'y',
                 responsive: true,
                 plugins: {
                     legend: {
@@ -156,7 +176,7 @@
                         },
                         title: {
                             display: true,
-                            text: 'Nutrients',
+                            text: 'Amount',
                             color: '#D3D3D3' // Change X-axis title color to white
                         }
                     },
@@ -169,7 +189,7 @@
                         },
                         title: {
                             display: true,
-                            text: 'Amount',
+                            text: 'Nutrients',
                             color: '#D3D3D3' // Change Y-axis title color to white
                         }
                     }
@@ -177,40 +197,66 @@
             }
         });
     }
-</script>
 
-<script>
-    // Function to generate macro and micro breakdown
-    function saveMacroMicroBreakdown() {
-        const macros = ["Water", "Protein", "Carbohydrate, by summation", "Carbohydrate, by difference", "Total lipid (fat)", "Fiber, total dietary", "Sugars, Total", "Carbohydrate Other" ];
-        const micros = ["Nitrogen", "Vitamin C, total ascorbic acid", "Calcium, Ca", "Iron, Fe", "Potassium", "Sodium", "Potassium, K", "Vitamin B-6", "Vitamin B-12", "Vitamin A", "Vitamin E", "Vitamin D", "Vitamin K"];
+    function populateNutrientFilter() {
+        const nutrientSet = new Set();
 
-        let macroTotal = 0;
-        let microTotal = 0;
+        // Collect all unique nutrients from the dataset
+        allFoods.forEach(food => {
+            food.foodNutrients.forEach(nutrient => {
+                nutrientSet.add(nutrient.nutrient.name);
+            });
+        });
 
+        const checkboxContainer = document.getElementById("nutrientCheckboxContainer");
+        nutrientSet.forEach(nutrient => {
+            const checkbox = document.createElement("div");
+            checkbox.className = "form-check";
+
+            checkbox.innerHTML = `
+                <input type="checkbox" class="form-check-input" id="checkbox-${nutrient}" value="${nutrient}">
+                <label class="form-check-label" for="checkbox-${nutrient}">${nutrient}</label>
+            `;
+
+            checkboxContainer.appendChild(checkbox);
+        });
+    }
+
+
+    // Call the function on page load
+    populateNutrientFilter();
+
+    function applyNutrientFilter() {
+        const selectedNutrients = Array.from(
+            document.querySelectorAll("#nutrientCheckboxContainer input:checked")
+        ).map(checkbox => checkbox.value);
+
+        const aggregatedNutrients = {};
+
+        // Filter nutrients based on user selection
         selectedFoods.forEach(food => {
             const gramsConsumed = food.grams;
             const foodWeight = food.foodPortions?.[0]?.gramWeight || 100;
 
             food.foodNutrients.forEach(nutrient => {
+                if (!selectedNutrients.includes(nutrient.nutrient.name)) return;
+
                 const nutrientName = nutrient.nutrient.name;
+                const unitName = nutrient.nutrient.unitName;
                 const nutrientAmountPerGram = nutrient.amount / foodWeight;
                 const totalNutrientAmount = nutrientAmountPerGram * gramsConsumed;
 
-                if (macros.includes(nutrientName)) {
-                    macroTotal += totalNutrientAmount;
-                } else if (micros.includes(nutrientName)) {
-                    microTotal += totalNutrientAmount;
+                if (!aggregatedNutrients[nutrientName]) {
+                    aggregatedNutrients[nutrientName] = {
+                        amount: 0,
+                        unitName: unitName
+                    };
                 }
+                aggregatedNutrients[nutrientName].amount += totalNutrientAmount;
             });
         });
 
-        // Save data to session storage
-        sessionStorage.setItem("macroMicroBreakdown", JSON.stringify({
-            macro: macroTotal,
-            micro: microTotal
-        }));
-
+        updateNutrientChart(aggregatedNutrients);
     }
 </script>
 
