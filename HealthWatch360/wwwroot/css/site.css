@@ -147,3 +147,6 @@ html, .card, .footer-nav {
     color: #fff;
 }
 
+#nutrientChart {
+    width: 100%; /* Ensure the chart width adjusts to the container */
+}
