@@ -1,0 +1,40 @@
+﻿@page
+@model HealthWatch360.Pages.BooksMindliftModel
+@{
+}
+<h1>Search for Books</h1>
+
+<form method="get">
+    <input type="text" asp-for="SearchQuery" placeholder="Enter book title or author" />
+    <button type="submit">Search</button>
+</form>
+
+@if (Model.Books.Any())
+{
+    <h2>Search Results for @Model.SearchQuery</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Publish Year</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var book in Model.Books)
+            {
+                <tr>
+                    <td>@book.Title</td>
+                    <td>@book.Author</td>
+                    <td>@book.ISBN</td>
+                    <td>@book.PublishYear</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (!string.IsNullOrWhiteSpace(Model.SearchQuery))
+{
+    <p>No results found for "@Model.SearchQuery".</p>
+}
