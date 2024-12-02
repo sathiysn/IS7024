@@ -138,6 +138,8 @@
             nutrientChart.destroy();
         }
 
+        Chart.defaults.font.size = 12;
+
         nutrientChart = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -181,6 +183,7 @@
                             text: 'Amount',
                             color: '#FFFFFF' // Change X-axis title color to white
                         }
+
                     },
                     y: {
                         ticks: {
