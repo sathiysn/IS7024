@@ -11,6 +11,21 @@ html {
     }
 }
 
+/* Custom button style for all buttons */
+.btn {
+    background-color: #A64AFC !important;
+    border-color: #A64AFC !important;
+    color: white; /* Ensure text is white */
+}
+
+    .btn:hover,
+    .btn:focus,
+    .btn:active {
+        background-color: #7a1adf !important; /* Darker shade on hover/focus */
+        border-color: #7a1adf !important;
+        color: white;
+    }
+
 /* Button and form focus states */
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
     box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
@@ -132,3 +147,6 @@ html, .card, .footer-nav {
     color: #fff;
 }
 
+#nutrientChart {
+    width: 100%; /* Ensure the chart width adjusts to the container */
+}

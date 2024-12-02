@@ -1,0 +1,32 @@
+﻿
+.facility-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.facility-container {
+    width: 100%;
+    max-width: 300px;
+}
+
+.facility-btn {
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.program-details {
+    margin-top: 10px;
+}
+
+.program-list {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+    .program-list li {
+        padding: 5px 0;
+    }

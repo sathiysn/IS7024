@@ -2,14 +2,11 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-//Purpose: manages user exercise activity
-//Uses: records exercise sessions and will be used to summarize workout information on the home screen
 
 namespace HealthWatch360.Models
 {
-    public class HealthReport
+    public class Program
     {
-        //Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse);
         [Key]
         public int HealthReportId { get; set; }
 
