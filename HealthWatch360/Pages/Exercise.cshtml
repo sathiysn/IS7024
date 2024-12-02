@@ -1,4 +1,4 @@
-﻿@page
+@page
 @using Newtonsoft.Json
 @model HealthWatch360.Pages.ExerciseModel
 @{
@@ -71,7 +71,50 @@ else if (!string.IsNullOrEmpty(Model.SelectedFacilityType))
 {
     <p>No facilities found for "@Model.SelectedFacilityType".</p>
 }
+@if (!string.IsNullOrEmpty(Model.SelectedFacilityType))
+{
+    var exerciseRecommendations = new Dictionary<string, List<(string Name, string Url)>>
+    {
+        { "Recreation Center", new List<(string, string)>
+            {
+                ("Weightlifting", "/ExerciseExamples/Weightlifting"),
+                ("Yoga", "/ExerciseExamples/Yoga"),
+                ("Cardio", "/ExerciseExamples/Cardio")
+            }
+        },
+        { "Aquatic Facility", new List<(string, string)>
+            {
+                ("Lap swimming", "/ExerciseExamples/LapSwimming"),
+                ("Water aerobics", "/ExerciseExamples/WaterAerobics"),
+                ("Pool-based resistance training", "/ExerciseExamples/PoolResistanceTraining")
+            }
+        },
+        { "Golf Course", new List<(string, string)>
+            {
+                ("Rotational Core Exercises", "/ExerciseExamples/RotCoreExercises"),
+                ("Golf Swing Drills", "/ExerciseExamples/GolfSwingDrills"),
+                ("Leg and Hip Mobility Training", "/ExerciseExamples/MobilityTraining")
+            }
+        }
+    };
 
+    if (exerciseRecommendations.ContainsKey(Model.SelectedFacilityType))
+    {
+        <h3>Recommended Exercises for "@Model.SelectedFacilityType":</h3>
+        <ul>
+            @foreach (var exercise in exerciseRecommendations[Model.SelectedFacilityType])
+            {
+                <li>
+                    <a asp-page="@exercise.Url">@exercise.Name</a>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No exercise recommendations available for "@Model.SelectedFacilityType".</p>
+    }
+}
 <script>
     // JavaScript function to toggle the visibility of program details
     function toggleProgramDetails(zipCode) {
@@ -83,5 +126,3 @@ else if (!string.IsNullOrEmpty(Model.SelectedFacilityType))
         }
     }
 </script>
-
-
