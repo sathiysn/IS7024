@@ -1,54 +1,62 @@
 using HealthWatch360.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Text.Json;
 using static HealthWatch360.Models.Library;
 
 namespace HealthWatch360.Pages
 {
     public class BooksMindliftModel : PageModel
     {
-        private static readonly HttpClient client = new HttpClient();
+        public string SearchQuery { get; set; }
+        public List<Book> BookResults { get; private set; } = new List<Book>();
+        public static List<string> Authors { get; private set; } = new List<string>();
 
-        [BindProperty(SupportsGet = true)]
-        public string SearchQuery { get; set; } = string.Empty;
-
-        public List<Book> Books { get; set; } = new List<Book>();
-
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string searchQuery)
         {
-            if (!string.IsNullOrWhiteSpace(SearchQuery))
+
+            await FetchBooks(searchQuery);
+
+
+        }
+
+        private async Task FetchBooks(string author)
+        {
+            var apiUrl = "https://mindlift20241130171555.azurewebsites.net/api/reviews";
+
+            using (var httpClient = new HttpClient())
             {
-                string url = $"https://openlibrary.org/search.json?q={Uri.EscapeDataString(SearchQuery)}";
-                try
+                var response = await httpClient.GetAsync(apiUrl);
+                if (response.IsSuccessStatusCode)
                 {
-                    HttpResponseMessage response = await client.GetAsync(url);
-                    response.EnsureSuccessStatusCode();
-                    string responseBody = await response.Content.ReadAsStringAsync();
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+                    var jsonDocument = JsonDocument.Parse(jsonResponse);
 
-                    // Parse JSON response
-                    JObject jsonResponse = JObject.Parse(responseBody);
-                    var docs = jsonResponse["docs"];
-
-                    if (docs != null)
-                    {
-                        foreach (var book in docs.Take(10)) // Display top 10 results
-                        {
-                            Books.Add(new Book
-                            {
-                                Title = book["title"]?.ToString() ?? "N/A",
-                                Author = book["author_name"] != null ? string.Join(", ", book["author_name"].ToObject<string[]>()) : "N/A",
-                                ISBN = book["isbn"] != null && book["isbn"].HasValues ? book["isbn"].First.ToString() : "N/A",
-                                PublishYear = book["first_publish_year"]?.ToString() ?? "N/A"
-                            });
-                        }
-                    }
-                }
-                catch (HttpRequestException e)
-                {
-                    Console.WriteLine($"Request error: {e.Message}");
+                    // Extract book titles for the specified author
+                    var docs = jsonDocument.RootElement;
+                    var bookList = new List<Book>();
+                    bookList = JsonConvert.DeserializeObject<List<Book>>(jsonResponse);
+                    BookResults = bookList;
                 }
             }
         }
+
+        // API endpoint to get author names (used by JavaScript)
+        public IActionResult OnGetAuthors()
+        {
+            return new JsonResult(Authors);
+        }
+    }
+
+    public class Book
+    {
+
+        [JsonProperty("bookTitle")]
+        public string BookTitle { get; set; }
+
+        [JsonProperty("comment")]
+        public string BookReview { get; set; }
     }
 }

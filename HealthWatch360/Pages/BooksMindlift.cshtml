@@ -9,32 +9,20 @@
     <button type="submit">Search</button>
 </form>
 
-@if (Model.Books.Any())
+@if (Model.BookResults != null && Model.BookResults.Any())
 {
-    <h2>Search Results for @Model.SearchQuery</h2>
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>ISBN</th>
-                <th>Publish Year</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var book in Model.Books)
-            {
-                <tr>
-                    <td>@book.Title</td>
-                    <td>@book.Author</td>
-                    <td>@book.ISBN</td>
-                    <td>@book.PublishYear</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+    <h3>Books Reviews from Mindlift:</h3>
+    <ul>
+        @foreach (var book in Model.BookResults)
+        {
+            <li>
+                @book.BookTitle
+                <p>@book.BookReview</p>
+            </li>
+        }
+    </ul>
 }
-else if (!string.IsNullOrWhiteSpace(Model.SearchQuery))
+else if (!string.IsNullOrEmpty(Model.SearchQuery))
 {
-    <p>No results found for "@Model.SearchQuery".</p>
+    <p>No books found for "@Model.SearchQuery".</p>
 }
