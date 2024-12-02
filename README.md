@@ -13,7 +13,7 @@ HealthWatch 360 enables users to:
 * Track Lifestyle & Exercise Habits
 * Discover Local Exercise Centers and Programs
 * Personalized Health Goals
-* Health Reports
+* Gain User Health Reports
   
 The app is designed for those looking to take control of their health with data-driven insights, empowering users to make better lifestyle choices and prevent common health issues like heart disease, diabetes, and obesity. 
 
