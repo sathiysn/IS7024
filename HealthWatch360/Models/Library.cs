@@ -9,10 +9,14 @@ namespace HealthWatch360.Models
     {
         public class Book
         {
-            public string Title { get; set; }
-            public string Author { get; set; }
-            public string ISBN { get; set; }
-            public string PublishYear { get; set; }
+            [JsonProperty("bookTitle")]
+            public string BookTitle { get; set; }
+
+            [JsonProperty("comment")]
+            public string BookReview { get; set; }
+
+            [JsonProperty("authorName")]
+            public string AuthorName { get; set; }
         }
     }
 }

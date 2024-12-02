@@ -22,7 +22,7 @@ namespace HealthWatch360.Pages
 
         }
 
-        private async Task FetchBooks(string author)
+        private async Task FetchBooks(string searchQuery)
         {
             var apiUrl = "https://mindlift20241130171555.azurewebsites.net/api/reviews";
 
@@ -32,31 +32,30 @@ namespace HealthWatch360.Pages
                 if (response.IsSuccessStatusCode)
                 {
                     var jsonResponse = await response.Content.ReadAsStringAsync();
-                    var jsonDocument = JsonDocument.Parse(jsonResponse);
+                    var bookList = JsonConvert.DeserializeObject<List<Book>>(jsonResponse);
 
-                    // Extract book titles for the specified author
-                    var docs = jsonDocument.RootElement;
-                    var bookList = new List<Book>();
-                    bookList = JsonConvert.DeserializeObject<List<Book>>(jsonResponse);
-                    BookResults = bookList;
+                    // Populate the authors list
+                    Authors = bookList.Select(b => b.AuthorName).Distinct().ToList();
+
+                    // Filter books based on the search query (if provided)
+                    if (!string.IsNullOrWhiteSpace(searchQuery))
+                    {
+                        searchQuery = searchQuery.ToLower();
+                        BookResults = bookList.Where(b =>
+                            b.BookTitle.ToLower().Contains(searchQuery))
+                            .ToList();
+                    }
+                    else
+                    {
+                        BookResults = bookList;
+                    }
+                }
+                else
+                {
+                    // Handle the case where the API call fails
+                    BookResults = new List<Book>();
                 }
             }
         }
-
-        // API endpoint to get author names (used by JavaScript)
-        public IActionResult OnGetAuthors()
-        {
-            return new JsonResult(Authors);
-        }
-    }
-
-    public class Book
-    {
-
-        [JsonProperty("bookTitle")]
-        public string BookTitle { get; set; }
-
-        [JsonProperty("comment")]
-        public string BookReview { get; set; }
     }
 }

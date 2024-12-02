@@ -1,28 +1,62 @@
 ﻿@page
 @model HealthWatch360.Pages.BooksMindliftModel
 @{
+    ViewData["Title"] = "Books - Mindlift";
 }
-<h1>Search for Books</h1>
 
-<form method="get">
-    <input type="text" asp-for="SearchQuery" placeholder="Enter book title or author" />
-    <button type="submit">Search</button>
-</form>
+<h1>Books - Mindlift</h1>
 
-@if (Model.BookResults != null && Model.BookResults.Any())
-{
-    <h3>Books Reviews from Mindlift:</h3>
-    <ul>
+<div>
+    <label for="searchQuery">Search by Title:</label>
+    <input id="searchQuery" name="searchQuery" type="text" onkeyup="filterBooks()" />
+    <datalist id="authorList"></datalist>
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Review</th>
+        </tr>
+    </thead>
+    <tbody id="bookTable">
         @foreach (var book in Model.BookResults)
         {
-            <li>
-                @book.BookTitle
-                <p>@book.BookReview</p>
-            </li>
+            <tr>
+                <td>@book.BookTitle</td>
+                <td>@book.BookReview</td>
+            </tr>
         }
-    </ul>
-}
-else if (!string.IsNullOrEmpty(Model.SearchQuery))
-{
-    <p>No books found for "@Model.SearchQuery".</p>
+    </tbody>
+</table>
+
+@section Scripts {
+    <script>
+        // Fetch authors for autocomplete
+        async function loadAuthors() {
+            const response = await fetch('/BooksMindlift?handler=Authors');
+            const authors = await response.json();
+            const authorList = document.getElementById("authorList");
+
+            authorList.innerHTML = '';
+            authors.forEach(author => {
+                const option = document.createElement("option");
+                option.value = author;
+                authorList.appendChild(option);
+            });
+        }
+
+        // Filter books dynamically
+        async function filterBooks() {
+            const searchQuery = document.getElementById("searchQuery").value;
+            const response = await fetch(`/BooksMindlift?searchQuery=${encodeURIComponent(searchQuery)}`);
+            const html = await response.text();
+            document.getElementById("bookTable").innerHTML = new DOMParser()
+                .parseFromString(html, 'text/html')
+                .querySelector("#bookTable").innerHTML;
+        }
+
+        // Load authors on page load
+        window.onload = loadAuthors;
+    </script>
 }
